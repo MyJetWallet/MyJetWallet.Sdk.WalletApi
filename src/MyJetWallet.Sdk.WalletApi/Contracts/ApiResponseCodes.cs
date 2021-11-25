@@ -7,15 +7,15 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
     {
         OK = 0,
         InternalServerError = 1,        // Something went wrong. Please try again later.
-        WalletDoNotExist = 2,           // Wallet is not found
-        LowBalance = 3,                 // ...
-        CannotProcessWithdrawal = 4,    // ?? Withdrawal request failed
-        AddressIsNotValid = 5,          // Invalid address
-        AssetDoNotFound = 6,            // Asset is not found
+        WalletDoNotExist = 2,           // Wallet is not found.
+        LowBalance = 3,                 // ... depo, trade...
+        CannotProcessWithdrawal = 4,    // Withdrawal request failed. Please try again later.
+        AddressIsNotValid = 5,          // Invalid address. // (withdraw address verification)
+        AssetDoNotFound = 6,            // Asset is not found.
         AssetIsDisabled = 7,            // Asset is not supported / Trading is not available for this asset now. Please try again later.
-        AmountIsSmall = 8,              // Your amount is too small
-        InvalidInstrument = 9,          // Asset is not supported
-        KycNotPassed = 10,              // Your account is not verified. Complete KYC verification now
+        AmountIsSmall = 8,              // Your amount is too small.
+        InvalidInstrument = 9,          // Asset is not supported.
+        KycNotPassed = 10,              // Your account is not verified. Complete KYC verification now.
         AssetDoNotSupported = 11,       // Asset is not supported / Trading is not available for this asset now. Please try again later.
         NotEnoughLiquidityForMarketOrder = 12,   // 
         InvalidOrderValue = 13,                  // 
@@ -34,7 +34,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         BlockchainIsNotSupported = 26,           //
             
         //Auth
-        InvalidUserNameOrPassword = 101,      // Invalid login or password
+        InvalidUserNameOrPassword = 101,      // Invalid login or password.
         UserExists = 102,                     // ??а нужно ли? мы же сделаи обходной флоу
         UserNotExist = 103,                   // ?? User not found
         OldPasswordNotMatch = 104,            // You entered the wrong current password
