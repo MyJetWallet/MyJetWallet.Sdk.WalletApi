@@ -32,7 +32,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         OperationNotAllowed = 24,                //
         BlockchainIsNotConfigured = 25,          //
         BlockchainIsNotSupported = 26,           //
-            
+        InvalidPhone = 27,
+        
         //Auth
         InvalidUserNameOrPassword = 101,      // Invalid login or password.
         UserExists = 102,                     // ??а нужно ли? мы же сделаи обходной флоу
