@@ -33,6 +33,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         BlockchainIsNotConfigured = 25,          //
         BlockchainIsNotSupported = 26,           //
         InvalidPhone = 27,
+        AmountToLarge = 28,                      // Amount to large
         
         //Auth
         InvalidUserNameOrPassword = 101,      // Invalid login or password.
