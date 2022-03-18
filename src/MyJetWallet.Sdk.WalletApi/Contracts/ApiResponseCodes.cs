@@ -69,6 +69,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardNotFound = 216,                     // 
         PaymentFailed = 217,                    // 
         CardFirstAndLastNameCannotBeEmpty = 218,  // 
-        InvalidGuid = 219 //  
+        InvalidGuid = 219, //  
+
+        InvalidAccountNumber = 220,//  
+        InvalidRoutingNumber = 221,//  
+        InvalidIban = 222,//  
     }
 }
