@@ -71,8 +71,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardFirstAndLastNameCannotBeEmpty = 218,  // 
         InvalidGuid = 219, //  
 
-        InvalidAccountNumber = 220,//  
-        InvalidRoutingNumber = 221,//  
-        InvalidIban = 222,//  
+        InvalidAccountNumber = 220, //  
+        InvalidRoutingNumber = 221, //  
+        InvalidIban = 222, //  
     }
 }
