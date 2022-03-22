@@ -74,5 +74,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidAccountNumber = 220, //  
         InvalidRoutingNumber = 221, //  
         InvalidIban = 222, //  
+        BankAccountNotFound = 223, //  
     }
 }
