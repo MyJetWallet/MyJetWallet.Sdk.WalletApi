@@ -4,7 +4,9 @@ using System.Linq;
 using System.ServiceModel.Dispatcher;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyJetWallet.ApiSecurityManager.EncryptionKeys;
 using MyJetWallet.Domain;
+using MyJetWallet.Sdk.Authorization.Extensions;
 using MyJetWallet.Sdk.Authorization.Http;
 using MyJetWallet.Sdk.WalletApi.Wallets;
 using Newtonsoft.Json;
@@ -15,16 +17,18 @@ namespace MyJetWallet.Sdk.WalletApi
     {
         public static IWalletService WalletService { get; set; }
 
+        public static IEncryptionKeyStorage IEncryptionKeyStorage { get; set; }
+
         /// <summary>
         /// PrintToken
         /// </summary>
         /// <param name="tokenString"></param>
         /// <returns></returns>
-        public static string PrintToken(this string tokenString)
+        public static string PrintToken(this string tokenString, string encryptionKeyId)
         {
             try
             {
-                var (result, token) = MyControllerBaseHelper.ParseToken(tokenString);
+                var (result, token) = IEncryptionKeyStorage.ParseToken(encryptionKeyId, tokenString);
 
                 return JsonConvert.SerializeObject(token);
             }

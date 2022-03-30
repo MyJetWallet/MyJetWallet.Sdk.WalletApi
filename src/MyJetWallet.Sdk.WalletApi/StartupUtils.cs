@@ -26,8 +26,6 @@ namespace MyJetWallet.Sdk.WalletApi
 {
     public static class StartupUtils
     {
-        private const string SessionEncodingKeyEnv = "SESSION_ENCODING_KEY";
-
         /// <summary>
         /// Setup swagger ui ba
         /// </summary>
@@ -63,7 +61,7 @@ namespace MyJetWallet.Sdk.WalletApi
             });
         }
 
-        public static void SetupWalletServices(IServiceCollection services)
+        public static void SetupWalletServices(IServiceCollection services, string sessionEncryptionKeyId)
         {
             services.SetupSwaggerDocumentation();
             services.ConfigurateHeaders();
@@ -77,21 +75,26 @@ namespace MyJetWallet.Sdk.WalletApi
 
             services
                 .AddAuthentication(o => { o.DefaultScheme = "Bearer"; })
-                .AddScheme<MyAuthenticationOptions, RootSessionAuthHandler>("Bearer", o => { });
+                .AddScheme<MyAuthenticationOptions, RootSessionAuthHandler>("Bearer", o =>
+                {
+                    o.SessionEncryptionKeyId = sessionEncryptionKeyId;
+                });
 
             services
                 .AddAuthorization(o => o.SetupWalletApiPolicy());
         }
 
-        public static void SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, 
-            bool enableApiTrace, string swaggerOffsetName)
+        public static void SetupWalletApplication(
+            IApplicationBuilder app,
+            IWebHostEnvironment env,
+            bool enableApiTrace,
+            string swaggerOffsetName)
         {
             if (env.IsDevelopment())
             {
                 TokensManager.DebugMode = true;
                 RootSessionAuthHandler.IsDevelopmentEnvironment = true;
             }
-
 
             app.UseForwardedHeaders();
 
@@ -105,7 +108,6 @@ namespace MyJetWallet.Sdk.WalletApi
                 Console.WriteLine("API Trace is Disabled");
             }
 
-
             app.BindMetricsMiddleware();
 
             if (env.IsDevelopment())
@@ -115,14 +117,11 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.UseRouting();
             app.UseStaticFiles();
-
             app.UseMetricServer();
 
             app.BindServicesTree(Assembly.GetExecutingAssembly());
 
-            GetSessionEncodingKey();
-
-            app.BindIsAlive(GetEnvVariables());
+            app.BindIsAlive();
 
             app.UseOpenApi(settings =>
             {
@@ -136,34 +135,12 @@ namespace MyJetWallet.Sdk.WalletApi
                 settings.DocumentPath = $"/swagger/{swaggerOffsetName}/swagger.json";
 
             });
-            
 
             app.UseMiddleware<ExceptionLogMiddleware>();
             app.UseMiddleware<DebugMiddleware>();
 
             app.UseAuthentication();
             app.UseAuthorization();
-            
-        }
-
-        public static string GetSessionEncodingKey()
-        {
-            var key = Environment.GetEnvironmentVariable(SessionEncodingKeyEnv);
-
-            if (string.IsNullOrEmpty(key))
-                throw new Exception($"Env Variable {SessionEncodingKeyEnv} is not found");
-
-            return key;
-        }
-
-        private static IDictionary<string, string> GetEnvVariables()
-        {
-            var autoLoginKey = GetSessionEncodingKey();
-
-            return new Dictionary<string, string>
-            {
-                { SessionEncodingKeyEnv, autoLoginKey.EncodeToSha1().ToHexString() }
-            };
         }
     }
 }
