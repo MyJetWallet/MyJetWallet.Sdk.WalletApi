@@ -2,8 +2,10 @@
 using System.Globalization;
 using System.Linq;
 using System.ServiceModel.Dispatcher;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyJetWallet.ApiSecurityManager.ApiKeys;
 using MyJetWallet.ApiSecurityManager.EncryptionKeys;
 using MyJetWallet.Domain;
 using MyJetWallet.Sdk.Authorization.Extensions;
@@ -17,18 +19,20 @@ namespace MyJetWallet.Sdk.WalletApi
     {
         public static IWalletService WalletService { get; set; }
 
-        public static IEncryptionKeyStorage IEncryptionKeyStorage { get; set; }
+        public static IEncryptionKeyStorage EncryptionKeyStorage { get; set; }
+
+        public static IApiKeyStorage ApiKeyStorage { get; set; }
 
         /// <summary>
         /// PrintToken
         /// </summary>
         /// <param name="tokenString"></param>
         /// <returns></returns>
-        public static string PrintToken(this string tokenString, string encryptionKeyId)
+        public static async Task<string> PrintToken(this string tokenString, string encryptionKeyId)
         {
             try
             {
-                var (result, token) = IEncryptionKeyStorage.ParseToken(encryptionKeyId, tokenString);
+                var (result, token) = await ApiKeyStorage.ParseToken(encryptionKeyId, tokenString);
 
                 return JsonConvert.SerializeObject(token);
             }

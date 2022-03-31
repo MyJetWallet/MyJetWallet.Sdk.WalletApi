@@ -61,7 +61,7 @@ namespace MyJetWallet.Sdk.WalletApi
             });
         }
 
-        public static void SetupWalletServices(IServiceCollection services, string sessionEncryptionKeyId)
+        public static void SetupWalletServices(IServiceCollection services, string sessionEncryptionApiKeyId)
         {
             services.SetupSwaggerDocumentation();
             services.ConfigurateHeaders();
@@ -77,7 +77,7 @@ namespace MyJetWallet.Sdk.WalletApi
                 .AddAuthentication(o => { o.DefaultScheme = "Bearer"; })
                 .AddScheme<MyAuthenticationOptions, RootSessionAuthHandler>("Bearer", o =>
                 {
-                    o.SessionEncryptionKeyId = sessionEncryptionKeyId;
+                    o.SessionEncryptionApiKeyId = sessionEncryptionApiKeyId;
                 });
 
             services
