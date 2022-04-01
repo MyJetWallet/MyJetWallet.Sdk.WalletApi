@@ -83,6 +83,29 @@ namespace MyJetWallet.Sdk.WalletApi
             services
                 .AddAuthorization(o => o.SetupWalletApiPolicy());
         }
+        
+        public static void SetupSimpleServices(IServiceCollection services, string sessionEncryptionApiKeyId)
+        {
+            services.SetupSwaggerDocumentation();
+            services.ConfigurateHeaders();
+            services.AddControllers(options =>
+            {
+
+            }).AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new MyDoubleConverter());
+            });
+
+            services
+                .AddAuthentication(o => { o.DefaultScheme = "Bearer"; })
+                .AddScheme<MyAuthenticationOptions, SimpleAuthHandler>("Bearer", o =>
+                {
+                    o.SessionEncryptionApiKeyId = sessionEncryptionApiKeyId;
+                });
+
+            services
+                .AddAuthorization(o => o.SetupWalletApiPolicy());
+        }
 
         public static void SetupWalletApplication(
             IApplicationBuilder app,
