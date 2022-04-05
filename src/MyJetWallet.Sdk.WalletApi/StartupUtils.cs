@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyJetWallet.Sdk.Authorization.Http;
+using MyJetWallet.Sdk.Authorization.NoSql;
+using MyJetWallet.Sdk.NoSql;
 using MyJetWallet.Sdk.RestApiTrace;
-using MyJetWallet.Sdk.Service;
 using MyJetWallet.Sdk.WalletApi.Common;
 using MyJetWallet.Sdk.WalletApi.Middleware;
 using NSwag;
@@ -164,6 +161,12 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.UseAuthentication();
             app.UseAuthorization();
+        }
+
+        public static void RegisterAuthServices(ContainerBuilder builder, Func<string> authMyNoSqlReaderHostPortGet)
+        {
+            var authNoSql = builder.CreateNoSqlClient(authMyNoSqlReaderHostPortGet);
+            builder.RegisterMyNoSqlReader<ShortRootSessionNoSqlEntity>(authNoSql, ShortRootSessionNoSqlEntity.TableName);
         }
     }
 }
