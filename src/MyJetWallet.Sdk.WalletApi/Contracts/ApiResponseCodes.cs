@@ -76,5 +76,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidIban = 222, //  
         BankAccountNotFound = 223, //  
         ExistingRequestId = 224, //
+        OperationBlocked = 225 //
     }
 }
