@@ -1,4 +1,6 @@
-﻿namespace MyJetWallet.Sdk.WalletApi.Contracts
+﻿using System;
+
+namespace MyJetWallet.Sdk.WalletApi.Contracts
 {
     public class Response
     {
@@ -20,6 +22,11 @@
         public T Data { get; set; }
 
         public Response(T data) : base(ApiResponseCodes.OK)
+        {
+            Data = data;
+        }
+        
+        public Response(ApiResponseCodes code, T data) : base(code)
         {
             Data = data;
         }
