@@ -49,6 +49,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidToken = 111,                   // ?? Invalid token. Please log in again
         RecaptchaFailed = 112,                // The CAPTCHA verification failed. Please try again
         InvalidCode = 113,                    //  
+        InvalidRefCode = 114,  
         
         //Circle, Cards
         InvalidKeyId = 201,                     // Invalid key id ????
