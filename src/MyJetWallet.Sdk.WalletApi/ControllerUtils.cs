@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyJetWallet.ApiSecurityManager.ApiKeys;
-using MyJetWallet.ApiSecurityManager.EncryptionKeys;
 using MyJetWallet.Domain;
 using MyJetWallet.Sdk.Authorization.Extensions;
 using MyJetWallet.Sdk.Authorization.Http;
@@ -19,8 +18,6 @@ namespace MyJetWallet.Sdk.WalletApi
     {
         public static IWalletService WalletService { get; set; }
 
-        public static IEncryptionKeyStorage EncryptionKeyStorage { get; set; }
-
         public static IApiKeyStorage ApiKeyStorage { get; set; }
 
         /// <summary>
@@ -32,7 +29,7 @@ namespace MyJetWallet.Sdk.WalletApi
         {
             try
             {
-                var (result, token) = await ApiKeyStorage.ParseToken(encryptionKeyId, tokenString);
+                var (result, token) = ApiKeyStorage.ParseToken(encryptionKeyId, tokenString);
 
                 return JsonConvert.SerializeObject(token);
             }
