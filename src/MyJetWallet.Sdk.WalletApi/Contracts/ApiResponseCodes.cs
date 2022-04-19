@@ -80,5 +80,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ExistingRequestId = 224, //
         OperationBlocked = 225, //
         InvalidCardNumber = 226,
+        DisclaimerConfirmRequired = 227
     }
 }
