@@ -62,7 +62,16 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 await context.Response.WriteAsJsonAsync(new Response<BlockerExpiredData>(ex.Code, ex.BlockerData));
+            }
+            catch (WalletApiErrorAttemptsException ex)
+            {
+                ex.Code.AddToActivityAsTag("ErrorCode");
+                ex.FailActivity();
                 
+                _logger.LogInformation(ex, "Receive WalletApiErrorAttemptsException with status code: {codeText}; path: {Path}", ex.Code.ToString(), context.Request.Path);
+
+                context.Response.StatusCode = (int) HttpStatusCode.OK;
+                await context.Response.WriteAsJsonAsync(new Response<BlockerAttemptsData>(ex.Code, ex.BlockerData));
             }
             catch (WalletApiErrorException ex)
             {
