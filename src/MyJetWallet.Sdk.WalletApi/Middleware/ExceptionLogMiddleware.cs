@@ -42,17 +42,6 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 context.Response.StatusCode = (int) ex.StatusCode;
                 await context.Response.WriteAsJsonAsync(new {ex.Message});
             }
-            catch (WalletHttpWithAttemptsException ex)
-            {
-                ex.StatusCode.AddToActivityAsTag("ErrorCode");
-                ex.FailActivity();
-                _logger.LogInformation(ex,
-                    "Receive WalletHttpWithAttemptsException with status code: {StatusCode}; path: {Path}", ex.StatusCode,
-                    context.Request.Path);
-
-                context.Response.StatusCode = (int) ex.StatusCode;
-                await context.Response.WriteAsJsonAsync(new {ex.Message, ex.BlockerData});
-            }
             catch (WalletApiErrorBlockerException ex)
             {
                 ex.Code.AddToActivityAsTag("ErrorCode");
@@ -61,17 +50,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 _logger.LogInformation(ex, "Receive WalletApiErrorBlockerException with status code: {codeText}; path: {Path}", ex.Code.ToString(), context.Request.Path);
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
-                await context.Response.WriteAsJsonAsync(new Response<BlockerExpiredData>(ex.Code, ex.BlockerData));
-            }
-            catch (WalletApiErrorAttemptsException ex)
-            {
-                ex.Code.AddToActivityAsTag("ErrorCode");
-                ex.FailActivity();
-                
-                _logger.LogInformation(ex, "Receive WalletApiErrorAttemptsException with status code: {codeText}; path: {Path}", ex.Code.ToString(), context.Request.Path);
-
-                context.Response.StatusCode = (int) HttpStatusCode.OK;
-                await context.Response.WriteAsJsonAsync(new Response<BlockerAttemptsData>(ex.Code, ex.BlockerData));
+                await context.Response.WriteAsJsonAsync(new Response<UnauthorizedData>(ex.Code, ex.UnauthorizedData));
             }
             catch (WalletApiErrorException ex)
             {
