@@ -83,13 +83,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         DisclaimerConfirmRequired = 227,
 
         //High-Yield
-        InvalidParameters = 300,
-        ClientOfferNotFound = 301,
-        ClientOfferClosed = 302,
         ClientOfferDisabled = 303,
-        OfferNotFound = 304,
         OfferDisabled = 305,
         ClientOfferFinished = 306,
-        TierNotFound = 307
+        TierNotFound = 307,
+        CannotChangeBalance = 308
     }
 }
