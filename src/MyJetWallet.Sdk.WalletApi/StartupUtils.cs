@@ -127,6 +127,10 @@ namespace MyJetWallet.Sdk.WalletApi
                     {
                         item.RejectCode = rejectCode;
                     }
+                    else
+                    {
+                        item.RejectCode = "OK";
+                    }
                 };
                 
                 app.UseMiddleware<ApiTraceMiddleware>();
