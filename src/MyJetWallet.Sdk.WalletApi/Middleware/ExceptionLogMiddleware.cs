@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
@@ -16,6 +17,8 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 {
     public class ExceptionLogMiddleware
     {
+        public const string RejectCodeHeader = "reject-code";
+        
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionLogMiddleware> _logger;
 
@@ -50,6 +53,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 _logger.LogInformation(ex, "Receive WalletApiErrorBlockerException with status code: {codeText}; path: {Path}", ex.Code.ToString(), context.Request.Path);
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
+                context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
                 await context.Response.WriteAsJsonAsync(new Response<UnauthorizedData>(ex.Code, ex.UnauthorizedData));
             }
             catch (WalletApiErrorException ex)
@@ -59,6 +63,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 _logger.LogInformation(ex, "Receive WalletApiErrorException with status code: {codeText}; path: {Path}", ex.Code.ToString(), context.Request.Path);
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
+                context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
                 await context.Response.WriteAsJsonAsync(new Response(ex.Code));
             }
             catch (Exception ex)
