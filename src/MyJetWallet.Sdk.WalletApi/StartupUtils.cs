@@ -120,6 +120,19 @@ namespace MyJetWallet.Sdk.WalletApi
 
             if (enableApiTrace)
             {
+                ApiTraceMiddleware.ContextHandlerCallback = (context, item) =>
+                {
+                    if (context.Response.Headers.TryGetValue(ExceptionLogMiddleware.RejectCodeHeader,
+                            out var rejectCode))
+                    {
+                        item.RejectCode = rejectCode;
+                    }
+                    else
+                    {
+                        item.RejectCode = "OK";
+                    }
+                };
+                
                 app.UseMiddleware<ApiTraceMiddleware>();
                 Console.WriteLine("API Trace is Enabled");
             }

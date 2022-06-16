@@ -88,6 +88,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         OfferDisabled = 305,
         ClientOfferFinished = 306,
         TierNotFound = 307,
-        CannotChangeBalance = 308
+        CannotChangeBalance = 308,
+        TopUpBlocked = 309,
+        ConvertAssetError = 310,
+        ClientOfferNotFound = 311
     }
 }
