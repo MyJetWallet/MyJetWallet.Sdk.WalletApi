@@ -35,6 +35,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidPhone = 27,
         AmountToLarge = 28,                      // Amount to large
         OperationUnavailable = 29, 
+        InvalidDeletionReasons = 30,
         
         //Auth
         InvalidUserNameOrPassword = 101,      // Invalid login or password.
