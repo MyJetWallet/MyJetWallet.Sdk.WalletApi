@@ -83,6 +83,40 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         OperationBlocked = 225, //
         InvalidCardNumber = 226,
         DisclaimerConfirmRequired = 227,
+        
+        // Card extension codes
+        VerificationFailed = 228,
+        VerificationNotSupportedByIssuer = 229,
+        CardInvalid = 230,
+        CardNotHonored = 231,
+        CardAccountIneligible = 232,
+        CardLimitViolated = 233,
+        CardCvvRequired = 234,
+        ThreeDSecureNotSupported = 235,
+        ThreeDSecureActionExpired = 236,
+        ThreeDSecureInvalidRequest = 237,
+        
+        PaymentNotSupportedByIssuer = 238,
+        PaymentNotFunded = 239,
+        PaymentFailedBalanceCheck = 240,
+        //CardInvalid = 230,
+        //CardLimitViolated = 233,
+        //CardNotHonored = 231,
+        CardRestricted = 241,
+        
+        // Bank extension codes
+        BankAccountIneligible = 242,
+        //InvalidAccountNumber = 220,
+        InvalidWireRtn = 243,
+        RefIdInvalid = 244,
+        AccountNameMismatch = 245,
+        AccountNumberMismatch = 246,
+        AccountIneligible = 247,
+        WalletAddressMismatch = 248,
+        CustomerNameMismatch = 249,
+        InstitutionNameMismatch = 250,
+        TransferFailed = 251,
+        InsufficientFunds = 252,
 
         //High-Yield
         ClientOfferDisabled = 303,
