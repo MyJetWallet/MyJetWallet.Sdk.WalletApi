@@ -54,7 +54,16 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
-                await context.Response.WriteAsJsonAsync(new Response<UnauthorizedData>(ex.Code, ex.UnauthorizedData));
+
+                //TODO: after refactoring on client side need to remove Response<UnauthorizedData> and use simple Response
+                //var response = Response.RejectWithDetails(ex.Code, ex.UnauthorizedData);
+
+                var response = new Response<UnauthorizedData>(ex.Code, ex.UnauthorizedData)
+                {
+                    RejectDetail = ex.UnauthorizedData
+                };
+                
+                await context.Response.WriteAsJsonAsync(response);
             }
             catch (WalletApiErrorException ex)
             {

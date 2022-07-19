@@ -5,6 +5,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
     public class Response
     {
         public ApiResponseCodes Result { get; set; }
+        
+        public UnauthorizedData RejectDetail { get; set; }
 
         public Response(ApiResponseCodes result)
         {
@@ -14,6 +16,14 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         public static Response OK()
         {
             return new Response(ApiResponseCodes.OK);
+        }
+        
+        public static Response RejectWithDetails(ApiResponseCodes code, UnauthorizedData detail)
+        {
+            return new Response(code)
+            {
+                RejectDetail = detail
+            };
         }
     }
 
