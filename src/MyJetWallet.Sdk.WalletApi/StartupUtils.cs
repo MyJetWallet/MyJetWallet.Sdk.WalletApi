@@ -18,6 +18,7 @@ using Prometheus;
 using SimpleTrading.BaseMetrics;
 using SimpleTrading.ServiceStatusReporterConnector;
 using SimpleTrading.TokensManager;
+using Microsoft.Extensions.Logging;
 
 namespace MyJetWallet.Sdk.WalletApi
 {
@@ -176,9 +177,11 @@ namespace MyJetWallet.Sdk.WalletApi
             app.UseAuthorization();
         }
 
-        public static void RegisterAuthServices(ContainerBuilder builder, Func<string> authMyNoSqlReaderHostPortGet)
+        public static void RegisterAuthServices(ContainerBuilder builder, 
+            string readerHostPort,
+            ILoggerFactory loggerFactory)
         {
-            var authNoSql = builder.CreateNoSqlClient(authMyNoSqlReaderHostPortGet);
+            var authNoSql = builder.CreateNoSqlClient(readerHostPort, loggerFactory, "AuthNoSql");
             builder.RegisterMyNoSqlReader<ShortRootSessionNoSqlEntity>(authNoSql, ShortRootSessionNoSqlEntity.TableName);
         }
     }

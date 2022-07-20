@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
+using MyJetWallet.Sdk.Authorization;
 
 namespace MyJetWallet.Sdk.WalletApi.Common
 {
@@ -7,6 +8,7 @@ namespace MyJetWallet.Sdk.WalletApi.Common
         public const string VerifiedEmailPolicy = "VerifiedEmail";
         public const string Passed2FaPolicy = "Passed2Fa";
         public const string PassedKYCPolicy = "PassedKYC";
+        public const string SessionCheckPassPolicy = "SessionCheckPass";
         public static void SetupWalletApiPolicy(this AuthorizationOptions options)
         {
             options.AddPolicy(VerifiedEmailPolicy, policy => policy.RequireClaim("Email-Verified", "True"));
@@ -16,6 +18,14 @@ namespace MyJetWallet.Sdk.WalletApi.Common
                 policy.RequireClaim("2FA-Passed", "True");
             });
             options.AddPolicy(PassedKYCPolicy,policy => policy.RequireClaim("KYCPassed", "True")); 
+            
+            options.AddPolicy(SessionCheckPassPolicy, policy =>
+            {
+                policy.RequireClaim(AuthorizationConst.PinPassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.PhonePassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.EmailPassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.SelfiePassClaim, "True");
+            });
         }
     }
 }

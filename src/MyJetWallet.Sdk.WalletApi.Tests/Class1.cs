@@ -50,6 +50,12 @@ namespace MyJetWallet.Sdk.WalletApi.Tests
             Console.WriteLine((d.V2 + d.V2 + d.V2) == 1);
         }
 
+
+        [Test]
+        public void Test2()
+        {
+            Console.WriteLine(true.ToString());
+        }
     }
 
     public class Data
