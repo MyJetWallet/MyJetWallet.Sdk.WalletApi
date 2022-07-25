@@ -55,6 +55,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidCode = 113,                    //  
         InvalidRefCode = 114,  
         PinCodeAlreadyExist = 115,            // user can't setup new pin, because pin already exist
+        SelfieNotExist = 116,            // user can't setup new pin, because pin already exist
         
         
         //Circle, Cards
