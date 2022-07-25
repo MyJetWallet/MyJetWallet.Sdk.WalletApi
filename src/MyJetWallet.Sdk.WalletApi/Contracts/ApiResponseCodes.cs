@@ -54,6 +54,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         RecaptchaFailed = 112,                // The CAPTCHA verification failed. Please try again
         InvalidCode = 113,                    //  
         InvalidRefCode = 114,  
+        PinCodeAlreadyExist = 115,            // user can't setup new pin, because pin already exist
         
         //Circle, Cards
         InvalidKeyId = 201,                     // Invalid key id ????
