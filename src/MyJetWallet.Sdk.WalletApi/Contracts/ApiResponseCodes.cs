@@ -38,7 +38,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidDeletionReasons = 30,
         InvalidSwapPair = 31,
         AssetIsNotConfigued = 32,
-
+        ClientMustBeOlder = 33,
+        ProfileAlreadyExist = 34,
+        
         //Auth
         InvalidUserNameOrPassword = 101,      // Invalid login or password.
         UserExists = 102,                     // ??а нужно ли? мы же сделаи обходной флоу
