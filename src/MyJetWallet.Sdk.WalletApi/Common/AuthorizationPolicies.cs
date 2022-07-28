@@ -21,9 +21,9 @@ namespace MyJetWallet.Sdk.WalletApi.Common
             
             options.AddPolicy(SessionCheckPassPolicy, policy =>
             {
-                policy.RequireClaim(AuthorizationConst.PinPassClaim, "True");
-                policy.RequireClaim(AuthorizationConst.PhonePassClaim, "True");
-                policy.RequireClaim(AuthorizationConst.EmailPassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.SetupPinPassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.VerifyPinPassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.ProfileKycPassClaim, "True");
                 policy.RequireClaim(AuthorizationConst.SelfiePassClaim, "True");
             });
         }
