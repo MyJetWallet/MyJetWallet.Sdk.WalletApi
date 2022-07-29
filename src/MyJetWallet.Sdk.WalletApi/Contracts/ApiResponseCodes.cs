@@ -123,7 +123,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InstitutionNameMismatch = 250,
         TransferFailed = 251,
         InsufficientFunds = 252,
-        
+
         //Payout
         //TODO: Implement codes return to WithdrawalProcessor func ExecuteCirclePayoutsAsync()
         //InsufficientFunds = 252,
@@ -135,6 +135,14 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidBankAccountNumber = 258,
         InvalidAchRtn = 259,
         //InvalidWireRtn = 243,
+        PaymentStoppedByIssuer = 260,
+        PaymentCanceled = 261,
+        PaymentReturned = 262,
+        CreditCardNotAllowed = 263,
+        PaymentMethodUnsupported = 264,
+        VerificationDenied = 265,
+        ThreeDSecureRequired = 266,
+        ThreeDSecureFailure = 267,
         
         //High-Yield
         ClientOfferDisabled = 303,
