@@ -144,6 +144,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ThreeDSecureRequired = 266,
         ThreeDSecureFailure = 267,
         PaymentFailedDueToPaymentProcessorError = 268,
+        DeclineByBank = 269,
         
         //High-Yield
         ClientOfferDisabled = 303,
