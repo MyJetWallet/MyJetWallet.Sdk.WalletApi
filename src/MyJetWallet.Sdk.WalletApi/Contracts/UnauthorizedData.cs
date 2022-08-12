@@ -6,6 +6,7 @@ public class UnauthorizedData
 {
     public BlockerExpiredData Blocker { get; set; }
     public AttemptsData Attempts { get; set; }
+    public string ErrorMessage { get; set; }
 }
 public class BlockerExpiredData
 {
