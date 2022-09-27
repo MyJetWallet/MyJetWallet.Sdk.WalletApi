@@ -40,6 +40,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         AssetIsNotConfigued = 32,
         ClientMustBeOlder = 33,
         ProfileAlreadyExist = 34,
+        AnotherVerificationInProgress = 35,
+        DocumentsNotUploaded = 36, 
         
         //Auth
         InvalidUserNameOrPassword = 101,      // Invalid login or password.
