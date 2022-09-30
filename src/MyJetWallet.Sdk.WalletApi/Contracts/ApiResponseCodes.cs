@@ -156,6 +156,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CannotChangeBalance = 308,
         TopUpBlocked = 309,
         ConvertAssetError = 310,
-        ClientOfferNotFound = 311
+        ClientOfferNotFound = 311,
+
+        //NFT
+        NftIsNotOnSale = 400,
     }
 }
