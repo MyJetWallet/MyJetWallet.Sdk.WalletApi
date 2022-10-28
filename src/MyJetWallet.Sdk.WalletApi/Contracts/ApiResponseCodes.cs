@@ -160,5 +160,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
 
         //NFT
         NftIsNotOnSale = 400,
+
+        //Fee
+        NotEnoughBalanceToCoverFee = 500,
     }
 }
