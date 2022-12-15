@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MyJetWallet.Sdk.WalletApi.Contracts
+﻿namespace MyJetWallet.Sdk.WalletApi.Contracts
 {
     public class Response
     {

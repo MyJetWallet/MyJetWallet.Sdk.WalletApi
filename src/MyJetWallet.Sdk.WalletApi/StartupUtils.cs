@@ -17,7 +17,6 @@ using NSwag;
 using Prometheus;
 using SimpleTrading.BaseMetrics;
 using SimpleTrading.ServiceStatusReporterConnector;
-using SimpleTrading.TokensManager;
 using Microsoft.Extensions.Logging;
 
 namespace MyJetWallet.Sdk.WalletApi
@@ -113,7 +112,7 @@ namespace MyJetWallet.Sdk.WalletApi
         {
             if (env.IsDevelopment())
             {
-                TokensManager.DebugMode = true;
+                TokensManager.TokensManager.DebugMode = true;
                 RootSessionAuthHandler.IsDevelopmentEnvironment = true;
             }
 

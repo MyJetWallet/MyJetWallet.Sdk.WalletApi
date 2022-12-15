@@ -1,5 +1,3 @@
-using System;
-
 namespace MyJetWallet.Sdk.WalletApi.Contracts;
 
 public class BlockerAttemptsData
