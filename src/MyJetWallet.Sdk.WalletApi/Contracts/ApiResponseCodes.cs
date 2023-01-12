@@ -163,5 +163,12 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
 
         //Fee
         NotEnoughBalanceToCoverFee = 500,
+        
+        
+        //Nickname
+        InvalidNickname = 600,
+        NicknameUsed = 601,
+        NoNicknameChangesLeft = 602,
+        
     }
 }
