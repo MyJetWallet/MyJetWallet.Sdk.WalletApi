@@ -6,7 +6,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
     {
         public ApiResponseCodes Code { get; set; }
 
-        public WalletApiErrorException(string localizedMessage, ApiResponseCodes code) : base(localizedMessage)
+        public WalletApiErrorException(ApiResponseCodes code, string localizedMessage) : base(localizedMessage)
         {
             Code = code;
         }
