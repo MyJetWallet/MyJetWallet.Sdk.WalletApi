@@ -7,7 +7,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
     {
         public HttpStatusCode StatusCode { get; set; }
 
-        public WalletApiHttpException(string message, HttpStatusCode statusCode) : base(message)
+        public WalletApiHttpException(string localizedMessage, HttpStatusCode statusCode) : base(localizedMessage)
         {
             StatusCode = statusCode;
         }

@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 using MyJetWallet.Sdk.Service;
 using MyJetWallet.Sdk.WalletApi.Contracts;
 using Newtonsoft.Json;
-using Service.MessageTemplates.Client;
 
 // ReSharper disable UnusedMember.Global
 
@@ -22,12 +21,11 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
         
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionLogMiddleware> _logger;
-        private readonly ITemplateClient _templateClient;
-        public ExceptionLogMiddleware(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger, ITemplateClient templateClient)
+
+        public ExceptionLogMiddleware(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger)
         {
             _next = next;
             _logger = logger;
-            _templateClient = templateClient;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -59,9 +57,8 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 
                 //TODO: after refactoring on client side need to remove Response<UnauthorizedData> and use simple Response
                 //var response = Response.RejectWithDetails(ex.Code, ex.UnauthorizedData);
-
-                var message = await GetMessage(ex.Code, context);
-                var response = new Response<UnauthorizedData>(ex.Code, message, ex.UnauthorizedData)
+                
+                var response = new Response<UnauthorizedData>(ex.Code, ex.Message, ex.UnauthorizedData)
                 {
                     RejectDetail = ex.UnauthorizedData
                 };
@@ -76,9 +73,9 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
-                var message = await GetMessage(ex.Code, context);
+                //var message = await GetMessage(ex.Code, context);
 
-                await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
+                await context.Response.WriteAsJsonAsync(new Response(ex.Code, ex.Message));
             }
             catch (Exception ex)
             {
@@ -88,12 +85,12 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
             }
         }
 
-        private async Task<string> GetMessage(ApiResponseCodes exCode, HttpContext context)
-        {
-            var lang = context.GetLang();
-            var template = await _templateClient.GetTemplateBody(exCode.ToString(), "simple", lang);
-            return template;
-        }
+        // private async Task<string> GetMessage(ApiResponseCodes exCode, HttpContext context)
+        // {
+        //     var lang = context.GetLang();
+        //     var template = await _templateClient.GetTemplateBody(exCode.ToString(), "simple", lang);
+        //     return template;
+        // }
     }
 
     public class DebugMiddleware
