@@ -15,10 +15,11 @@ public class LocalizationManager
     private readonly ITemplateService _templateService;
     private readonly ITemplateClient _templateClient;
     private readonly ILogger<LocalizationManager> _logger;
-    public LocalizationManager(ITemplateService templateService, ILogger<LocalizationManager> logger)
+    public LocalizationManager(ITemplateService templateService, ILogger<LocalizationManager> logger, ITemplateClient templateClient)
     {
         _templateService = templateService;
         _logger = logger;
+        _templateClient = templateClient;
     }
 
     public async Task Start()
@@ -43,8 +44,16 @@ public class LocalizationManager
 
     public async Task<string> GetTemplateBody(ApiResponseCodes code, HttpContext ctx, params string[] paramValues)
     {
-        var body = await _templateClient.GetTemplateBody(code.ToString(), Defaults.DefaultBrand, ctx.GetLang());
+        var lang = ctx.GetLang();
+        if (string.IsNullOrWhiteSpace(lang))
+            lang = Defaults.DefaultLang;
+        
+        var body = await _templateClient.GetTemplateBody(code.ToString(), Defaults.DefaultBrand, lang);
         var keys = ApiResponseClassData.TemplateBodyParams[code];
+        
+        if (!keys.Any()) 
+            return body;
+        
         for (var i = 0; i < keys.Count; i++)
         {
             var key = keys[i];
@@ -57,6 +66,7 @@ public class LocalizationManager
                 _logger.LogError($"Unable to apply params to temlpate {code.ToString()}, param {key}");
             }
         }
+
         return body;
     }
 }
