@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Text.Json;
+using MyJetWallet.Sdk.WalletApi.Contracts;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -55,6 +57,16 @@ namespace MyJetWallet.Sdk.WalletApi.Tests
         public void Test2()
         {
             Console.WriteLine(true.ToString());
+        }
+
+        [Test]
+        public void Test3()
+        {
+            var codes = Enum.GetValues<ApiResponseCodes>().ToList();
+            foreach (var code in codes)
+            {
+                Console.WriteLine($"AddBody(ApiResponseCodes.{code});");
+            }
         }
     }
 

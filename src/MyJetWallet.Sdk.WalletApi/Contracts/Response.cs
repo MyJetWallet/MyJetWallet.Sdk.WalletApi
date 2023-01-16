@@ -3,7 +3,6 @@
     public class Response
     {
         public ApiResponseCodes Result { get; set; }
-        
         public UnauthorizedData RejectDetail { get; set; }
         public string Message { get; set; }
 

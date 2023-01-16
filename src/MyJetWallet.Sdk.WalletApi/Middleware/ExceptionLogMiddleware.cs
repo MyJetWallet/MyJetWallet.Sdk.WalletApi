@@ -21,11 +21,13 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
         
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionLogMiddleware> _logger;
+        private readonly LocalizationManager _localizationManager;
 
-        public ExceptionLogMiddleware(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger)
+        public ExceptionLogMiddleware(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger, LocalizationManager localizationManager)
         {
             _next = next;
             _logger = logger;
+            _localizationManager = localizationManager;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -58,7 +60,9 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 //TODO: after refactoring on client side need to remove Response<UnauthorizedData> and use simple Response
                 //var response = Response.RejectWithDetails(ex.Code, ex.UnauthorizedData);
                 
-                var response = new Response<UnauthorizedData>(ex.Code, ex.Message, ex.UnauthorizedData)
+                var message = await _localizationManager.GetTemplateBody(ex.Code, context, ex.TemplateParams);
+
+                var response = new Response<UnauthorizedData>(ex.Code, message, ex.UnauthorizedData)
                 {
                     RejectDetail = ex.UnauthorizedData
                 };
@@ -73,9 +77,9 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
-                //var message = await GetMessage(ex.Code, context);
-
-                await context.Response.WriteAsJsonAsync(new Response(ex.Code, ex.Message));
+               
+                var message = await _localizationManager.GetTemplateBody(ex.Code, context, ex.TemplateParams);
+                await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
             }
             catch (Exception ex)
             {

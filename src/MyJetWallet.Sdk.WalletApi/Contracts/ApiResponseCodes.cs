@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace MyJetWallet.Sdk.WalletApi.Contracts
 {
@@ -6,81 +8,83 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
     public enum ApiResponseCodes
     {
         OK = 0,
-        InternalServerError = 1,        // Something went wrong. Please try again later.
-        WalletDoNotExist = 2,           // Wallet is not found.
-        LowBalance = 3,                 // ... depo, trade...
-        CannotProcessWithdrawal = 4,    // Withdrawal request failed. Please try again later.
-        AddressIsNotValid = 5,          // Invalid address. // (withdraw address verification)
-        AssetDoNotFound = 6,            // Asset is not found.
-        AssetIsDisabled = 7,            // Asset is not supported / Trading is not available for this asset now. Please try again later.
-        AmountIsSmall = 8,              // Your amount is too small.
-        InvalidInstrument = 9,          // Asset is not supported.
-        KycNotPassed = 10,              // Your account is not verified. Complete KYC verification now.
-        AssetDoNotSupported = 11,       // Asset is not supported / Trading is not available for this asset now. Please try again later.
-        NotEnoughLiquidityForMarketOrder = 12,   // 
-        InvalidOrderValue = 13,                  // 
-        CannotProcessQuoteRequest = 14,          // 
-        CannotExecuteQuoteRequest = 15,          // 
-        NoqEnoughLiquidityForConvert = 16,       // 
-        LeadToNegativeSpread = 17,               // 
-        WithdrawalDoNotFound = 18,               // 
-        AddressDoNotSupported = 19,              // 
+        InternalServerError = 1, // Something went wrong. Please try again later.
+        WalletDoNotExist = 2, // Wallet is not found.
+        LowBalance = 3, // ... depo, trade...
+        CannotProcessWithdrawal = 4, // Withdrawal request failed. Please try again later.
+        AddressIsNotValid = 5, // Invalid address. // (withdraw address verification)
+        AssetDoNotFound = 6, // Asset is not found.
+
+        AssetIsDisabled = 7, // Asset is not supported / Trading is not available for this asset now. Please try again later.
+        AmountIsSmall = 8, // Your amount is too small.
+        InvalidInstrument = 9, // Asset is not supported.
+        KycNotPassed = 10, // Your account is not verified. Complete KYC verification now.
+
+        AssetDoNotSupported = 11, // Asset is not supported / Trading is not available for this asset now. Please try again later.
+        NotEnoughLiquidityForMarketOrder = 12, // 
+        InvalidOrderValue = 13, // 
+        CannotProcessQuoteRequest = 14, // 
+        CannotExecuteQuoteRequest = 15, // 
+        NoqEnoughLiquidityForConvert = 16, // 
+        LeadToNegativeSpread = 17, // 
+        WithdrawalDoNotFound = 18, // 
+        AddressDoNotSupported = 19, // 
         CannotResendWithdrawalVerification = 20, //
-        PhoneIsNotConfirmed = 21,                //
-        NotSupported = 22,                       //
-        OperationNotFound = 23,                  //
-        OperationNotAllowed = 24,                //
-        BlockchainIsNotConfigured = 25,          //
-        BlockchainIsNotSupported = 26,           //
+        PhoneIsNotConfirmed = 21, //
+        NotSupported = 22, //
+        OperationNotFound = 23, //
+        OperationNotAllowed = 24, //
+        BlockchainIsNotConfigured = 25, //
+        BlockchainIsNotSupported = 26, //
         InvalidPhone = 27,
-        AmountToLarge = 28,                      // Amount to large
-        OperationUnavailable = 29, 
+        AmountToLarge = 28, // Amount to large
+        OperationUnavailable = 29,
         InvalidDeletionReasons = 30,
         InvalidSwapPair = 31,
         AssetIsNotConfigued = 32,
         ClientMustBeOlder = 33,
         ProfileAlreadyExist = 34,
         AnotherVerificationInProgress = 35,
-        DocumentsNotUploaded = 36, 
-        
+        DocumentsNotUploaded = 36,
+
         //Auth
-        InvalidUserNameOrPassword = 101,      // Invalid login or password.
-        UserExists = 102,                     // ??а нужно ли? мы же сделаи обходной флоу
-        UserNotExist = 103,                   // ?? User not found
-        OldPasswordNotMatch = 104,            // You entered the wrong current password
-        Expired = 105,                        // Session has expired. Please log in again
-        CountryIsRestricted = 106,            // Registration from your country is not allowed
-        SocialNetworkNotSupported = 107,      // Social network is not available for log in
-        SocialNetworkNotAvailable = 108,      // Social network is not available for log in
-        ValidationError = 109,                // 
-        BrandNotFound = 110,                  // Something went wrong. Please try again
-        InvalidToken = 111,                   // ?? Invalid token. Please log in again
-        RecaptchaFailed = 112,                // The CAPTCHA verification failed. Please try again
-        InvalidCode = 113,                    //  
-        InvalidRefCode = 114,  
-        PinCodeAlreadyExist = 115,            // user can't setup new pin, because pin already exist
-        SelfieNotExist = 116,            // user can't setup new pin, because pin already exist
-        
-        
+        InvalidUserNameOrPassword = 101, // Invalid login or password.
+        UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
+        UserNotExist = 103, // ?? User not found
+        OldPasswordNotMatch = 104, // You entered the wrong current password
+        Expired = 105, // Session has expired. Please log in again
+        CountryIsRestricted = 106, // Registration from your country is not allowed
+        SocialNetworkNotSupported = 107, // Social network is not available for log in
+        SocialNetworkNotAvailable = 108, // Social network is not available for log in
+        ValidationError = 109, // 
+        BrandNotFound = 110, // Something went wrong. Please try again
+        InvalidToken = 111, // ?? Invalid token. Please log in again
+        RecaptchaFailed = 112, // The CAPTCHA verification failed. Please try again
+        InvalidCode = 113, //  
+        InvalidRefCode = 114,
+        PinCodeAlreadyExist = 115, // user can't setup new pin, because pin already exist
+        SelfieNotExist = 116, // user can't setup new pin, because pin already exist
+
+
         //Circle, Cards
-        InvalidKeyId = 201,                     // Invalid key id ????
-        InvalidEncryptedData = 202,             // ????
-        InvalidBillingName = 203,               // Invalid Name
-        InvalidBillingCity = 204,               // Invalid city
-        InvalidBillingCountry = 205,            // Invalid country
-        InvalidBillingLine1 = 206,              // Invalid ???
-        InvalidBillingDistrict = 207,           // Invalid district
-        InvalidBillingPostalCode = 208,         // Invalid postal code
-        InvalidExpMonth = 209,                  // Invalid expiration month
-        InvalidExpYear = 210,                   // Invalid expiration year
-        CardAddressMismatch = 211,              // ??
-        CardZipMismatch = 212,                  // ??
-        CardCvvInvalid = 213,                   // Invalid CVV code
-        CardExpired = 214,                      // Card is expired
-        CardFailed = 215,                       // 
-        CardNotFound = 216,                     // 
-        PaymentFailed = 217,                    // 
-        CardFirstAndLastNameCannotBeEmpty = 218,  // 
+        InvalidKeyId = 201, // Invalid key id ????
+        InvalidEncryptedData = 202, // ????
+        InvalidBillingName = 203, // Invalid Name
+        InvalidBillingCity = 204, // Invalid city
+        InvalidBillingCountry = 205, // Invalid country
+        InvalidBillingLine1 = 206, // Invalid ???
+        InvalidBillingDistrict = 207, // Invalid district
+        InvalidBillingPostalCode = 208, // Invalid postal code
+        InvalidExpMonth = 209, // Invalid expiration month
+        InvalidExpYear = 210, // Invalid expiration year
+        CardAddressMismatch = 211, // ??
+        CardZipMismatch = 212, // ??
+        CardCvvInvalid = 213, // Invalid CVV code
+        CardExpired = 214, // Card is expired
+        CardFailed = 215, // 
+        CardNotFound = 216, // 
+        PaymentFailed = 217, // 
+        CardFirstAndLastNameCannotBeEmpty = 218, // 
         InvalidGuid = 219, // 
 
         InvalidAccountNumber = 220, //  
@@ -91,7 +95,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         OperationBlocked = 225, //
         InvalidCardNumber = 226,
         DisclaimerConfirmRequired = 227,
-        
+
         // Card extension codes
         VerificationFailed = 228,
         VerificationNotSupportedByIssuer = 229,
@@ -103,17 +107,19 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ThreeDSecureNotSupported = 235,
         ThreeDSecureActionExpired = 236,
         ThreeDSecureInvalidRequest = 237,
-        
+
         PaymentNotSupportedByIssuer = 238,
         PaymentNotFunded = 239,
         PaymentFailedBalanceCheck = 240,
+
         //CardInvalid = 230,
         //CardLimitViolated = 233,
         //CardNotHonored = 231,
         CardRestricted = 241,
-        
+
         // Bank extension codes
         BankAccountIneligible = 242,
+
         //InvalidAccountNumber = 220,
         InvalidWireRtn = 243,
         RefIdInvalid = 244,
@@ -136,6 +142,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         FiatAccountLimitExceeded = 257,
         InvalidBankAccountNumber = 258,
         InvalidAchRtn = 259,
+
         //InvalidWireRtn = 243,
         PaymentStoppedByIssuer = 260,
         PaymentCanceled = 261,
@@ -147,7 +154,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ThreeDSecureFailure = 267,
         PaymentFailedDueToPaymentProcessorError = 268,
         DeclineByBank = 269,
-        
+
         //High-Yield
         ClientOfferDisabled = 303,
         OfferDisabled = 305,
@@ -163,12 +170,161 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
 
         //Fee
         NotEnoughBalanceToCoverFee = 500,
-        
-        
+
+
         //Nickname
         InvalidNickname = 600,
         NicknameUsed = 601,
         NoNicknameChangesLeft = 602,
         
+        //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
+    }
+
+    public static class ApiResponseClassData
+    {
+        static ApiResponseClassData()
+        {
+            AddBody(ApiResponseCodes.OK);
+            AddBody(ApiResponseCodes.InternalServerError);
+            AddBody(ApiResponseCodes.WalletDoNotExist);
+            AddBody(ApiResponseCodes.LowBalance);
+            AddBody(ApiResponseCodes.CannotProcessWithdrawal);
+            AddBody(ApiResponseCodes.AddressIsNotValid);
+            AddBody(ApiResponseCodes.AssetDoNotFound);
+            AddBody(ApiResponseCodes.AssetIsDisabled);
+            AddBody(ApiResponseCodes.AmountIsSmall, "MINAMOUNT");
+            AddBody(ApiResponseCodes.InvalidInstrument);
+            AddBody(ApiResponseCodes.KycNotPassed);
+            AddBody(ApiResponseCodes.AssetDoNotSupported);
+            AddBody(ApiResponseCodes.NotEnoughLiquidityForMarketOrder);
+            AddBody(ApiResponseCodes.InvalidOrderValue);
+            AddBody(ApiResponseCodes.CannotProcessQuoteRequest);
+            AddBody(ApiResponseCodes.CannotExecuteQuoteRequest);
+            AddBody(ApiResponseCodes.NoqEnoughLiquidityForConvert);
+            AddBody(ApiResponseCodes.LeadToNegativeSpread);
+            AddBody(ApiResponseCodes.WithdrawalDoNotFound);
+            AddBody(ApiResponseCodes.AddressDoNotSupported);
+            AddBody(ApiResponseCodes.CannotResendWithdrawalVerification);
+            AddBody(ApiResponseCodes.PhoneIsNotConfirmed);
+            AddBody(ApiResponseCodes.NotSupported);
+            AddBody(ApiResponseCodes.OperationNotFound);
+            AddBody(ApiResponseCodes.OperationNotAllowed);
+            AddBody(ApiResponseCodes.BlockchainIsNotConfigured);
+            AddBody(ApiResponseCodes.BlockchainIsNotSupported);
+            AddBody(ApiResponseCodes.InvalidPhone);
+            AddBody(ApiResponseCodes.AmountToLarge);
+            AddBody(ApiResponseCodes.OperationUnavailable);
+            AddBody(ApiResponseCodes.InvalidDeletionReasons);
+            AddBody(ApiResponseCodes.InvalidSwapPair);
+            AddBody(ApiResponseCodes.AssetIsNotConfigued);
+            AddBody(ApiResponseCodes.ClientMustBeOlder);
+            AddBody(ApiResponseCodes.ProfileAlreadyExist);
+            AddBody(ApiResponseCodes.AnotherVerificationInProgress);
+            AddBody(ApiResponseCodes.DocumentsNotUploaded);
+            AddBody(ApiResponseCodes.InvalidUserNameOrPassword);
+            AddBody(ApiResponseCodes.UserExists);
+            AddBody(ApiResponseCodes.UserNotExist);
+            AddBody(ApiResponseCodes.OldPasswordNotMatch);
+            AddBody(ApiResponseCodes.Expired);
+            AddBody(ApiResponseCodes.CountryIsRestricted);
+            AddBody(ApiResponseCodes.SocialNetworkNotSupported);
+            AddBody(ApiResponseCodes.SocialNetworkNotAvailable);
+            AddBody(ApiResponseCodes.ValidationError);
+            AddBody(ApiResponseCodes.BrandNotFound);
+            AddBody(ApiResponseCodes.InvalidToken);
+            AddBody(ApiResponseCodes.RecaptchaFailed);
+            AddBody(ApiResponseCodes.InvalidCode);
+            AddBody(ApiResponseCodes.InvalidRefCode);
+            AddBody(ApiResponseCodes.PinCodeAlreadyExist);
+            AddBody(ApiResponseCodes.SelfieNotExist);
+            AddBody(ApiResponseCodes.InvalidKeyId);
+            AddBody(ApiResponseCodes.InvalidEncryptedData);
+            AddBody(ApiResponseCodes.InvalidBillingName);
+            AddBody(ApiResponseCodes.InvalidBillingCity);
+            AddBody(ApiResponseCodes.InvalidBillingCountry);
+            AddBody(ApiResponseCodes.InvalidBillingLine1);
+            AddBody(ApiResponseCodes.InvalidBillingDistrict);
+            AddBody(ApiResponseCodes.InvalidBillingPostalCode);
+            AddBody(ApiResponseCodes.InvalidExpMonth);
+            AddBody(ApiResponseCodes.InvalidExpYear);
+            AddBody(ApiResponseCodes.CardAddressMismatch);
+            AddBody(ApiResponseCodes.CardZipMismatch);
+            AddBody(ApiResponseCodes.CardCvvInvalid);
+            AddBody(ApiResponseCodes.CardExpired);
+            AddBody(ApiResponseCodes.CardFailed);
+            AddBody(ApiResponseCodes.CardNotFound);
+            AddBody(ApiResponseCodes.PaymentFailed);
+            AddBody(ApiResponseCodes.CardFirstAndLastNameCannotBeEmpty);
+            AddBody(ApiResponseCodes.InvalidGuid);
+            AddBody(ApiResponseCodes.InvalidAccountNumber);
+            AddBody(ApiResponseCodes.InvalidRoutingNumber);
+            AddBody(ApiResponseCodes.InvalidIban);
+            AddBody(ApiResponseCodes.BankAccountNotFound);
+            AddBody(ApiResponseCodes.ExistingRequestId);
+            AddBody(ApiResponseCodes.OperationBlocked);
+            AddBody(ApiResponseCodes.InvalidCardNumber);
+            AddBody(ApiResponseCodes.DisclaimerConfirmRequired);
+            AddBody(ApiResponseCodes.VerificationFailed);
+            AddBody(ApiResponseCodes.VerificationNotSupportedByIssuer);
+            AddBody(ApiResponseCodes.CardInvalid);
+            AddBody(ApiResponseCodes.CardNotHonored);
+            AddBody(ApiResponseCodes.CardAccountIneligible);
+            AddBody(ApiResponseCodes.CardLimitViolated);
+            AddBody(ApiResponseCodes.CardCvvRequired);
+            AddBody(ApiResponseCodes.ThreeDSecureNotSupported);
+            AddBody(ApiResponseCodes.ThreeDSecureActionExpired);
+            AddBody(ApiResponseCodes.ThreeDSecureInvalidRequest);
+            AddBody(ApiResponseCodes.PaymentNotSupportedByIssuer);
+            AddBody(ApiResponseCodes.PaymentNotFunded);
+            AddBody(ApiResponseCodes.PaymentFailedBalanceCheck);
+            AddBody(ApiResponseCodes.CardRestricted);
+            AddBody(ApiResponseCodes.BankAccountIneligible);
+            AddBody(ApiResponseCodes.InvalidWireRtn);
+            AddBody(ApiResponseCodes.RefIdInvalid);
+            AddBody(ApiResponseCodes.AccountNameMismatch);
+            AddBody(ApiResponseCodes.AccountNumberMismatch);
+            AddBody(ApiResponseCodes.AccountIneligible);
+            AddBody(ApiResponseCodes.WalletAddressMismatch);
+            AddBody(ApiResponseCodes.CustomerNameMismatch);
+            AddBody(ApiResponseCodes.InstitutionNameMismatch);
+            AddBody(ApiResponseCodes.TransferFailed);
+            AddBody(ApiResponseCodes.InsufficientFunds);
+            AddBody(ApiResponseCodes.TransactionDenied);
+            AddBody(ApiResponseCodes.TransactionFailed);
+            AddBody(ApiResponseCodes.TransactionReturned);
+            AddBody(ApiResponseCodes.BankTransactionError);
+            AddBody(ApiResponseCodes.FiatAccountLimitExceeded);
+            AddBody(ApiResponseCodes.InvalidBankAccountNumber);
+            AddBody(ApiResponseCodes.InvalidAchRtn);
+            AddBody(ApiResponseCodes.PaymentStoppedByIssuer);
+            AddBody(ApiResponseCodes.PaymentCanceled);
+            AddBody(ApiResponseCodes.PaymentReturned);
+            AddBody(ApiResponseCodes.CreditCardNotAllowed);
+            AddBody(ApiResponseCodes.PaymentMethodUnsupported);
+            AddBody(ApiResponseCodes.VerificationDenied);
+            AddBody(ApiResponseCodes.ThreeDSecureRequired);
+            AddBody(ApiResponseCodes.ThreeDSecureFailure);
+            AddBody(ApiResponseCodes.PaymentFailedDueToPaymentProcessorError);
+            AddBody(ApiResponseCodes.DeclineByBank);
+            AddBody(ApiResponseCodes.ClientOfferDisabled);
+            AddBody(ApiResponseCodes.OfferDisabled);
+            AddBody(ApiResponseCodes.ClientOfferFinished);
+            AddBody(ApiResponseCodes.TierNotFound);
+            AddBody(ApiResponseCodes.CannotChangeBalance);
+            AddBody(ApiResponseCodes.TopUpBlocked);
+            AddBody(ApiResponseCodes.ConvertAssetError);
+            AddBody(ApiResponseCodes.ClientOfferNotFound);
+            AddBody(ApiResponseCodes.NftIsNotOnSale);
+            AddBody(ApiResponseCodes.NotEnoughBalanceToCoverFee);
+            AddBody(ApiResponseCodes.InvalidNickname);
+            AddBody(ApiResponseCodes.NicknameUsed);
+            AddBody(ApiResponseCodes.NoNicknameChangesLeft);
+        }
+
+        static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
+            keys?.Select(t => $"${{{t}}}").ToList() ?? new List<string>();
+
+        public static readonly IDictionary<ApiResponseCodes, List<string>> TemplateBodyParams =
+            new Dictionary<ApiResponseCodes, List<string>>();
     }
 }
