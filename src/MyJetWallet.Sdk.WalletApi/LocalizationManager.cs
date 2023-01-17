@@ -31,7 +31,7 @@ public class LocalizationManager
             throw new Exception($"Api code {code} doesnt have params");
         }
         var templates = await _templateService.GetAllTemplates();
-        foreach (var code in codes.Where(code => templates.Templates.Any(t => t.TemplateId == code.ToString())))
+        foreach (var code in codes.Where(code => templates.Templates.All(t => t.TemplateId != code.ToString())))
         {
             await _templateService.CreateNewTemplate(new Template
             {
