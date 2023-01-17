@@ -59,7 +59,7 @@ public class LocalizationManager
             var key = keys[i];
             try
             {
-                body = body.Replace(key, paramValues[i]);
+                body = body.Replace($"${{{key}}}", paramValues[i]);
             }
             catch (Exception e)
             {
