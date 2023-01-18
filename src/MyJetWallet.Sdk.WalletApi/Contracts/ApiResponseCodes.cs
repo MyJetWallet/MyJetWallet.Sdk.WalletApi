@@ -326,6 +326,11 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvalidNickname);
             AddBody(ApiResponseCodes.NicknameUsed);
             AddBody(ApiResponseCodes.NoNicknameChangesLeft);
+            AddBody(ApiResponseCodes.UnsuccessfulSend);
+            AddBody(ApiResponseCodes.PhoneNotFound);
+            AddBody(ApiResponseCodes.PhoneDuplicate);
+            AddBody(ApiResponseCodes.LanguageNotSet);
+
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
