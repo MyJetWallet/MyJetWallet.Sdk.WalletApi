@@ -177,6 +177,13 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         NicknameUsed = 601,
         NoNicknameChangesLeft = 602,
         
+        
+        //Verification Api
+        UnsuccessfulSend = 701,
+        PhoneNotFound = 702,
+        LanguageNotSet = 703,
+        PhoneDuplicate = 704,
+        
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
