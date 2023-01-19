@@ -91,16 +91,23 @@ namespace MyJetWallet.Sdk.WalletApi
 
         public static RegionInfo ClientRegionInfo(this ControllerBase controller)
         {
-            var ip = controller.ClientIp();
-            if (string.IsNullOrWhiteSpace(ip) ||
-                !controller.Request.Headers.TryGetValue("cf-ipcountry", out var cnCode))
+            try
+            {
+                var ip = controller.ClientIp();
+                
+                if (string.IsNullOrWhiteSpace(ip) || !controller.Request.Headers.TryGetValue("cf-ipcountry", out var cnCode))
+                {
+                    return null;
+                }
+
+                var result = new RegionInfo(cnCode);
+
+                return result;
+            }
+            catch (Exception)
             {
                 return null;
             }
-
-            var result = new RegionInfo(cnCode);
-
-            return result;
         }
 
     }
