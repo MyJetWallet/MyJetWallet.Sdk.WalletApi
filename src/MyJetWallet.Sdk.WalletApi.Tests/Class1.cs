@@ -68,6 +68,24 @@ namespace MyJetWallet.Sdk.WalletApi.Tests
                 Console.WriteLine($"AddBody(ApiResponseCodes.{code});");
             }
         }
+        
+        [Test]
+        public void Test4()
+        {
+
+            var paramValues = new string[] {"123"};
+        
+            var keys = ApiResponseClassData.TemplateBodyParams[ApiResponseCodes.AmountIsSmall];
+            var body = "Placeholder for amountissmall: ${MINAMOUNT}";
+            
+            for (var i = 0; i < keys.Count; i++)
+            {
+                var key = keys[i];
+                body = body.Replace(key, paramValues[i]);
+            }
+
+            Console.WriteLine(body);
+        }
     }
 
     public class Data
