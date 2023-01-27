@@ -13,8 +13,8 @@ The *MyJetWallet.Sdk.WalletApi.Tests.csproj* project file contains:
 
 - 1 namespaces.
 - 2 named types.
-- 72 total lines of source code.
-- Approximately 15 lines of executable code.
+- 90 total lines of source code.
+- Approximately 22 lines of executable code.
 - The highest cyclomatic complexity is 2 :heavy_check_mark:.
 
 <details>
@@ -28,8 +28,8 @@ The *MyJetWallet.Sdk.WalletApi.Tests.csproj* project file contains:
 The `MyJetWallet.Sdk.WalletApi.Tests` namespace contains 2 named types.
 
 - 2 named types.
-- 72 total lines of source code.
-- Approximately 15 lines of executable code.
+- 90 total lines of source code.
+- Approximately 22 lines of executable code.
 - The highest cyclomatic complexity is 2 :heavy_check_mark:.
 
 <details>
@@ -40,9 +40,9 @@ The `MyJetWallet.Sdk.WalletApi.Tests` namespace contains 2 named types.
 </summary>
 <br>
 
-- The `Class1` contains 3 members.
-- 60 total lines of source code.
-- Approximately 15 lines of executable code.
+- The `Class1` contains 4 members.
+- 78 total lines of source code.
+- Approximately 22 lines of executable code.
 - The highest cyclomatic complexity is 2 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
@@ -50,6 +50,7 @@ The `MyJetWallet.Sdk.WalletApi.Tests` namespace contains 2 named types.
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L15' title='void Class1.Test1()'>15</a> | 61 | 1 :heavy_check_mark: | 0 | 7 | 40 / 11 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L57' title='void Class1.Test2()'>57</a> | 100 | 1 :heavy_check_mark: | 0 | 2 | 5 / 1 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L63' title='void Class1.Test3()'>63</a> | 84 | 2 :heavy_check_mark: | 0 | 3 | 9 / 3 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L73' title='void Class1.Test4()'>73</a> | 67 | 2 :heavy_check_mark: | 0 | 2 | 17 / 7 |
 
 <a href="#Class1-class-diagram">:link: to `Class1` class diagram</a>
 
@@ -72,10 +73,10 @@ The `MyJetWallet.Sdk.WalletApi.Tests` namespace contains 2 named types.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L75' title='string Data.Name'>75</a> | 100 | 2 :heavy_check_mark: | 0 | 0 | 1 / 0 |
-| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L76' title='decimal Data.V1'>76</a> | 100 | 2 :heavy_check_mark: | 0 | 1 | 1 / 0 |
-| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L77' title='double Data.V2'>77</a> | 100 | 2 :heavy_check_mark: | 0 | 0 | 1 / 0 |
-| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L78' title='int Data.V3'>78</a> | 100 | 2 :heavy_check_mark: | 0 | 0 | 1 / 0 |
+| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L93' title='string Data.Name'>93</a> | 100 | 2 :heavy_check_mark: | 0 | 0 | 1 / 0 |
+| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L94' title='decimal Data.V1'>94</a> | 100 | 2 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L95' title='double Data.V2'>95</a> | 100 | 2 :heavy_check_mark: | 0 | 0 | 1 / 0 |
+| Property | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi.Tests/Class1.cs#L96' title='int Data.V3'>96</a> | 100 | 2 :heavy_check_mark: | 0 | 0 | 1 / 0 |
 
 <a href="#Data-class-diagram">:link: to `Data` class diagram</a>
 
@@ -1012,6 +1013,7 @@ class Class1{
     +Test1() void
     +Test2() void
     +Test3() void
+    +Test4() void
 }
 
 ```
