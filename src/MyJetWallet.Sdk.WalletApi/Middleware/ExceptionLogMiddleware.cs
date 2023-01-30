@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
@@ -49,10 +50,12 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
             }
             catch (WalletApiErrorBlockerException ex)
             {
+                var clientId = context.User?.Claims?.FirstOrDefault(e => e.Type == "Client-Id")?.Value;
                 ex.Code.AddToActivityAsTag("ErrorCode");
                 ex.FailActivity();
                 
-                _logger.LogInformation(ex, "Receive WalletApiErrorBlockerException with status code: {codeText}; path: {Path}", ex.Code.ToString(), context.Request.Path);
+                _logger.LogInformation(ex, "Receive WalletApiErrorBlockerException with status code: {codeText}; path: {Path}; clientId: '{clientId}'", 
+                    ex.Code.ToString(), context.Request.Path, clientId);
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
