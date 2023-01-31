@@ -96,8 +96,8 @@ The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 
 - 5 namespaces.
 - 26 named types.
-- 1,192 total lines of source code.
-- Approximately 382 lines of executable code.
+- 1,194 total lines of source code.
+- Approximately 384 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -700,8 +700,8 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 The `MyJetWallet.Sdk.WalletApi.Middleware` namespace contains 2 named types.
 
 - 2 named types.
-- 136 total lines of source code.
-- Approximately 42 lines of executable code.
+- 138 total lines of source code.
+- Approximately 44 lines of executable code.
 - The highest cyclomatic complexity is 4 :heavy_check_mark:.
 
 <details>
@@ -719,9 +719,9 @@ The `MyJetWallet.Sdk.WalletApi.Middleware` namespace contains 2 named types.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L102' title='RequestDelegate DebugMiddleware._next'>102</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L104' title='DebugMiddleware.DebugMiddleware(RequestDelegate next)'>104</a> | 96 | 1 :heavy_check_mark: | 0 | 1 | 4 / 1 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L109' title='Task DebugMiddleware.InvokeAsync(HttpContext context)'>109</a> | 59 | 4 :heavy_check_mark: | 0 | 6 | 38 / 13 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L105' title='RequestDelegate DebugMiddleware._next'>105</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L107' title='DebugMiddleware.DebugMiddleware(RequestDelegate next)'>107</a> | 96 | 1 :heavy_check_mark: | 0 | 1 | 4 / 1 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L112' title='Task DebugMiddleware.InvokeAsync(HttpContext context)'>112</a> | 59 | 4 :heavy_check_mark: | 0 | 6 | 38 / 13 |
 
 <a href="#DebugMiddleware-class-diagram">:link: to `DebugMiddleware` class diagram</a>
 
@@ -738,18 +738,18 @@ The `MyJetWallet.Sdk.WalletApi.Middleware` namespace contains 2 named types.
 <br>
 
 - The `ExceptionLogMiddleware` contains 6 members.
-- 81 total lines of source code.
-- Approximately 28 lines of executable code.
-- The highest cyclomatic complexity is 1 :heavy_check_mark:.
+- 83 total lines of source code.
+- Approximately 30 lines of executable code.
+- The highest cyclomatic complexity is 4 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L24' title='LocalizationManager ExceptionLogMiddleware._localizationManager'>24</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L23' title='ILogger<ExceptionLogMiddleware> ExceptionLogMiddleware._logger'>23</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L22' title='RequestDelegate ExceptionLogMiddleware._next'>22</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L26' title='ExceptionLogMiddleware.ExceptionLogMiddleware(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger, LocalizationManager localizationManager)'>26</a> | 79 | 1 :heavy_check_mark: | 0 | 3 | 6 / 3 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L33' title='Task ExceptionLogMiddleware.InvokeAsync(HttpContext context)'>33</a> | 50 | 1 :heavy_check_mark: | 0 | 16 | 58 / 24 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L20' title='string ExceptionLogMiddleware.RejectCodeHeader'>20</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L25' title='LocalizationManager ExceptionLogMiddleware._localizationManager'>25</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L24' title='ILogger<ExceptionLogMiddleware> ExceptionLogMiddleware._logger'>24</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L23' title='RequestDelegate ExceptionLogMiddleware._next'>23</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L27' title='ExceptionLogMiddleware.ExceptionLogMiddleware(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger, LocalizationManager localizationManager)'>27</a> | 79 | 1 :heavy_check_mark: | 0 | 3 | 6 / 3 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L34' title='Task ExceptionLogMiddleware.InvokeAsync(HttpContext context)'>34</a> | 49 | 4 :heavy_check_mark: | 0 | 16 | 60 / 26 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Middleware/ExceptionLogMiddleware.cs#L21' title='string ExceptionLogMiddleware.RejectCodeHeader'>21</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 
 <a href="#ExceptionLogMiddleware-class-diagram">:link: to `ExceptionLogMiddleware` class diagram</a>
 
