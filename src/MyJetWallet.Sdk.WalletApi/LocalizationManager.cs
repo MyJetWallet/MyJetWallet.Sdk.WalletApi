@@ -7,6 +7,7 @@ using MyJetWallet.Sdk.WalletApi.Contracts;
 using Service.MessageTemplates.Client;
 using Service.MessageTemplates.Domain.Models;
 using Service.MessageTemplates.Grpc;
+using Service.MessageTemplates.Grpc.Models;
 
 namespace MyJetWallet.Sdk.WalletApi;
 
@@ -31,8 +32,12 @@ public class LocalizationManager
             throw new Exception($"Api code {code} doesnt have params");
         }
         var templates = await _templateService.GetAllTemplates();
-        foreach (var code in codes.Where(code => templates.Templates.All(t => t.TemplateId != code.ToString())))
+        foreach (var code in codes)
         {
+            var template = templates.Templates.FirstOrDefault(t => t.TemplateId == code.ToString().ToLower());
+            if (template != null)
+                continue;
+            
             await _templateService.CreateNewTemplate(new Template
             {
                 TemplateId = code.ToString(),

@@ -219,7 +219,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.BlockchainIsNotConfigured);
             AddBody(ApiResponseCodes.BlockchainIsNotSupported);
             AddBody(ApiResponseCodes.InvalidPhone);
-            AddBody(ApiResponseCodes.AmountToLarge);
+            AddBody(ApiResponseCodes.AmountToLarge, "MAXAMOUNT");
             AddBody(ApiResponseCodes.OperationUnavailable);
             AddBody(ApiResponseCodes.InvalidDeletionReasons);
             AddBody(ApiResponseCodes.InvalidSwapPair);
