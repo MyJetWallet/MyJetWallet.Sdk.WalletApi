@@ -97,7 +97,7 @@ The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 - 5 namespaces.
 - 26 named types.
 - 1,198 total lines of source code.
-- Approximately 385 lines of executable code.
+- Approximately 386 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -248,7 +248,7 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 
 - 12 named types.
 - 484 total lines of source code.
-- Approximately 166 lines of executable code.
+- Approximately 167 lines of executable code.
 - The highest cyclomatic complexity is 3 :heavy_check_mark:.
 
 <details>
@@ -261,12 +261,12 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 
 - The `ApiResponseClassData` contains 3 members.
 - 152 total lines of source code.
-- Approximately 142 lines of executable code.
+- Approximately 143 lines of executable code.
 - The highest cyclomatic complexity is 3 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L192' title='ApiResponseClassData.ApiResponseClassData()'>192</a> | 29 | 1 :heavy_check_mark: | 0 | 1 | 143 / 139 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L192' title='ApiResponseClassData.ApiResponseClassData()'>192</a> | 29 | 1 :heavy_check_mark: | 0 | 1 | 143 / 140 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L336' title='void ApiResponseClassData.AddBody(ApiResponseCodes code, params string[] keys)'>336</a> | 84 | 3 :heavy_check_mark: | 0 | 4 | 2 / 2 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L339' title='IDictionary<ApiResponseCodes, List<string>> ApiResponseClassData.TemplateBodyParams'>339</a> | 93 | 0 :heavy_check_mark: | 0 | 4 | 1 / 1 |
 
@@ -284,7 +284,7 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 </summary>
 <br>
 
-- The `ApiResponseCodes` contains 139 members.
+- The `ApiResponseCodes` contains 140 members.
 - 182 total lines of source code.
 - Approximately 4 lines of executable code.
 - The highest cyclomatic complexity is 0 :heavy_check_mark:.
@@ -430,6 +430,7 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L129' title='ApiResponseCodes.WalletAddressMismatch'>129</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L12' title='ApiResponseCodes.WalletDoNotExist'>12</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L30' title='ApiResponseCodes.WithdrawalDoNotFound'>30</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L186' title='ApiResponseCodes.WrongPinWhenChangingPhone'>186</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 
 <a href="#ApiResponseCodes-class-diagram">:link: to `ApiResponseCodes` class diagram</a>
 
@@ -1257,6 +1258,7 @@ class ApiResponseCodes{
     -PhoneNotFound$
     -LanguageNotSet$
     -PhoneDuplicate$
+    -WrongPinWhenChangingPhone$
 }
 
 ```
