@@ -183,7 +183,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         PhoneNotFound = 702,
         LanguageNotSet = 703,
         PhoneDuplicate = 704,
-        
+        WrongPinWhenChangingPhone = 705,
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
@@ -330,7 +330,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.PhoneNotFound);
             AddBody(ApiResponseCodes.PhoneDuplicate);
             AddBody(ApiResponseCodes.LanguageNotSet);
-
+            AddBody(ApiResponseCodes.WrongPinWhenChangingPhone);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
