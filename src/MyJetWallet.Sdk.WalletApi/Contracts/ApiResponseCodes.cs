@@ -31,7 +31,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         //AddressDoNotSupported = 19, // 
         CannotResendWithdrawalVerification = 20, //
         PhoneIsNotConfirmed = 21, //
-        //NotSupported = 22, //
+        NotSupported = 22, //
         OperationNotFound = 23, //
         OperationNotAllowed = 24, //
         BlockchainIsNotConfigured = 25, //
@@ -55,7 +55,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
 
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
-        //UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
+        UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
         //UserNotExist = 103, // ?? User not found
         //OldPasswordNotMatch = 104, // You entered the wrong current password
         //Expired = 105, // Session has expired. Please log in again
@@ -329,6 +329,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TransferBlocked);
             AddBody(ApiResponseCodes.WithdrawalBlocked);
             AddBody(ApiResponseCodes.PhoneNumberUpdateBlocked);
+            AddBody(ApiResponseCodes.NotSupported);
+            AddBody(ApiResponseCodes.UserExists);
 
         }
 
