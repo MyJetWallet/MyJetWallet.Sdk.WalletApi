@@ -8,9 +8,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         public UnauthorizedData UnauthorizedData { get; set; }
         public string[] TemplateParams { get; set; }
 
-        public WalletApiErrorBlockerException(string message, int attempts, params string[] templateParams) : base(message)
+        public WalletApiErrorBlockerException(ApiResponseCodes code, string message, int attempts, params string[] templateParams) : base(message)
         {
-            Code = ApiResponseCodes.InvalidUserNameOrPassword;
+            Code = code;
             UnauthorizedData = new UnauthorizedData {Attempts = new AttemptsData()
             {
                 Left = attempts
@@ -18,9 +18,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             TemplateParams = templateParams;
 
         }
-        public WalletApiErrorBlockerException(string message, TimeSpan timeSpan, params string[] templateParams) : base(message)
+        public WalletApiErrorBlockerException(ApiResponseCodes code, string message, TimeSpan timeSpan, params string[] templateParams) : base(message)
         {
-            Code = ApiResponseCodes.OperationBlocked;
+            Code = code;
             UnauthorizedData = new UnauthorizedData {Blocker = new BlockerExpiredData()
             {
                 Expired = timeSpan

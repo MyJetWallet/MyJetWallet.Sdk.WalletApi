@@ -21,17 +21,17 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         KycNotPassed = 10, // Your account is not verified. Complete KYC verification now.
 
         AssetDoNotSupported = 11, // Asset is not supported / Trading is not available for this asset now. Please try again later.
-        NotEnoughLiquidityForMarketOrder = 12, // 
-        InvalidOrderValue = 13, // 
+        //NotEnoughLiquidityForMarketOrder = 12, // 
+        //InvalidOrderValue = 13, // 
         CannotProcessQuoteRequest = 14, // 
         CannotExecuteQuoteRequest = 15, // 
         NoqEnoughLiquidityForConvert = 16, // 
-        LeadToNegativeSpread = 17, // 
+        //LeadToNegativeSpread = 17, // 
         WithdrawalDoNotFound = 18, // 
-        AddressDoNotSupported = 19, // 
+        //AddressDoNotSupported = 19, // 
         CannotResendWithdrawalVerification = 20, //
         PhoneIsNotConfirmed = 21, //
-        NotSupported = 22, //
+        //NotSupported = 22, //
         OperationNotFound = 23, //
         OperationNotAllowed = 24, //
         BlockchainIsNotConfigured = 25, //
@@ -46,20 +46,26 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ProfileAlreadyExist = 34,
         AnotherVerificationInProgress = 35,
         DocumentsNotUploaded = 36,
+        WithdrawalBlocked = 37,
+        TransferBlocked = 38,
+        TradeBlocked = 39, 
+        DepositBlocked = 40,
+        LoginBlocked = 41,
+        PhoneNumberUpdateBlocked = 42,
 
         //Auth
-        InvalidUserNameOrPassword = 101, // Invalid login or password.
-        UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
-        UserNotExist = 103, // ?? User not found
-        OldPasswordNotMatch = 104, // You entered the wrong current password
-        Expired = 105, // Session has expired. Please log in again
+        //InvalidUserNameOrPassword = 101, // Invalid login or password.
+        //UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
+        //UserNotExist = 103, // ?? User not found
+        //OldPasswordNotMatch = 104, // You entered the wrong current password
+        //Expired = 105, // Session has expired. Please log in again
         CountryIsRestricted = 106, // Registration from your country is not allowed
-        SocialNetworkNotSupported = 107, // Social network is not available for log in
-        SocialNetworkNotAvailable = 108, // Social network is not available for log in
+        //SocialNetworkNotSupported = 107, // Social network is not available for log in
+        //SocialNetworkNotAvailable = 108, // Social network is not available for log in
         ValidationError = 109, // 
         BrandNotFound = 110, // Something went wrong. Please try again
         InvalidToken = 111, // ?? Invalid token. Please log in again
-        RecaptchaFailed = 112, // The CAPTCHA verification failed. Please try again
+        //RecaptchaFailed = 112, // The CAPTCHA verification failed. Please try again
         InvalidCode = 113, //  
         InvalidRefCode = 114,
         PinCodeAlreadyExist = 115, // user can't setup new pin, because pin already exist
@@ -85,7 +91,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardNotFound = 216, // 
         PaymentFailed = 217, // 
         CardFirstAndLastNameCannotBeEmpty = 218, // 
-        InvalidGuid = 219, // 
+        //InvalidGuid = 219, // 
 
         InvalidAccountNumber = 220, //  
         InvalidRoutingNumber = 221, //  
@@ -203,17 +209,12 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvalidInstrument);
             AddBody(ApiResponseCodes.KycNotPassed);
             AddBody(ApiResponseCodes.AssetDoNotSupported);
-            AddBody(ApiResponseCodes.NotEnoughLiquidityForMarketOrder);
-            AddBody(ApiResponseCodes.InvalidOrderValue);
             AddBody(ApiResponseCodes.CannotProcessQuoteRequest);
             AddBody(ApiResponseCodes.CannotExecuteQuoteRequest);
             AddBody(ApiResponseCodes.NoqEnoughLiquidityForConvert);
-            AddBody(ApiResponseCodes.LeadToNegativeSpread);
             AddBody(ApiResponseCodes.WithdrawalDoNotFound);
-            AddBody(ApiResponseCodes.AddressDoNotSupported);
             AddBody(ApiResponseCodes.CannotResendWithdrawalVerification);
             AddBody(ApiResponseCodes.PhoneIsNotConfirmed);
-            AddBody(ApiResponseCodes.NotSupported);
             AddBody(ApiResponseCodes.OperationNotFound);
             AddBody(ApiResponseCodes.OperationNotAllowed);
             AddBody(ApiResponseCodes.BlockchainIsNotConfigured);
@@ -228,18 +229,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.ProfileAlreadyExist);
             AddBody(ApiResponseCodes.AnotherVerificationInProgress);
             AddBody(ApiResponseCodes.DocumentsNotUploaded);
-            AddBody(ApiResponseCodes.InvalidUserNameOrPassword);
-            AddBody(ApiResponseCodes.UserExists);
-            AddBody(ApiResponseCodes.UserNotExist);
-            AddBody(ApiResponseCodes.OldPasswordNotMatch);
-            AddBody(ApiResponseCodes.Expired);
             AddBody(ApiResponseCodes.CountryIsRestricted);
-            AddBody(ApiResponseCodes.SocialNetworkNotSupported);
-            AddBody(ApiResponseCodes.SocialNetworkNotAvailable);
             AddBody(ApiResponseCodes.ValidationError);
             AddBody(ApiResponseCodes.BrandNotFound);
             AddBody(ApiResponseCodes.InvalidToken);
-            AddBody(ApiResponseCodes.RecaptchaFailed);
             AddBody(ApiResponseCodes.InvalidCode);
             AddBody(ApiResponseCodes.InvalidRefCode);
             AddBody(ApiResponseCodes.PinCodeAlreadyExist);
@@ -262,7 +255,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.CardNotFound);
             AddBody(ApiResponseCodes.PaymentFailed);
             AddBody(ApiResponseCodes.CardFirstAndLastNameCannotBeEmpty);
-            AddBody(ApiResponseCodes.InvalidGuid);
             AddBody(ApiResponseCodes.InvalidAccountNumber);
             AddBody(ApiResponseCodes.InvalidRoutingNumber);
             AddBody(ApiResponseCodes.InvalidIban);
