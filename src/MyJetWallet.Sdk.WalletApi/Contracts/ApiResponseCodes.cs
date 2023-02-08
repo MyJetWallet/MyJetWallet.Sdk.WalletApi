@@ -323,6 +323,13 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.PhoneDuplicate);
             AddBody(ApiResponseCodes.LanguageNotSet);
             AddBody(ApiResponseCodes.WrongPinWhenChangingPhone);
+            AddBody(ApiResponseCodes.DepositBlocked);
+            AddBody(ApiResponseCodes.LoginBlocked);
+            AddBody(ApiResponseCodes.TradeBlocked);
+            AddBody(ApiResponseCodes.TransferBlocked);
+            AddBody(ApiResponseCodes.WithdrawalBlocked);
+            AddBody(ApiResponseCodes.PhoneNumberUpdateBlocked);
+
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
