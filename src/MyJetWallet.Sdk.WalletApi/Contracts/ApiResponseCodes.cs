@@ -160,6 +160,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ThreeDSecureFailure = 267,
         PaymentFailedDueToPaymentProcessorError = 268,
         DeclineByBank = 269,
+        
+        //Wrong Card Country
+        CardCountryNotSupported = 270,
+        CardCountryNotSupportedExceptVisa = 271,
 
         //High-Yield
         ClientOfferDisabled = 303,
@@ -305,6 +309,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.ThreeDSecureFailure);
             AddBody(ApiResponseCodes.PaymentFailedDueToPaymentProcessorError);
             AddBody(ApiResponseCodes.DeclineByBank);
+            AddBody(ApiResponseCodes.CardCountryNotSupported);
+            AddBody(ApiResponseCodes.CardCountryNotSupportedExceptVisa);
             AddBody(ApiResponseCodes.ClientOfferDisabled);
             AddBody(ApiResponseCodes.OfferDisabled);
             AddBody(ApiResponseCodes.ClientOfferFinished);
