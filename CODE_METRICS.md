@@ -96,8 +96,8 @@ The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 
 - 5 namespaces.
 - 26 named types.
-- 1,199 total lines of source code.
-- Approximately 380 lines of executable code.
+- 1,205 total lines of source code.
+- Approximately 382 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -247,8 +247,8 @@ The `MyJetWallet.Sdk.WalletApi.Common` namespace contains 5 named types.
 The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 
 - 12 named types.
-- 485 total lines of source code.
-- Approximately 161 lines of executable code.
+- 491 total lines of source code.
+- Approximately 163 lines of executable code.
 - The highest cyclomatic complexity is 3 :heavy_check_mark:.
 
 <details>
@@ -260,15 +260,15 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 <br>
 
 - The `ApiResponseClassData` contains 3 members.
-- 147 total lines of source code.
-- Approximately 137 lines of executable code.
+- 149 total lines of source code.
+- Approximately 139 lines of executable code.
 - The highest cyclomatic complexity is 3 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L198' title='ApiResponseClassData.ApiResponseClassData()'>198</a> | 29 | 1 :heavy_check_mark: | 0 | 1 | 138 / 134 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L337' title='void ApiResponseClassData.AddBody(ApiResponseCodes code, params string[] keys)'>337</a> | 84 | 3 :heavy_check_mark: | 0 | 4 | 2 / 2 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L340' title='IDictionary<ApiResponseCodes, List<string>> ApiResponseClassData.TemplateBodyParams'>340</a> | 93 | 0 :heavy_check_mark: | 0 | 4 | 1 / 1 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L202' title='ApiResponseClassData.ApiResponseClassData()'>202</a> | 29 | 1 :heavy_check_mark: | 0 | 1 | 140 / 136 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L343' title='void ApiResponseClassData.AddBody(ApiResponseCodes code, params string[] keys)'>343</a> | 84 | 3 :heavy_check_mark: | 0 | 4 | 2 / 2 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L346' title='IDictionary<ApiResponseCodes, List<string>> ApiResponseClassData.TemplateBodyParams'>346</a> | 93 | 0 :heavy_check_mark: | 0 | 4 | 1 / 1 |
 
 <a href="#ApiResponseClassData-class-diagram">:link: to `ApiResponseClassData` class diagram</a>
 
@@ -284,8 +284,8 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 </summary>
 <br>
 
-- The `ApiResponseCodes` contains 134 members.
-- 188 total lines of source code.
+- The `ApiResponseCodes` contains 136 members.
+- 192 total lines of source code.
 - Approximately 4 lines of executable code.
 - The highest cyclomatic complexity is 0 :heavy_check_mark:.
 
@@ -308,13 +308,15 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L37' title='ApiResponseCodes.BlockchainIsNotConfigured'>37</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L38' title='ApiResponseCodes.BlockchainIsNotSupported'>38</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L66' title='ApiResponseCodes.BrandNotFound'>66</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L169' title='ApiResponseCodes.CannotChangeBalance'>169</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L173' title='ApiResponseCodes.CannotChangeBalance'>173</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L27' title='ApiResponseCodes.CannotExecuteQuoteRequest'>27</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L26' title='ApiResponseCodes.CannotProcessQuoteRequest'>26</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L14' title='ApiResponseCodes.CannotProcessWithdrawal'>14</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L32' title='ApiResponseCodes.CannotResendWithdrawalVerification'>32</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L110' title='ApiResponseCodes.CardAccountIneligible'>110</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L86' title='ApiResponseCodes.CardAddressMismatch'>86</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L165' title='ApiResponseCodes.CardCountryNotSupported'>165</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L166' title='ApiResponseCodes.CardCountryNotSupportedExceptVisa'>166</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L88' title='ApiResponseCodes.CardCvvInvalid'>88</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L112' title='ApiResponseCodes.CardCvvRequired'>112</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L89' title='ApiResponseCodes.CardExpired'>89</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
@@ -327,10 +329,10 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L124' title='ApiResponseCodes.CardRestricted'>124</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 4 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L87' title='ApiResponseCodes.CardZipMismatch'>87</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L45' title='ApiResponseCodes.ClientMustBeOlder'>45</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L165' title='ApiResponseCodes.ClientOfferDisabled'>165</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L167' title='ApiResponseCodes.ClientOfferFinished'>167</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L172' title='ApiResponseCodes.ClientOfferNotFound'>172</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L171' title='ApiResponseCodes.ConvertAssetError'>171</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L169' title='ApiResponseCodes.ClientOfferDisabled'>169</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L171' title='ApiResponseCodes.ClientOfferFinished'>171</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L176' title='ApiResponseCodes.ClientOfferNotFound'>176</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L175' title='ApiResponseCodes.ConvertAssetError'>175</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L62' title='ApiResponseCodes.CountryIsRestricted'>62</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 3 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L156' title='ApiResponseCodes.CreditCardNotAllowed'>156</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L136' title='ApiResponseCodes.CustomerNameMismatch'>136</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
@@ -361,7 +363,7 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L98' title='ApiResponseCodes.InvalidIban'>98</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L20' title='ApiResponseCodes.InvalidInstrument'>20</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L76' title='ApiResponseCodes.InvalidKeyId'>76</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L182' title='ApiResponseCodes.InvalidNickname'>182</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L186' title='ApiResponseCodes.InvalidNickname'>186</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L39' title='ApiResponseCodes.InvalidPhone'>39</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L70' title='ApiResponseCodes.InvalidRefCode'>70</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L97' title='ApiResponseCodes.InvalidRoutingNumber'>97</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
@@ -369,16 +371,16 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L67' title='ApiResponseCodes.InvalidToken'>67</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L130' title='ApiResponseCodes.InvalidWireRtn'>130</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L21' title='ApiResponseCodes.KycNotPassed'>21</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L190' title='ApiResponseCodes.LanguageNotSet'>190</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L194' title='ApiResponseCodes.LanguageNotSet'>194</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L53' title='ApiResponseCodes.LoginBlocked'>53</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L13' title='ApiResponseCodes.LowBalance'>13</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L175' title='ApiResponseCodes.NftIsNotOnSale'>175</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L183' title='ApiResponseCodes.NicknameUsed'>183</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L184' title='ApiResponseCodes.NoNicknameChangesLeft'>184</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L179' title='ApiResponseCodes.NftIsNotOnSale'>179</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L187' title='ApiResponseCodes.NicknameUsed'>187</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L188' title='ApiResponseCodes.NoNicknameChangesLeft'>188</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L28' title='ApiResponseCodes.NoqEnoughLiquidityForConvert'>28</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L178' title='ApiResponseCodes.NotEnoughBalanceToCoverFee'>178</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L182' title='ApiResponseCodes.NotEnoughBalanceToCoverFee'>182</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L34' title='ApiResponseCodes.NotSupported'>34</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L166' title='ApiResponseCodes.OfferDisabled'>166</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L170' title='ApiResponseCodes.OfferDisabled'>170</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L10' title='ApiResponseCodes.OK'>10</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L101' title='ApiResponseCodes.OperationBlocked'>101</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L36' title='ApiResponseCodes.OperationNotAllowed'>36</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
@@ -393,9 +395,9 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L117' title='ApiResponseCodes.PaymentNotSupportedByIssuer'>117</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L155' title='ApiResponseCodes.PaymentReturned'>155</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L153' title='ApiResponseCodes.PaymentStoppedByIssuer'>153</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L191' title='ApiResponseCodes.PhoneDuplicate'>191</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L195' title='ApiResponseCodes.PhoneDuplicate'>195</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L33' title='ApiResponseCodes.PhoneIsNotConfirmed'>33</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L189' title='ApiResponseCodes.PhoneNotFound'>189</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L193' title='ApiResponseCodes.PhoneNotFound'>193</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L54' title='ApiResponseCodes.PhoneNumberUpdateBlocked'>54</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L71' title='ApiResponseCodes.PinCodeAlreadyExist'>71</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L46' title='ApiResponseCodes.ProfileAlreadyExist'>46</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
@@ -406,15 +408,15 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L115' title='ApiResponseCodes.ThreeDSecureInvalidRequest'>115</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L113' title='ApiResponseCodes.ThreeDSecureNotSupported'>113</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L159' title='ApiResponseCodes.ThreeDSecureRequired'>159</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L168' title='ApiResponseCodes.TierNotFound'>168</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L170' title='ApiResponseCodes.TopUpBlocked'>170</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L172' title='ApiResponseCodes.TierNotFound'>172</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L174' title='ApiResponseCodes.TopUpBlocked'>174</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L51' title='ApiResponseCodes.TradeBlocked'>51</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L144' title='ApiResponseCodes.TransactionDenied'>144</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 4 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L145' title='ApiResponseCodes.TransactionFailed'>145</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L146' title='ApiResponseCodes.TransactionReturned'>146</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L50' title='ApiResponseCodes.TransferBlocked'>50</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L138' title='ApiResponseCodes.TransferFailed'>138</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L188' title='ApiResponseCodes.UnsuccessfulSend'>188</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L192' title='ApiResponseCodes.UnsuccessfulSend'>192</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L58' title='ApiResponseCodes.UserExists'>58</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 3 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L65' title='ApiResponseCodes.ValidationError'>65</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 2 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L158' title='ApiResponseCodes.VerificationDenied'>158</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
@@ -424,7 +426,7 @@ The `MyJetWallet.Sdk.WalletApi.Contracts` namespace contains 12 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L12' title='ApiResponseCodes.WalletDoNotExist'>12</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L49' title='ApiResponseCodes.WithdrawalBlocked'>49</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L30' title='ApiResponseCodes.WithdrawalDoNotFound'>30</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L192' title='ApiResponseCodes.WrongPinWhenChangingPhone'>192</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Contracts/ApiResponseCodes.cs#L196' title='ApiResponseCodes.WrongPinWhenChangingPhone'>196</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 
 <a href="#ApiResponseCodes-class-diagram">:link: to `ApiResponseCodes` class diagram</a>
 
@@ -1229,6 +1231,8 @@ class ApiResponseCodes{
     -ThreeDSecureFailure$
     -PaymentFailedDueToPaymentProcessorError$
     -DeclineByBank$
+    -CardCountryNotSupported$
+    -CardCountryNotSupportedExceptVisa$
     -ClientOfferDisabled$
     -OfferDisabled$
     -ClientOfferFinished$
