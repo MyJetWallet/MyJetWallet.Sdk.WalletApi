@@ -86,15 +86,14 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 //TODO: Remove
                 if (ex.Code == ApiResponseCodes.CardCountryNotSupported)
                 {
-                    var workAroundMesage = "{\"data\": { \"cardId\": \"b2588207375b4221b0bddac526093811\", \"status\": 1,  \"requiredVerification\": 0 }, \"result\": \"CardCountryNotSupported\", \"rejectDetail\": null, \"message\": \"Card Country Not Supported\"\n}";
-                    await context.Response.WriteAsJsonAsync(new Response(ex.Code, workAroundMesage));
+                    var workAroundMesage = "{\n   \"data\":{\n      \"cardId\":\"fc2f410910684ec1a7886a319b63cadc\",\n      \"status\":1,\n      \"requiredVerification\":1\n   },\n   \"result\":\"CardCountryNotSupported\",\n   \"rejectDetail\":null,\n   \"message\":\"Card Country Not Supported\"\n}";
+                    await context.Response.WriteAsync(workAroundMesage);
                 }
                 //TODO: Remove
                 else if (ex.Code == ApiResponseCodes.CardCountryNotSupportedExceptVisa)
                 {
-                    var workAroundMesage = "{\"data\": {\"cardId\": \"b2588207375b4221b0bddac526093812\", \"status\": 1,  \"requiredVerification\": 0 }, \"result\": \"CardCountryNotSupportedExceptVisa\", \"rejectDetail\": null, \"message\": \"Card Country Not Supported Except Visa\"\n}";
-                    await context.Response.WriteAsJsonAsync(new Response(ex.Code, workAroundMesage));
-                }
+                    var workAroundMesage = "{\n   \"data\":{\n      \"cardId\":\"b2588207375b4221b0bddac526093812\",\n      \"status\":1,\n      \"requiredVerification\":0\n   },\n   \"result\":\"CardCountryNotSupportedExceptVisa\",\n   \"rejectDetail\":null,\n   \"message\":\"Card Country Not Supported Except Visa\"\n}";
+                    await context.Response.WriteAsync(workAroundMesage);                }
                 else
                     await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
             }
