@@ -86,7 +86,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 //TODO: Remove
                 if (ex.Code == ApiResponseCodes.CardCountryNotSupported)
                 {
-                    var workAroundMesage = "{\n   \"data\":{\n      \"cardId\":\"fc2f410910684ec1a7886a319b63cadc\",\n      \"status\":1,\n      \"requiredVerification\":1\n   },\n   \"result\":\"CardCountryNotSupported\",\n   \"rejectDetail\":null,\n   \"message\":\"Card Country Not Supported\"\n}";
+                    var workAroundMesage = "{\n   \"data\":{\n      \"cardId\":\"fc2f410910684ec1a7886a319b63cadc\",\n      \"status\":1,\n      \"requiredVerification\":0\n   },\n   \"result\":\"CardCountryNotSupported\",\n   \"rejectDetail\":null,\n   \"message\":\"Card Country Not Supported\"\n}";
                     await context.Response.WriteAsync(workAroundMesage);
                 }
                 //TODO: Remove
