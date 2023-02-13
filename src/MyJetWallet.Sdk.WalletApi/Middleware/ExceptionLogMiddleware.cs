@@ -86,13 +86,13 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 //TODO: Remove
                 if (ex.Code == ApiResponseCodes.CardCountryNotSupported)
                 {
-                    var workAroundMesage = "{\n   \"data\":{\n      \"cardId\":\"fc2f410910684ec1a7886a319b63cadc\",\n      \"status\":1,\n      \"requiredVerification\":0\n   },\n   \"result\":\"CardCountryNotSupported\",\n   \"rejectDetail\":null,\n   \"message\":\"Card Country Not Supported\"\n}";
+                    var workAroundMesage = "{\"data\":{\"cardId\":\"fc2f410910684ec1a7886a319b63cadc\",\"status\":1, \"requiredVerification\":0},\"result\":\"CardCountryNotSupported\",\"rejectDetail\":null,\"message\":\"Card Country Not Supported\"}";
                     await context.Response.WriteAsync(workAroundMesage);
                 }
                 //TODO: Remove
                 else if (ex.Code == ApiResponseCodes.CardCountryNotSupportedExceptVisa)
                 {
-                    var workAroundMesage = "{\n   \"data\":{\n      \"cardId\":\"b2588207375b4221b0bddac526093812\",\n      \"status\":1,\n      \"requiredVerification\":0\n   },\n   \"result\":\"CardCountryNotSupportedExceptVisa\",\n   \"rejectDetail\":null,\n   \"message\":\"Card Country Not Supported Except Visa\"\n}";
+                    var workAroundMesage = "{\"data\":{\"cardId\":\"fc2f410910684ec1a7886a319b63cadc\",\"status\":1, \"requiredVerification\":0},\"result\":\"CardCountryNotSupportedExceptVisa\",\"rejectDetail\":null,\"message\":\"Card Country Not Supported Except Visa\"}";
                     await context.Response.WriteAsync(workAroundMesage);                }
                 else
                     await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
