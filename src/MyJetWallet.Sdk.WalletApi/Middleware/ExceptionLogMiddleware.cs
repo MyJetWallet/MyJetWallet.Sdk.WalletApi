@@ -80,9 +80,23 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
 
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
-               
+
                 var message = await _localizationManager.GetTemplateBody(ex.Code, context, ex.TemplateParams);
-                await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
+                
+                //TODO: Remove
+                if (ex.Code == ApiResponseCodes.CardCountryNotSupported)
+                {
+                    var workAroundMesage = "{\"data\": { \"cardId\": \"b2588207375b4221b0bddac526093811\", \"status\": 1,  \"requiredVerification\": 0 }, \"result\": \"CardCountryNotSupported\", \"rejectDetail\": null, \"message\": \"Card Country Not Supported\"\n}";
+                    await context.Response.WriteAsJsonAsync(new Response(ex.Code, workAroundMesage));
+                }
+                //TODO: Remove
+                else if (ex.Code == ApiResponseCodes.CardCountryNotSupportedExceptVisa)
+                {
+                    var workAroundMesage = "{\"data\": {\"cardId\": \"b2588207375b4221b0bddac526093812\", \"status\": 1,  \"requiredVerification\": 0 }, \"result\": \"CardCountryNotSupportedExceptVisa\", \"rejectDetail\": null, \"message\": \"Card Country Not Supported Except Visa\"\n}";
+                    await context.Response.WriteAsJsonAsync(new Response(ex.Code, workAroundMesage));
+                }
+                else
+                    await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
             }
             catch (Exception ex)
             {
