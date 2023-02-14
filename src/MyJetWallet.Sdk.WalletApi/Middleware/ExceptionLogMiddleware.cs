@@ -82,42 +82,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 context.Response.Headers.TryAdd(RejectCodeHeader, ex.Code.ToString());
 
                 var message = await _localizationManager.GetTemplateBody(ex.Code, context, ex.TemplateParams);
-                
-                //TODO: Remove
-                if (ex.Code == ApiResponseCodes.CardCountryNotSupported)
-                {
-                    var response = new Response<AddCardResponse>(ex.Code, message)
-                    {
-                        RejectDetail = null,
-                        Data = new AddCardResponse
-                        {
-                            CardId = "e286a1c1e10d4bf2a05d2d5f3ea18dd7",
-                            Status = 1,
-                            RequiredVerification = 0
-                        },
-                        Result = ApiResponseCodes.CardCountryNotSupported,
-                        Message = "Card Country Not Supported"
-                    };
-                    await context.Response.WriteAsJsonAsync(response);
-                }
-                //TODO: Remove
-                else if (ex.Code == ApiResponseCodes.CardCountryNotSupportedExceptVisa)
-                {
-                    var response = new Response<AddCardResponse>(ex.Code, message)
-                    {
-                        RejectDetail = null,
-                        Data = new AddCardResponse
-                        {
-                            CardId = "e286a1c1e10d4bf2a05d2d5f3ea18dd7",
-                            Status = 1,
-                            RequiredVerification = 0
-                        },
-                        Result = ApiResponseCodes.CardCountryNotSupportedExceptVisa,
-                        Message = "Card Country Not Supported Except Visa"
-                    };
-                    await context.Response.WriteAsJsonAsync(response);                }
-                else
-                    await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
+                await context.Response.WriteAsJsonAsync(new Response(ex.Code, message));
             }
             catch (Exception ex)
             {
@@ -127,13 +92,6 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
             }
         }
         
-        //TODO: Remove
-        public class AddCardResponse
-        {
-            public string CardId { get; set; }
-            public int Status { get; set; }
-            public int RequiredVerification { get; set; }
-        }
         // private async Task<string> GetMessage(ApiResponseCodes exCode, HttpContext context)
         // {
         //     var lang = context.GetLang();
