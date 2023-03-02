@@ -52,6 +52,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         DepositBlocked = 40,
         LoginBlocked = 41,
         PhoneNumberUpdateBlocked = 42,
+        BlockchainSendNotSupported = 43,
+        InternalSendNotSupported = 44,
 
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -329,14 +331,16 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.PhoneDuplicate);
             AddBody(ApiResponseCodes.LanguageNotSet);
             AddBody(ApiResponseCodes.WrongPinWhenChangingPhone);
-            AddBody(ApiResponseCodes.DepositBlocked);
-            AddBody(ApiResponseCodes.LoginBlocked);
-            AddBody(ApiResponseCodes.TradeBlocked);
-            AddBody(ApiResponseCodes.TransferBlocked);
-            AddBody(ApiResponseCodes.WithdrawalBlocked);
-            AddBody(ApiResponseCodes.PhoneNumberUpdateBlocked);
+            AddBody(ApiResponseCodes.DepositBlocked, "EXPIRETIME");
+            AddBody(ApiResponseCodes.LoginBlocked, "EXPIRETIME");
+            AddBody(ApiResponseCodes.TradeBlocked, "EXPIRETIME");
+            AddBody(ApiResponseCodes.TransferBlocked, "EXPIRETIME");
+            AddBody(ApiResponseCodes.WithdrawalBlocked, "EXPIRETIME");
+            AddBody(ApiResponseCodes.PhoneNumberUpdateBlocked, "EXPIRETIME");
             AddBody(ApiResponseCodes.NotSupported);
             AddBody(ApiResponseCodes.UserExists);
+            AddBody(ApiResponseCodes.BlockchainSendNotSupported);
+            AddBody(ApiResponseCodes.InternalSendNotSupported);
 
         }
 
