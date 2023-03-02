@@ -54,7 +54,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         PhoneNumberUpdateBlocked = 42,
         BlockchainSendNotSupported = 43,
         InternalSendNotSupported = 44,
-
+        BlockchainReceiveNotSupported = 45,
+        
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
         UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
@@ -341,7 +342,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.UserExists);
             AddBody(ApiResponseCodes.BlockchainSendNotSupported);
             AddBody(ApiResponseCodes.InternalSendNotSupported);
-
+            AddBody(ApiResponseCodes.BlockchainReceiveNotSupported);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
