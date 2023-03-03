@@ -166,7 +166,7 @@ namespace MyJetWallet.Sdk.WalletApi
                 settings.EnableTryItOut = true;
                 settings.Path = $"/swagger/{swaggerOffsetName}";
                 settings.DocumentPath = $"/swagger/{swaggerOffsetName}/swagger.json";
-
+                settings.DocumentTitle = $"{swaggerOffsetName.ToUpper()} API";
             });
 
             app.UseMiddleware<ExceptionLogMiddleware>();
