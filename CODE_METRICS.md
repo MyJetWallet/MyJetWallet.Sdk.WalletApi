@@ -97,7 +97,7 @@ The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 - 5 namespaces.
 - 26 named types.
 - 1,210 total lines of source code.
-- Approximately 385 lines of executable code.
+- Approximately 386 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -771,7 +771,7 @@ The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 
 - 5 named types.
 - 425 total lines of source code.
-- Approximately 135 lines of executable code.
+- Approximately 136 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -866,7 +866,7 @@ The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 
 - The `StartupUtils` contains 6 members.
 - 163 total lines of source code.
-- Approximately 56 lines of executable code.
+- Approximately 57 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
@@ -875,7 +875,7 @@ The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/StartupUtils.cs#L179' title='void StartupUtils.RegisterAuthServices(ContainerBuilder builder, string readerHostPort, ILoggerFactory loggerFactory)'>179</a> | 84 | 1 :heavy_check_mark: | 0 | 3 | 7 / 2 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/StartupUtils.cs#L84' title='void StartupUtils.SetupSimpleServices(IServiceCollection services, string sessionEncryptionApiKeyId)'>84</a> | 67 | 1 :heavy_check_mark: | 0 | 3 | 22 / 9 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/StartupUtils.cs#L30' title='void StartupUtils.SetupSwaggerDocumentation(IServiceCollection services)'>30</a> | 75 | 1 :heavy_check_mark: | 0 | 3 | 21 / 4 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/StartupUtils.cs#L107' title='void StartupUtils.SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, bool enableApiTrace, string swaggerOffsetName)'>107</a> | 51 | 5 :heavy_check_mark: | 0 | 5 | 71 / 30 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/StartupUtils.cs#L107' title='void StartupUtils.SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, bool enableApiTrace, string swaggerOffsetName)'>107</a> | 51 | 5 :heavy_check_mark: | 0 | 5 | 71 / 31 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/StartupUtils.cs#L61' title='void StartupUtils.SetupWalletServices(IServiceCollection services, string sessionEncryptionApiKeyId)'>61</a> | 67 | 1 :heavy_check_mark: | 0 | 3 | 22 / 9 |
 
 <a href="#StartupUtils-class-diagram">:link: to `StartupUtils` class diagram</a>
