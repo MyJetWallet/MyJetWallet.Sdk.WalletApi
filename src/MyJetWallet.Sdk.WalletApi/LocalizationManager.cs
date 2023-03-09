@@ -35,15 +35,25 @@ public class LocalizationManager
         foreach (var code in codes)
         {
             var template = templates.Templates.FirstOrDefault(t => t.TemplateId == code.ToString().ToLower());
-            if (template != null)
-                continue;
-            
-            await _templateService.CreateNewTemplate(new Template
+            if (template == null)
             {
-                TemplateId = code.ToString(),
-                Params = ApiResponseClassData.TemplateBodyParams[code],
-                Type = TemplateType.ApiResponseCode
-            });
+                await _templateService.CreateNewTemplate(new Template
+                {
+                    TemplateId = code.ToString(),
+                    Params = ApiResponseClassData.TemplateBodyParams[code],
+                    Type = TemplateType.ApiResponseCode
+                });
+                continue;
+            }
+
+            if (template.Type != TemplateType.ApiResponseCode)
+            {
+                await _templateService.EditDefaultValues(new TemplateEditRequest
+                {
+                    TemplateId = template.TemplateId,
+                    Type = TemplateType.ApiResponseCode,
+                });
+            }
         }
     }
 
