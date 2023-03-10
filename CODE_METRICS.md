@@ -96,8 +96,8 @@ The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 
 - 5 namespaces.
 - 26 named types.
-- 1,210 total lines of source code.
-- Approximately 386 lines of executable code.
+- 1,220 total lines of source code.
+- Approximately 389 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -770,8 +770,8 @@ The `MyJetWallet.Sdk.WalletApi.Middleware` namespace contains 2 named types.
 The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 
 - 5 named types.
-- 425 total lines of source code.
-- Approximately 136 lines of executable code.
+- 435 total lines of source code.
+- Approximately 139 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -813,9 +813,9 @@ The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 <br>
 
 - The `LocalizationManager` contains 6 members.
-- 64 total lines of source code.
-- Approximately 25 lines of executable code.
-- The highest cyclomatic complexity is 4 :heavy_check_mark:.
+- 74 total lines of source code.
+- Approximately 28 lines of executable code.
+- The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -823,8 +823,8 @@ The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L17' title='ITemplateClient LocalizationManager._templateClient'>17</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
 | Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L16' title='ITemplateService LocalizationManager._templateService'>16</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
 | Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L19' title='LocalizationManager.LocalizationManager(ITemplateService templateService, ILogger<LocalizationManager> logger, ITemplateClient templateClient)'>19</a> | 79 | 1 :heavy_check_mark: | 0 | 3 | 6 / 3 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L50' title='Task<string> LocalizationManager.GetTemplateBody(ApiResponseCodes code, HttpContext ctx, params string[] paramValues)'>50</a> | 61 | 4 :heavy_check_mark: | 0 | 10 | 27 / 11 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L26' title='Task LocalizationManager.Start()'>26</a> | 62 | 4 :heavy_check_mark: | 0 | 12 | 23 / 11 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L60' title='Task<string> LocalizationManager.GetTemplateBody(ApiResponseCodes code, HttpContext ctx, params string[] paramValues)'>60</a> | 61 | 4 :heavy_check_mark: | 0 | 10 | 27 / 11 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/LocalizationManager.cs#L26' title='Task LocalizationManager.Start()'>26</a> | 59 | 5 :heavy_check_mark: | 0 | 13 | 33 / 14 |
 
 <a href="#LocalizationManager-class-diagram">:link: to `LocalizationManager` class diagram</a>
 
