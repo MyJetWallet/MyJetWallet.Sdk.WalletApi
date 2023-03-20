@@ -55,6 +55,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         BlockchainSendNotSupported = 43,
         InternalSendNotSupported = 44,
         BlockchainReceiveNotSupported = 45,
+        LimitExceeded = 46,
         
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -343,6 +344,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.BlockchainSendNotSupported);
             AddBody(ApiResponseCodes.InternalSendNotSupported);
             AddBody(ApiResponseCodes.BlockchainReceiveNotSupported);
+            AddBody(ApiResponseCodes.LimitExceeded, "LIMIT");
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
