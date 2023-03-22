@@ -94,10 +94,10 @@ The `MyJetWallet.Sdk.WalletApi.Tests` namespace contains 2 named types.
 
 The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 
-- 5 namespaces.
-- 26 named types.
-- 1,222 total lines of source code.
-- Approximately 390 lines of executable code.
+- 6 namespaces.
+- 28 named types.
+- 1,284 total lines of source code.
+- Approximately 404 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -755,6 +755,76 @@ The `MyJetWallet.Sdk.WalletApi.Middleware` namespace contains 2 named types.
 <a href="#ExceptionLogMiddleware-class-diagram">:link: to `ExceptionLogMiddleware` class diagram</a>
 
 <a href="#myjetwallet-sdk-walletapi-middleware">:top: back to MyJetWallet.Sdk.WalletApi.Middleware</a>
+
+</details>
+
+</details>
+
+<details>
+<summary>
+  <strong id="myjetwallet-sdk-walletapi-services">
+    MyJetWallet.Sdk.WalletApi.Services :heavy_check_mark:
+  </strong>
+</summary>
+<br>
+
+The `MyJetWallet.Sdk.WalletApi.Services` namespace contains 2 named types.
+
+- 2 named types.
+- 62 total lines of source code.
+- Approximately 14 lines of executable code.
+- The highest cyclomatic complexity is 1 :heavy_check_mark:.
+
+<details>
+<summary>
+  <strong id="ipaymentservice">
+    IPaymentService :heavy_check_mark:
+  </strong>
+</summary>
+<br>
+
+- The `IPaymentService` contains 3 members.
+- 6 total lines of source code.
+- Approximately 0 lines of executable code.
+- The highest cyclomatic complexity is 1 :heavy_check_mark:.
+
+| Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/IPaymentService.cs#L11' title='ValueTask<List<BuyMethodModelDTO>> IPaymentService.GetBuyMethodsAsync(JetClientIdentity clientId)'>11</a> | 100 | 1 :heavy_check_mark: | 0 | 4 | 1 / 0 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/IPaymentService.cs#L10' title='ValueTask<List<ReceiveMethodModelDTO>> IPaymentService.GetReceiveMethodsAsync(JetClientIdentity clientId)'>10</a> | 100 | 1 :heavy_check_mark: | 0 | 4 | 1 / 0 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/IPaymentService.cs#L12' title='ValueTask<List<SendMethodModelDTO>> IPaymentService.GetSendMethodsAsync(JetClientIdentity clientId)'>12</a> | 100 | 1 :heavy_check_mark: | 0 | 4 | 1 / 0 |
+
+<a href="#IPaymentService-class-diagram">:link: to `IPaymentService` class diagram</a>
+
+<a href="#myjetwallet-sdk-walletapi-services">:top: back to MyJetWallet.Sdk.WalletApi.Services</a>
+
+</details>
+
+<details>
+<summary>
+  <strong id="paymentservice">
+    PaymentService :heavy_check_mark:
+  </strong>
+</summary>
+<br>
+
+- The `PaymentService` contains 6 members.
+- 51 total lines of source code.
+- Approximately 14 lines of executable code.
+- The highest cyclomatic complexity is 1 :heavy_check_mark:.
+
+| Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/PaymentService.cs#L14' title='IKycStatusClient PaymentService._kycStatusClient'>14</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/PaymentService.cs#L15' title='IPaymentMethodV2Client PaymentService._paymentMethodV2Client'>15</a> | 100 | 0 :heavy_check_mark: | 0 | 1 | 1 / 0 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/PaymentService.cs#L17' title='PaymentService.PaymentService(IKycStatusClient kycStatusClient, IPaymentMethodV2Client paymentMethodV2Client)'>17</a> | 85 | 1 :heavy_check_mark: | 0 | 2 | 6 / 2 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/PaymentService.cs#L37' title='ValueTask<List<BuyMethodModelDTO>> PaymentService.GetBuyMethodsAsync(JetClientIdentity clientId)'>37</a> | 75 | 1 :heavy_check_mark: | 0 | 8 | 12 / 4 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/PaymentService.cs#L24' title='ValueTask<List<ReceiveMethodModelDTO>> PaymentService.GetReceiveMethodsAsync(JetClientIdentity clientId)'>24</a> | 75 | 1 :heavy_check_mark: | 0 | 8 | 12 / 4 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/Services/PaymentService.cs#L50' title='ValueTask<List<SendMethodModelDTO>> PaymentService.GetSendMethodsAsync(JetClientIdentity clientId)'>50</a> | 75 | 1 :heavy_check_mark: | 0 | 8 | 12 / 4 |
+
+<a href="#PaymentService-class-diagram">:link: to `PaymentService` class diagram</a>
+
+<a href="#myjetwallet-sdk-walletapi-services">:top: back to MyJetWallet.Sdk.WalletApi.Services</a>
 
 </details>
 
@@ -1430,6 +1500,38 @@ class ExceptionLogMiddleware{
     -LocalizationManager _localizationManager
     +.ctor(RequestDelegate next, ILogger<ExceptionLogMiddleware> logger, LocalizationManager localizationManager) ExceptionLogMiddleware
     +InvokeAsync(HttpContext context) Task
+}
+
+```
+
+<div id="IPaymentService-class-diagram"></div>
+
+##### `IPaymentService` class diagram
+
+```mermaid
+classDiagram
+class IPaymentService{
+    +GetReceiveMethodsAsync(JetClientIdentity clientId)* ValueTask<List<ReceiveMethodModelDTO>>
+    +GetBuyMethodsAsync(JetClientIdentity clientId)* ValueTask<List<BuyMethodModelDTO>>
+    +GetSendMethodsAsync(JetClientIdentity clientId)* ValueTask<List<SendMethodModelDTO>>
+}
+
+```
+
+<div id="PaymentService-class-diagram"></div>
+
+##### `PaymentService` class diagram
+
+```mermaid
+classDiagram
+IPaymentService <|-- PaymentService : implements
+class PaymentService{
+    -IKycStatusClient _kycStatusClient
+    -IPaymentMethodV2Client _paymentMethodV2Client
+    +.ctor(IKycStatusClient kycStatusClient, IPaymentMethodV2Client paymentMethodV2Client) PaymentService
+    +GetReceiveMethodsAsync(JetClientIdentity clientId) ValueTask<List<ReceiveMethodModelDTO>>
+    +GetBuyMethodsAsync(JetClientIdentity clientId) ValueTask<List<BuyMethodModelDTO>>
+    +GetSendMethodsAsync(JetClientIdentity clientId) ValueTask<List<SendMethodModelDTO>>
 }
 
 ```
