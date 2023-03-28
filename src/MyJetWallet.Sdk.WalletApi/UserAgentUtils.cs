@@ -108,5 +108,20 @@ namespace MyJetWallet.Sdk.WalletApi
                 return string.Empty;
             }
         }
+        
+        public static string GetInstallationId(this HttpContext ctx)
+        {
+            try
+            {
+                var userAgent = ctx.GetRowUserAgent();
+                var split = userAgent.Split(';');
+                var deviceUid = split.Length >= 9 ? split[8] : string.Empty;
+                return deviceUid;
+            }
+            catch (Exception e)
+            {
+                return string.Empty;
+            }
+        }
     }
 }
