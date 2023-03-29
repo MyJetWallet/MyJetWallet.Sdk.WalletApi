@@ -96,8 +96,8 @@ The *MyJetWallet.Sdk.WalletApi.csproj* project file contains:
 
 - 6 namespaces.
 - 28 named types.
-- 1,287 total lines of source code.
-- Approximately 405 lines of executable code.
+- 1,335 total lines of source code.
+- Approximately 423 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -842,8 +842,8 @@ The `MyJetWallet.Sdk.WalletApi.Services` namespace contains 2 named types.
 The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 
 - 5 named types.
-- 435 total lines of source code.
-- Approximately 139 lines of executable code.
+- 483 total lines of source code.
+- Approximately 157 lines of executable code.
 - The highest cyclomatic complexity is 5 :heavy_check_mark:.
 
 <details>
@@ -964,21 +964,24 @@ The `MyJetWallet.Sdk.WalletApi` namespace contains 5 named types.
 </summary>
 <br>
 
-- The `UserAgentUtils` contains 8 members.
-- 72 total lines of source code.
-- Approximately 26 lines of executable code.
-- The highest cyclomatic complexity is 2 :heavy_check_mark:.
+- The `UserAgentUtils` contains 11 members.
+- 120 total lines of source code.
+- Approximately 44 lines of executable code.
+- The highest cyclomatic complexity is 3 :heavy_check_mark:.
 
 | Member kind | Line number | Maintainability index | Cyclomatic complexity | Depth of inheritance | Class coupling | Lines of source / executable code |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L58' title='string UserAgentUtils.GetCountryFull(HttpContext ctx)'>58</a> | 86 | 1 :heavy_check_mark: | 0 | 2 | 5 / 2 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L64' title='string UserAgentUtils.GetDeviceUid(HttpContext ctx)'>64</a> | 71 | 1 :heavy_check_mark: | 0 | 2 | 14 / 6 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L12' title='string UserAgentUtils.GetGeolocationByIp(HttpContext ctx)'>12</a> | 85 | 2 :heavy_check_mark: | 0 | 2 | 7 / 2 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L28' title='string UserAgentUtils.GetLang(HttpContext ctx)'>28</a> | 70 | 2 :heavy_check_mark: | 0 | 2 | 14 / 6 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L43' title='string UserAgentUtils.GetPhoneModel(HttpContext ctx)'>43</a> | 71 | 1 :heavy_check_mark: | 0 | 2 | 14 / 6 |
-| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L20' title='string UserAgentUtils.GetRowUserAgent(HttpContext ctx)'>20</a> | 87 | 2 :heavy_check_mark: | 0 | 2 | 7 / 2 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L10' title='string UserAgentUtils.Ipcountry'>10</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
-| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L9' title='string UserAgentUtils.UserAgent'>9</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L97' title='string UserAgentUtils.GetClientApplicationVersion(HttpContext ctx)'>97</a> | 70 | 2 :heavy_check_mark: | 0 | 2 | 14 / 6 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L61' title='string UserAgentUtils.GetCountryFull(HttpContext ctx)'>61</a> | 86 | 1 :heavy_check_mark: | 0 | 2 | 5 / 2 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L82' title='string UserAgentUtils.GetDevicePlatform(HttpContext ctx)'>82</a> | 70 | 2 :heavy_check_mark: | 0 | 2 | 14 / 6 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L67' title='string UserAgentUtils.GetDeviceUid(HttpContext ctx)'>67</a> | 70 | 2 :heavy_check_mark: | 0 | 2 | 14 / 6 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L15' title='string UserAgentUtils.GetGeolocationByIp(HttpContext ctx)'>15</a> | 85 | 2 :heavy_check_mark: | 0 | 2 | 7 / 2 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L112' title='string UserAgentUtils.GetInstallationId(HttpContext ctx)'>112</a> | 70 | 2 :heavy_check_mark: | 0 | 2 | 14 / 6 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L31' title='string UserAgentUtils.GetLang(HttpContext ctx)'>31</a> | 69 | 3 :heavy_check_mark: | 0 | 2 | 14 / 6 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L46' title='string UserAgentUtils.GetPhoneModel(HttpContext ctx)'>46</a> | 70 | 2 :heavy_check_mark: | 0 | 2 | 14 / 6 |
+| Method | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L23' title='string UserAgentUtils.GetRowUserAgent(HttpContext ctx)'>23</a> | 87 | 2 :heavy_check_mark: | 0 | 2 | 7 / 2 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L13' title='string UserAgentUtils.Ipcountry'>13</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
+| Field | <a href='https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi/blob/master/src/MyJetWallet.Sdk.WalletApi/UserAgentUtils.cs#L12' title='string UserAgentUtils.UserAgent'>12</a> | 93 | 0 :heavy_check_mark: | 0 | 0 | 1 / 1 |
 
 <a href="#UserAgentUtils-class-diagram">:link: to `UserAgentUtils` class diagram</a>
 
@@ -1619,6 +1622,9 @@ class UserAgentUtils{
     +GetPhoneModel(HttpContext ctx)$ string
     +GetCountryFull(HttpContext ctx)$ string
     +GetDeviceUid(HttpContext ctx)$ string
+    +GetDevicePlatform(HttpContext ctx)$ string
+    +GetClientApplicationVersion(HttpContext ctx)$ string
+    +GetInstallationId(HttpContext ctx)$ string
 }
 
 ```
