@@ -55,8 +55,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         BlockchainSendNotSupported = 43,
         InternalSendNotSupported = 44,
         BlockchainReceiveNotSupported = 45,
-        LimitExceeded = 46,
-        TradingDisabled = 47,
+        LimitExceeded = 46, // personal limit by payment method is hit
+        TradingDisabled = 47, // disable trading on the system
         
         
         //Auth
