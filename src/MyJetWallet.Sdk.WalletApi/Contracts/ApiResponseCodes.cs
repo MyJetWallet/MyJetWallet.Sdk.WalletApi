@@ -76,6 +76,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidRefCode = 114,
         PinCodeAlreadyExist = 115, // user can't setup new pin, because pin already exist
         SelfieNotExist = 116, // user can't setup new pin, because pin already exist
+        WrongPinCodeAttempt = 117, // wrong pin code with attempts
+        WrongPinCodeBlocked = 118, // wrong pin code hit block time
 
 
         //Circle, Cards
@@ -348,6 +350,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.BlockchainReceiveNotSupported);
             AddBody(ApiResponseCodes.LimitExceeded, "LIMIT");
             AddBody(ApiResponseCodes.TradingDisabled);
+            AddBody(ApiResponseCodes.WrongPinCodeAttempt, "ATTEMPTS_LEFT");
+            AddBody(ApiResponseCodes.WrongPinCodeBlocked, "BLOCK_SECONDS");
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
