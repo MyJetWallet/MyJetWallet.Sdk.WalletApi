@@ -351,7 +351,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.LimitExceeded, "LIMIT");
             AddBody(ApiResponseCodes.TradingDisabled);
             AddBody(ApiResponseCodes.WrongPinCodeAttempt, "ATTEMPTS_LEFT");
-            AddBody(ApiResponseCodes.WrongPinCodeBlocked, "BLOCK_SECONDS");
+            AddBody(ApiResponseCodes.WrongPinCodeBlocked, "BLOCK_TIME_LEFT_MIN", "BLOCK_TIME_LEFT_SEC");
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
