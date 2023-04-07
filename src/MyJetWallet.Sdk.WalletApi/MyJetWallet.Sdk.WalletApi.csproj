@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <PackageProjectUrl>https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi</RepositoryUrl>
   </PropertyGroup>
