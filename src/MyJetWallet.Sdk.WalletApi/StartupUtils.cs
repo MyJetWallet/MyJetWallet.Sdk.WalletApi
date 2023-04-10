@@ -16,8 +16,9 @@ using MyJetWallet.Sdk.WalletApi.Middleware;
 using NSwag;
 using Prometheus;
 using SimpleTrading.BaseMetrics;
-using SimpleTrading.ServiceStatusReporterConnector;
 using Microsoft.Extensions.Logging;
+using MyJetWallet.Sdk.Service;
+using MyJetWallet.Sdk.Service.LivenessProbs;
 
 namespace MyJetWallet.Sdk.WalletApi
 {
@@ -152,9 +153,9 @@ namespace MyJetWallet.Sdk.WalletApi
             app.UseStaticFiles();
             app.UseMetricServer();
 
-            app.BindServicesTree(Assembly.GetExecutingAssembly());
-
-            app.BindIsAlive();
+            app.BindDependenciesTree(Assembly.GetExecutingAssembly());
+            app.BindIsAliveEndpoint();
+            app.UseMiddleware<IsAlive2Middleware>();
 
             app.UseOpenApi(settings =>
             {
