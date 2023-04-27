@@ -194,7 +194,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidNickname = 600,
         NicknameUsed = 601,
         NoNicknameChangesLeft = 602,
-        
+        ContactWithThisIbanAlreadyExists = 603,
+        ContactWithThisNicknameAlreadyExists = 604,
+        ContactWithThisNameAlreadyExists = 605,
+        ContactNotFound = 606,
         
         //Verification Api
         UnsuccessfulSend = 701,
@@ -352,6 +355,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TradingDisabled);
             AddBody(ApiResponseCodes.WrongPinCodeAttempt, "ATTEMPTS_LEFT");
             AddBody(ApiResponseCodes.WrongPinCodeBlocked, "BLOCK_TIME_LEFT_MIN", "BLOCK_TIME_LEFT_SEC");
+            AddBody(ApiResponseCodes.ContactWithThisIbanAlreadyExists);
+            AddBody(ApiResponseCodes.ContactWithThisNameAlreadyExists);
+            AddBody(ApiResponseCodes.ContactWithThisNicknameAlreadyExists);
+            AddBody(ApiResponseCodes.ContactNotFound);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
