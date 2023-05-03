@@ -205,6 +205,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         LanguageNotSet = 703,
         PhoneDuplicate = 704,
         WrongPinWhenChangingPhone = 705,
+        
+        //Iban pt.2
+        AddressInvalidOnlyLatinSymbolAllowed = 801,
+        
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
@@ -359,6 +363,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.ContactWithThisNameAlreadyExists);
             AddBody(ApiResponseCodes.ContactWithThisNicknameAlreadyExists);
             AddBody(ApiResponseCodes.ContactNotFound);
+            AddBody(ApiResponseCodes.AddressInvalidOnlyLatinSymbolAllowed, "INVALID_FIELD");
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
