@@ -208,6 +208,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         
         //Iban pt.2
         AddressInvalidOnlyLatinSymbolAllowed = 801,
+        IbanNotReachable = 802,
         
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
@@ -364,6 +365,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.ContactWithThisNicknameAlreadyExists);
             AddBody(ApiResponseCodes.ContactNotFound);
             AddBody(ApiResponseCodes.AddressInvalidOnlyLatinSymbolAllowed, "INVALID_FIELD");
+            AddBody(ApiResponseCodes.IbanNotReachable);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
