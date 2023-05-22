@@ -353,7 +353,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.NoNicknameChangesLeft);
             AddBody(ApiResponseCodes.UnsuccessfulSend);
             AddBody(ApiResponseCodes.PhoneNotFound);
-            AddBody(ApiResponseCodes.PhoneDuplicate);
+            AddBody(ApiResponseCodes.PhoneDuplicate, "OWNEREMAIL");
             AddBody(ApiResponseCodes.LanguageNotSet);
             AddBody(ApiResponseCodes.WrongPinWhenChangingPhone);
             AddBody(ApiResponseCodes.DepositBlocked, "EXPIRETIME");
