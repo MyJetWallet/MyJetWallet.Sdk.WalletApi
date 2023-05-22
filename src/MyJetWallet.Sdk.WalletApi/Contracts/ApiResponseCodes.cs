@@ -209,6 +209,17 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         //Iban pt.2
         AddressInvalidOnlyLatinSymbolAllowed = 801,
         IbanNotReachable = 802,
+        CardNumberRequired = 803,
+        IbanRequired = 804,
+        PhoneNumberRequired = 805,
+        RecipientNameRequired = 806,
+        PanNumberRequired = 807,
+        UpiAddressRequired = 808,
+        AccountNumberRequired = 809,
+        BeneficiaryNameRequired = 810,
+        BankNameRequired = 811,
+        IfscCodeRequired = 812,
+        BankAccountRequired = 813,
         
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
@@ -366,6 +377,17 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.ContactNotFound);
             AddBody(ApiResponseCodes.AddressInvalidOnlyLatinSymbolAllowed, "INVALID_FIELD");
             AddBody(ApiResponseCodes.IbanNotReachable);
+            AddBody(ApiResponseCodes.CardNumberRequired);
+            AddBody(ApiResponseCodes.IbanRequired);
+            AddBody(ApiResponseCodes.PhoneNumberRequired);
+            AddBody(ApiResponseCodes.RecipientNameRequired);
+            AddBody(ApiResponseCodes.PanNumberRequired);
+            AddBody(ApiResponseCodes.UpiAddressRequired);
+            AddBody(ApiResponseCodes.AccountNumberRequired);
+            AddBody(ApiResponseCodes.BeneficiaryNameRequired);
+            AddBody(ApiResponseCodes.BankNameRequired);
+            AddBody(ApiResponseCodes.IfscCodeRequired);
+            AddBody(ApiResponseCodes.BankAccountRequired);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
