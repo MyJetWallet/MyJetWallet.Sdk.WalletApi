@@ -58,7 +58,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         LimitExceeded = 46, // personal limit by payment method is hit
         TradingDisabled = 47, // disable trading on the system
         InvalidInvoice = 48, // invalid invoice
-        
+        LimitReached = 49, // limit reached
         
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -390,6 +390,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.IfscCodeRequired);
             AddBody(ApiResponseCodes.BankAccountRequired);
             AddBody(ApiResponseCodes.InvalidInvoice);
+            AddBody(ApiResponseCodes.LimitReached);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
