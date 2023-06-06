@@ -57,6 +57,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         BlockchainReceiveNotSupported = 45,
         LimitExceeded = 46, // personal limit by payment method is hit
         TradingDisabled = 47, // disable trading on the system
+        InvalidInvoice = 48, // invalid invoice
         
         
         //Auth
@@ -388,6 +389,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.BankNameRequired);
             AddBody(ApiResponseCodes.IfscCodeRequired);
             AddBody(ApiResponseCodes.BankAccountRequired);
+            AddBody(ApiResponseCodes.InvalidInvoice);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
