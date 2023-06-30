@@ -197,6 +197,14 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
             {
                 throw;
             }
+            catch (WalletApiErrorBlockerException)
+            {
+                throw;
+            }
+            catch (WalletApiHttpException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
