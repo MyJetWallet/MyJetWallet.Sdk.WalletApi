@@ -26,8 +26,8 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
         private readonly ConcurrentDictionary<string, List<DateTime>> _requestsByPath = new();
         private readonly ConcurrentDictionary<(string path, string ip), List<DateTime>> _requestsByIps = new();
 
-        private readonly ConcurrentDictionary<string, DateTime> _blockedIps = new();
-        private readonly ConcurrentDictionary<string, DateTime> _blockedCountries = new();
+        private readonly ConcurrentDictionary<(string path, string ip), DateTime> _blockedIps = new();
+        private readonly ConcurrentDictionary<(string path, string country), DateTime> _blockedCountries = new();
 
         private readonly IMyNoSqlServerDataReader<ApiAccessSettingsNoSqlEntity> _settingsReader;
         private readonly IMyNoSqlServerDataReader<RestrictedCountriesNoSqlEntity> _restrictedCountriesReader;
@@ -91,14 +91,14 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 var ip = context.GetIp();
                 var path = context.Request.Path.Value;
 
-                if (_blockedIps.TryGetValue(ip, out var blocker))
+                if (_blockedIps.TryGetValue((path, ip), out var blocker))
                 {
                     _logger.LogInformation("Client with ip {ip} try to access to {path} but blocked till {blocker}",
                         ip, path, blocker);
                     throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
                 }
 
-                if (_blockedCountries.TryGetValue(country, out var blocker2))
+                if (_blockedCountries.TryGetValue((path, country), out var blocker2))
                 {
                     _logger.LogInformation(
                         "Client with ip {ip} and country {country} try to access to {path} but blocked till {blocker}",
@@ -106,7 +106,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                     throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
                 }
 
-                if (_blockedCountries.TryGetValue(AllCountriesCode, out var blocker3))
+                if (_blockedCountries.TryGetValue((path, AllCountriesCode), out var blocker3))
                 {
                     _logger.LogInformation(
                         "Client try to access to {path} but blocked till {blocker}. All requests from all countries are blocked",
@@ -210,7 +210,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
             _logger.LogError(
                 "!!! API BLOCK !!! Client from {country} try to access [{path}]  {attempts} times per {duration} and blocked till {blockTime}",
                 country, path, attempts, duration, blockTime);
-            _blockedCountries[country] = blockTime;
+            _blockedCountries[(path, country)] = blockTime;
             throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
         }
 
@@ -219,7 +219,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
             _logger.LogError(
                 "!!! API BLOCK !!!  Client with ip {ip} try to access [{path}]  {attempts} times per {duration} and blocked till {blockTime}",
                 ip, path, attempts, duration, blockTime);
-            _blockedIps[ip] = blockTime;
+            _blockedIps[(path, ip)] = blockTime;
             throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
         }
     }
