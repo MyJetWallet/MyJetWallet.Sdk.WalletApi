@@ -107,7 +107,7 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                     if (dtList.Count(t => t < DateTime.UtcNow.AddDays(-1)) > restrictedMethod.Attempts1Day)
                         throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
 
-                    if (settings.EnableBlocksWithoutCountries)
+                    if (settings?.EnableBlocksWithoutCountries ?? false)
                     {
                         if (dtList2.Count(t => t < DateTime.UtcNow.AddSeconds(-5)) > restrictedMethod.Attempts5Sec)
                             throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
