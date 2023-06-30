@@ -79,6 +79,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         SelfieNotExist = 116, // user can't setup new pin, because pin already exist
         WrongPinCodeAttempt = 117, // wrong pin code with attempts
         WrongPinCodeBlocked = 118, // wrong pin code hit block time
+        WebLoginTemporallyNotAvailable = 119, // wrong pin code hit block time
 
 
         //Circle, Cards
@@ -363,6 +364,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TransferBlocked, "EXPIRETIME");
             AddBody(ApiResponseCodes.WithdrawalBlocked, "EXPIRETIME");
             AddBody(ApiResponseCodes.PhoneNumberUpdateBlocked, "EXPIRETIME");
+            AddBody(ApiResponseCodes.WebLoginTemporallyNotAvailable, "EXPIRETIME");
             AddBody(ApiResponseCodes.NotSupported);
             AddBody(ApiResponseCodes.UserExists);
             AddBody(ApiResponseCodes.BlockchainSendNotSupported);
