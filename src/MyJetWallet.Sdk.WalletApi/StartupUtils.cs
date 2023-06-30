@@ -172,7 +172,8 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.UseMiddleware<ExceptionLogMiddleware>();
             app.UseMiddleware<DebugMiddleware>();
-
+            app.UseMiddleware<ApiAccessMiddleware>();
+            
             app.UseAuthentication();
             app.UseAuthorization();
         }
