@@ -87,14 +87,10 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                 {
                     _requestsByCountry.TryGetValue((path, country), out var dtList);
                     dtList ??= new List<DateTime>();
-                    dtList.Add(DateTime.UtcNow);
-                    _requestsByCountry[(path, country)] = dtList;
-
+                    
                     _requestsByPath.TryGetValue(path, out var dtList2);
                     dtList2 ??= new List<DateTime>();
-                    dtList2.Add(DateTime.UtcNow);
-                    _requestsByPath[path] = dtList2;
-
+                    
                     if (dtList.Count(t => t < DateTime.UtcNow.AddSeconds(-5)) > restrictedMethod.Attempts5Sec)
                         throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
 
@@ -107,6 +103,9 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                     if (dtList.Count(t => t < DateTime.UtcNow.AddDays(-1)) > restrictedMethod.Attempts1Day)
                         throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
 
+                    dtList.Add(DateTime.UtcNow);
+                    _requestsByCountry[(path, country)] = dtList;
+                    
                     if (settings?.EnableBlocksWithoutCountries ?? false)
                     {
                         if (dtList2.Count(t => t < DateTime.UtcNow.AddSeconds(-5)) > restrictedMethod.Attempts5Sec)
@@ -121,6 +120,9 @@ namespace MyJetWallet.Sdk.WalletApi.Middleware
                         if (dtList2.Count(t => t < DateTime.UtcNow.AddDays(-1)) > restrictedMethod.Attempts1Day)
                             throw new WalletApiErrorException(ApiResponseCodes.ServiceUnavailable);
                     }
+                    
+                    dtList2.Add(DateTime.UtcNow);
+                    _requestsByPath[path] = dtList2;
                 }
 
                 await _next(context);
