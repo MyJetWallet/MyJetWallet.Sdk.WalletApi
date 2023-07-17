@@ -224,6 +224,15 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         IfscCodeRequired = 812,
         BankAccountRequired = 813,
         
+        
+        //Gifts
+        SimpleKycRequired = 901,
+        FullKycRequired = 902,
+        GiftNotFound = 903,
+        GiftAlreadyClaimed = 904,
+        GiftExpired = 905,
+        GiftCancelled = 906,
+
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
@@ -395,6 +404,12 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvalidInvoice);
             AddBody(ApiResponseCodes.LimitReached);
             AddBody(ApiResponseCodes.ServiceUnavailable);
+            AddBody(ApiResponseCodes.SimpleKycRequired);
+            AddBody(ApiResponseCodes.FullKycRequired);
+            AddBody(ApiResponseCodes.GiftExpired);
+            AddBody(ApiResponseCodes.GiftCancelled);
+            AddBody(ApiResponseCodes.GiftNotFound);
+            AddBody(ApiResponseCodes.GiftAlreadyClaimed);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
