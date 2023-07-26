@@ -175,6 +175,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         //Wrong Card Country
         CardCountryNotSupported = 270,
         CardCountryNotSupportedExceptVisa = 271,
+        CardTypeNotSupported = 272,
 
         //High-Yield
         ClientOfferDisabled = 303,
