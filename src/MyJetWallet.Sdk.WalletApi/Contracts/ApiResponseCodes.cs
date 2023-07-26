@@ -351,6 +351,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.DeclineByBank);
             AddBody(ApiResponseCodes.CardCountryNotSupported);
             AddBody(ApiResponseCodes.CardCountryNotSupportedExceptVisa);
+            AddBody(ApiResponseCodes.CardTypeNotSupported);
             AddBody(ApiResponseCodes.ClientOfferDisabled);
             AddBody(ApiResponseCodes.OfferDisabled);
             AddBody(ApiResponseCodes.ClientOfferFinished);
