@@ -60,7 +60,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidInvoice = 48, // invalid invoice
         LimitReached = 49, // limit reached
         ServiceUnavailable = 50, // service unavailable
-        
+        InvalidEmail = 51,
+
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
         UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
@@ -412,6 +413,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.GiftCancelled);
             AddBody(ApiResponseCodes.GiftNotFound);
             AddBody(ApiResponseCodes.GiftAlreadyClaimed);
+            AddBody(ApiResponseCodes.InvalidEmail);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
