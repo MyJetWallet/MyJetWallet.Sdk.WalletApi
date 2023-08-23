@@ -235,6 +235,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         GiftExpired = 905,
         GiftCancelled = 906,
 
+        //Rewards
+        NotEnoughSpins = 1001,
+        RewardBalanceTooLow = 1002,
+        
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
@@ -414,6 +418,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.GiftNotFound);
             AddBody(ApiResponseCodes.GiftAlreadyClaimed);
             AddBody(ApiResponseCodes.InvalidEmail);
+            AddBody(ApiResponseCodes.NotEnoughSpins);
+            AddBody(ApiResponseCodes.RewardBalanceTooLow);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
