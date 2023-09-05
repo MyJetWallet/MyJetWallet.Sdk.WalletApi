@@ -32,7 +32,7 @@ namespace MyJetWallet.Sdk.WalletApi.Wallets
         {
             var list = await _clientWalletService.GetWalletsByClient(clientId);
 
-            var defaultWallet = list.Wallets.FirstOrDefault(e => e.IsDefault) ?? list.Wallets.FirstOrDefault();
+            var defaultWallet = list.Wallets.FirstOrDefault(e => e.IsDefault);
 
             if (defaultWallet == null)
             {
