@@ -239,6 +239,20 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         NotEnoughSpins = 1001,
         RewardBalanceTooLow = 1002,
         
+        // invest reject codes 10_000 - 19_999
+        InvestInstrumentNotFound = 10_000,
+        InvestAssetNotFound = 10_001,
+        InvestMultiolicatorToSmall = 10_002,
+        InvestMultiolicatorToBig = 10_003,
+        InvestAmountToSmall = 10_004,
+        InvestAmountToBig = 10_005,
+        InvestPendingPriceToSmall = 10_006,
+        InvestPendingPriceToBig = 10_007,
+        
+        InvestLastCode = 19_999,
+        
+        
+        
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
@@ -420,6 +434,19 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvalidEmail);
             AddBody(ApiResponseCodes.NotEnoughSpins);
             AddBody(ApiResponseCodes.RewardBalanceTooLow);
+            
+            // invest reject codes 10_000 - 20_000
+            AddBody(ApiResponseCodes.InvestInstrumentNotFound);
+            AddBody(ApiResponseCodes.InvestAssetNotFound);
+            AddBody(ApiResponseCodes.InvestMultiolicatorToSmall, "MIN_MULTIPLICATOR");
+            AddBody(ApiResponseCodes.InvestMultiolicatorToBig, "MAX_MULTIPLICATOR");
+            AddBody(ApiResponseCodes.InvestAmountToSmall, "MIN_AMOUNT");
+            AddBody(ApiResponseCodes.InvestAmountToBig, "MAX_AMOUNT");
+            AddBody(ApiResponseCodes.InvestPendingPriceToSmall, "MIN_PRICE");
+            AddBody(ApiResponseCodes.InvestPendingPriceToBig,"MAX_PRICE");
+            
+            AddBody(ApiResponseCodes.InvestLastCode);
+            
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
