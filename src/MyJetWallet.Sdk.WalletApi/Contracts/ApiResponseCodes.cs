@@ -210,6 +210,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         LanguageNotSet = 703,
         PhoneDuplicate = 704,
         WrongPinWhenChangingPhone = 705,
+        PhoneBindingRequired = 706,
         
         //Iban pt.2
         AddressInvalidOnlyLatinSymbolAllowed = 801,
