@@ -453,6 +453,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvestOrderCannotReplace);
             
             AddBody(ApiResponseCodes.InvestLastCode);
+            AddBody(ApiResponseCodes.PhoneBindingRequired);
             
         }
 
