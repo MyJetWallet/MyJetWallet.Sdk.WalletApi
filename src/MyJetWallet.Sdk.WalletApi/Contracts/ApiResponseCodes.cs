@@ -249,6 +249,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvestPendingPriceToSmall = 10_006,
         InvestPendingPriceToBig = 10_007,
         InvestPositionNotFount = 10_008,
+        InvestPositionWrongStatus = 10_009,
+        InvestOrderCannotReplace = 10_010,
         
         InvestLastCode = 19_999,
         
@@ -446,6 +448,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvestPendingPriceToSmall, "MIN_PRICE");
             AddBody(ApiResponseCodes.InvestPendingPriceToBig,"MAX_PRICE");
             AddBody(ApiResponseCodes.InvestPositionNotFount);
+            AddBody(ApiResponseCodes.InvestPositionWrongStatus);
+            AddBody(ApiResponseCodes.InvestOrderCannotReplace);
             
             AddBody(ApiResponseCodes.InvestLastCode);
             
