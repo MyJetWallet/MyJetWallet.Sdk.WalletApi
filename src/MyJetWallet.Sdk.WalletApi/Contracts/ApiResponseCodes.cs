@@ -243,8 +243,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         // invest reject codes 10_000 - 19_999
         InvestInstrumentNotFound = 10_000,
         InvestAssetNotFound = 10_001,
-        InvestMultiolicatorToSmall = 10_002,
-        InvestMultiolicatorToBig = 10_003,
+        InvestMultiplicatorToSmall = 10_002,
+        InvestMultiplicatorToBig = 10_003,
         InvestVolumeToSmall = 10_004,
         InvestVolumeToBig = 10_005,
         InvestPendingPriceToSmall = 10_006,
@@ -442,8 +442,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             // invest reject codes 10_000 - 20_000
             AddBody(ApiResponseCodes.InvestInstrumentNotFound);
             AddBody(ApiResponseCodes.InvestAssetNotFound);
-            AddBody(ApiResponseCodes.InvestMultiolicatorToSmall, "MIN_MULTIPLICATOR");
-            AddBody(ApiResponseCodes.InvestMultiolicatorToBig, "MAX_MULTIPLICATOR");
+            AddBody(ApiResponseCodes.InvestMultiplicatorToSmall, "MIN_MULTIPLICATOR");
+            AddBody(ApiResponseCodes.InvestMultiplicatorToBig, "MAX_MULTIPLICATOR");
             AddBody(ApiResponseCodes.InvestVolumeToSmall, "MIN_VOLUME");
             AddBody(ApiResponseCodes.InvestVolumeToBig, "MAX_VOLUME");
             AddBody(ApiResponseCodes.InvestPendingPriceToSmall, "MIN_PRICE");
