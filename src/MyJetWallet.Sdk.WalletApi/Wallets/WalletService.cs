@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using MyJetWallet.Domain;
 using Service.ClientWallets.Domain.Models;
 using Service.ClientWallets.Grpc;
+using Service.ClientWallets.Grpc.Models;
 
 namespace MyJetWallet.Sdk.WalletApi.Wallets
 {
@@ -44,6 +45,42 @@ namespace MyJetWallet.Sdk.WalletApi.Wallets
             Activity.Current?.AddBaggage("walletId", defaultWallet.WalletId);
 
             return defaultWallet;
+        }
+
+        public async ValueTask<ClientWallet> GetInvestWalletAsync(JetClientIdentity clientId)
+        {
+            var list = await _clientWalletService.GetWalletsByClient(clientId);
+
+            //todo: move it to wallet service
+            var investWalletName = "Invest";
+            var investWalletBaseAsset = "USDT";
+            
+            var investWallet = list.Wallets.FirstOrDefault(e => e.Name == investWalletName);
+
+            if (investWallet != null)
+                return investWallet;
+            
+            var resp = await _clientWalletService.CreateWalletAsync(new CreateWalletRequest()
+            {
+                ClientId = clientId,
+                Name = investWalletName,
+                BaseAsset = investWalletBaseAsset
+            });
+            
+            if (!resp.Success)
+                throw new Exception("Cannot create invest wallet");
+
+            var info = await _clientWalletService.GetWalletInfoByIdAsync(new GetWalletInfoByIdRequest()
+            {
+                WalletId = resp.WalletId
+            });
+
+            if (!info.Success)
+                throw new Exception("Cannot find after create invest wallet");
+            
+            investWallet = info.WalletInfo;
+            
+            return investWallet;
         }
 
         public async ValueTask<ClientWallet> GetWalletByIdAsync(JetClientIdentity clientId, string walletId)

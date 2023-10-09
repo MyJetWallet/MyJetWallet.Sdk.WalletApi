@@ -10,6 +10,8 @@ namespace MyJetWallet.Sdk.WalletApi.Wallets
         ValueTask<List<ClientWallet>> GetWalletsAsync(JetClientIdentity clientId);
 
         ValueTask<ClientWallet> GetDefaultWalletAsync(JetClientIdentity clientId);
+        
+        ValueTask<ClientWallet> GetInvestWalletAsync(JetClientIdentity clientId);
 
         ValueTask<ClientWallet> GetWalletByIdAsync(JetClientIdentity clientId, string walletId);
         ValueTask<bool> SetBaseAssetAsync(JetClientIdentity clientId, string walletId, string baseAsset);
