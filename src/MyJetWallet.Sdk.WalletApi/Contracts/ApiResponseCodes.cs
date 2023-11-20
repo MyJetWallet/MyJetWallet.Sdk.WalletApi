@@ -227,8 +227,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         IfscCodeRequired = 812,
         BankAccountRequired = 813,
         AccountLabelAlreadyUsed = 814,
-        
-        
+        InvalidBic = 815,
+
         //Gifts
         SimpleKycRequired = 901,
         FullKycRequired = 902,
@@ -456,6 +456,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvestLastCode);
             AddBody(ApiResponseCodes.PhoneBindingRequired);
             AddBody(ApiResponseCodes.AccountLabelAlreadyUsed);
+            AddBody(ApiResponseCodes.InvalidBic);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
