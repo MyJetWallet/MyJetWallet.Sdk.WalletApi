@@ -33,7 +33,7 @@ namespace MyJetWallet.Sdk.WalletApi
             services.AddSwaggerDocument(o =>
             {
                 o.Title = "MyJetWallet API";
-                o.SchemaSettings.GenerateEnumMappingDescription = true;
+                o.GenerateEnumMappingDescription = true;
 
                 o.AddSecurity("Bearer", Enumerable.Empty<string>(),
                     new OpenApiSecurityScheme
@@ -161,8 +161,8 @@ namespace MyJetWallet.Sdk.WalletApi
             {
                 settings.Path = $"/swagger/{swaggerOffsetName}/swagger.json";
             });
-            
-            app.UseSwaggerUi(settings =>
+
+            app.UseSwaggerUi3(settings =>
             {
                 settings.EnableTryItOut = true;
                 settings.Path = $"/swagger/{swaggerOffsetName}";
