@@ -28,60 +28,58 @@ namespace MyJetWallet.Sdk.WalletApi
         /// Setup swagger ui ba
         /// </summary>
         /// <param name="services"></param>
-        public static void SetupSwaggerDocumentation(this IServiceCollection services)
+        /// <param name="swaggerOffsetName"></param>
+        public static void SetupSwaggerDocumentation(this IServiceCollection services, string swaggerOffsetName)
         {
-            // services.AddSwaggerGen(option =>
-            // {
-            //     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-            //     {
-            //         Type = SecuritySchemeType.ApiKey,
-            //         Description = "Bearer Token", 
-            //         In = ParameterLocation.Header,
-            //         Name = "Authorization",
-            //         Scheme = "Bearer"
-            //     });
-            //     
-            //     option.AddSecurityRequirement(new OpenApiSecurityRequirement()
-            //     {
-            //         {
-            //             new OpenApiSecurityScheme
-            //             {
-            //                 Reference = new OpenApiReference
-            //                 {
-            //                     Type = ReferenceType.SecurityScheme,
-            //                     Id = "Bearer"
-            //                 },
-            //                 Scheme = "oauth2",
-            //                 Name = "Bearer",
-            //                 In = ParameterLocation.Header,
-            //
-            //             },
-            //             new List<string>()
-            //         }
-            //     });
-            // });
+            var baseUrl = Environment.GetEnvironmentVariable("SWAGGER_BASE_URL");
+            if (string.IsNullOrEmpty(baseUrl))
+                throw new Exception("SWAGGER_BASE_URL environment variable not set");
             
-            // services.AddSwaggerDocument(o =>
-            // {
-            //     o.Title = "MyJetWallet API";
-            //     o.SchemaSettings.GenerateEnumMappingDescription = true;
-            //
-            //     o.AddSecurity("Bearer", Enumerable.Empty<string>(),
-            //         new OpenApiSecurityScheme
-            //         {
-            //             Type = OpenApiSecuritySchemeType.ApiKey,
-            //             Description = "Bearer Token",
-            //             In = OpenApiSecurityApiKeyLocation.Header,
-            //             Name = "Authorization"
-            //         });
-            // });
+            services.AddSwaggerGen(option =>
+            {
+                option.SwaggerGeneratorOptions.Servers = new List<OpenApiServer>() { new() { Url = baseUrl },};
+                option.SwaggerDoc(swaggerOffsetName, new OpenApiInfo()
+                {
+                    Title = $"{swaggerOffsetName.ToUpper()} API",
+                    Version = "1.0.0",
+                    Description = $"{swaggerOffsetName.ToUpper()} API",
+                });
+                
+                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Type = SecuritySchemeType.ApiKey,
+                    Description = "Bearer Token",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Scheme = "Bearer"
+                });
+
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+                        },
+                        new List<string>()
+                    }
+                });
+            });
+
         }
 
         /// <summary>
         /// Headers settings
         /// </summary>
         /// <param name="services"></param>
-        public static void ConfigurateHeaders(this IServiceCollection services)
+        public static void ConfigureHeaders(this IServiceCollection services)
         {
             services.Configure<ForwardedHeadersOptions>(options =>
             {
@@ -90,10 +88,10 @@ namespace MyJetWallet.Sdk.WalletApi
             });
         }
 
-        public static void SetupWalletServices(IServiceCollection services, string sessionEncryptionApiKeyId)
+        public static void SetupWalletServices(IServiceCollection services, string sessionEncryptionApiKeyId, string swaggerOffsetName)
         {
-            services.SetupSwaggerDocumentation();
-            services.ConfigurateHeaders();
+            services.SetupSwaggerDocumentation(swaggerOffsetName);
+            services.ConfigureHeaders();
             services.AddControllers(options =>
             {
 
@@ -113,10 +111,10 @@ namespace MyJetWallet.Sdk.WalletApi
                 .AddAuthorization(o => o.SetupWalletApiPolicy());
         }
         
-        public static void SetupSimpleServices(IServiceCollection services, string sessionEncryptionApiKeyId)
+        public static void SetupSimpleServices(IServiceCollection services, string sessionEncryptionApiKeyId, string swaggerOffsetName)
         {
-            services.SetupSwaggerDocumentation();
-            services.ConfigurateHeaders();
+            services.SetupSwaggerDocumentation(swaggerOffsetName);
+            services.ConfigureHeaders();
             services.AddControllers(options =>
             {
 
@@ -188,6 +186,17 @@ namespace MyJetWallet.Sdk.WalletApi
             app.BindIsAliveEndpoint();
             app.UseMiddleware<IsAlive2Middleware>();
 
+            app.UseSwagger(options =>
+            {
+                options.SerializeAsV2 = true;
+            });
+            app.UseSwaggerUI(settings =>
+            {
+                settings.SwaggerEndpoint($"swagger.json", "v1");
+                settings.RoutePrefix = $"swagger/{swaggerOffsetName}";
+                settings.DocumentTitle = $"{swaggerOffsetName.ToUpper()} API";
+            });
+            
             // app.UseSwagger();
             // app.UseSwaggerUI(settings =>
             // {

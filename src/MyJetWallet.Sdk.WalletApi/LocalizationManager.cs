@@ -78,7 +78,7 @@ public class LocalizationManager
             }
             catch (Exception e)
             {
-                _logger.LogError($"Unable to apply params to temlpate {code.ToString()}, param {key}");
+                _logger.LogError(e,$"Unable to apply params to temlpate {code.ToString()}, param {key}");
             }
         }
 

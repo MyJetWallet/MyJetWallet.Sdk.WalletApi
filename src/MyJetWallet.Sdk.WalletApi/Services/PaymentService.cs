@@ -25,7 +25,6 @@ public class PaymentService : IPaymentService
     {
         var kycStatus = await _kycStatusClient.GetClientKycStatus(new KycStatusRequest()
         {
-            BrokerId = clientId.BrokerId,
             ClientId = clientId.ClientId
         });
         var country = kycStatus.Country;
@@ -38,7 +37,6 @@ public class PaymentService : IPaymentService
     {
         var kycStatus = await _kycStatusClient.GetClientKycStatus(new KycStatusRequest()
         {
-            BrokerId = clientId.BrokerId,
             ClientId = clientId.ClientId
         });
         var country = kycStatus.Country;
@@ -51,7 +49,6 @@ public class PaymentService : IPaymentService
     {
         var kycStatus = await _kycStatusClient.GetClientKycStatus(new KycStatusRequest()
         {
-            BrokerId = clientId.BrokerId,
             ClientId = clientId.ClientId
         });
         var country = kycStatus.Country;
