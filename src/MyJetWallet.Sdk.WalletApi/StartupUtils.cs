@@ -30,36 +30,36 @@ namespace MyJetWallet.Sdk.WalletApi
         /// <param name="services"></param>
         public static void SetupSwaggerDocumentation(this IServiceCollection services)
         {
-            services.AddSwaggerGen(option =>
-            {
-                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-                {
-                    Type = SecuritySchemeType.ApiKey,
-                    Description = "Bearer Token", 
-                    In = ParameterLocation.Header,
-                    Name = "Authorization",
-                    Scheme = "Bearer"
-                });
-                
-                option.AddSecurityRequirement(new OpenApiSecurityRequirement()
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            },
-                            Scheme = "oauth2",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header,
-
-                        },
-                        new List<string>()
-                    }
-                });
-            });
+            // services.AddSwaggerGen(option =>
+            // {
+            //     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            //     {
+            //         Type = SecuritySchemeType.ApiKey,
+            //         Description = "Bearer Token", 
+            //         In = ParameterLocation.Header,
+            //         Name = "Authorization",
+            //         Scheme = "Bearer"
+            //     });
+            //     
+            //     option.AddSecurityRequirement(new OpenApiSecurityRequirement()
+            //     {
+            //         {
+            //             new OpenApiSecurityScheme
+            //             {
+            //                 Reference = new OpenApiReference
+            //                 {
+            //                     Type = ReferenceType.SecurityScheme,
+            //                     Id = "Bearer"
+            //                 },
+            //                 Scheme = "oauth2",
+            //                 Name = "Bearer",
+            //                 In = ParameterLocation.Header,
+            //
+            //             },
+            //             new List<string>()
+            //         }
+            //     });
+            // });
             
             // services.AddSwaggerDocument(o =>
             // {
@@ -188,13 +188,13 @@ namespace MyJetWallet.Sdk.WalletApi
             app.BindIsAliveEndpoint();
             app.UseMiddleware<IsAlive2Middleware>();
 
-            app.UseSwagger();
-            app.UseSwaggerUI(settings =>
-            {
-                settings.SwaggerEndpoint($"/swagger/{swaggerOffsetName}/swagger.json", "v1");
-                settings.RoutePrefix = $"/swagger/{swaggerOffsetName}";
-                settings.DocumentTitle = $"{swaggerOffsetName.ToUpper()} API";
-            });
+            // app.UseSwagger();
+            // app.UseSwaggerUI(settings =>
+            // {
+            //     settings.SwaggerEndpoint($"/swagger/{swaggerOffsetName}/swagger.json", "v1");
+            //     settings.RoutePrefix = $"/swagger/{swaggerOffsetName}";
+            //     settings.DocumentTitle = $"{swaggerOffsetName.ToUpper()} API";
+            // });
             
             // app.UseOpenApi(settings =>
             // {
