@@ -4,6 +4,8 @@ using System.Text.Json;
 using MyJetWallet.Sdk.WalletApi.Contracts;
 using Newtonsoft.Json;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace MyJetWallet.Sdk.WalletApi.Tests
