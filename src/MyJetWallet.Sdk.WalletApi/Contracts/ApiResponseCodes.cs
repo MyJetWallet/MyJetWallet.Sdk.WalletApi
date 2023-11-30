@@ -61,6 +61,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         LimitReached = 49, // limit reached
         ServiceUnavailable = 50, // service unavailable
         InvalidEmail = 51,
+        BalanceTooBigForDeletion = 52,
 
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -457,6 +458,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.PhoneBindingRequired);
             AddBody(ApiResponseCodes.AccountLabelAlreadyUsed);
             AddBody(ApiResponseCodes.InvalidBic);
+            AddBody(ApiResponseCodes.BalanceTooBigForDeletion);
+
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
