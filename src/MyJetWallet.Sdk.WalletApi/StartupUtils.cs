@@ -19,6 +19,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MyJetWallet.Sdk.Service;
 using MyJetWallet.Sdk.Service.LivenessProbs;
+using MyJetWallet.Sdk.WalletApi.Swagger;
 
 namespace MyJetWallet.Sdk.WalletApi
 {
@@ -44,6 +45,8 @@ namespace MyJetWallet.Sdk.WalletApi
                     Version = "1.0.0",
                     Description = $"{swaggerOffsetName.ToUpper()} API",
                 });
+                option.SchemaFilter<EnumSchemaFilter>();
+
                 
                 option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
@@ -71,6 +74,7 @@ namespace MyJetWallet.Sdk.WalletApi
                         new List<string>()
                     }
                 });
+                
             });
 
         }
