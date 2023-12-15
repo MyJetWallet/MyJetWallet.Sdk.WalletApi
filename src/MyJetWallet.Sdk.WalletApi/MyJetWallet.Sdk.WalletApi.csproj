@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.0" />
     <PackageReference Include="MyJetWallet.Domain" Version="1.2.4" />
     <PackageReference Include="MyJetWallet.Sdk.NoSql" Version="2.4.1" />
-    <PackageReference Include="MyJetWallet.Sdk.Service" Version="2.6.1" />
+    <PackageReference Include="MyJetWallet.Sdk.Service" Version="2.6.2" />
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="2.4.8" />
     <PackageReference Include="MyJetWallet.Service.MessageTemplates.Client" Version="1.3.4" />
     <PackageReference Include="MyJetWallet.Service.Service.KYC.Client" Version="1.15.12" />
