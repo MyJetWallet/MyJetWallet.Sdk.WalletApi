@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Http;
+using MyJetWallet.Sdk.WalletApi.Common;
 using SimpleTrading.Common.Helpers;
 
 namespace MyJetWallet.Sdk.WalletApi
@@ -85,8 +86,8 @@ namespace MyJetWallet.Sdk.WalletApi
             {
                 var userAgent = ctx.GetRowUserAgent();
                 var split = userAgent.Split(';');
-                var deviceUid = split.Length >= 3 ? split[2] : string.Empty;
-                return deviceUid;
+                var platform = split.Length >= 3 ? split[2] : string.Empty;
+                return platform;
             }
             catch (Exception e)
             {
@@ -100,8 +101,8 @@ namespace MyJetWallet.Sdk.WalletApi
             {
                 var userAgent = ctx.GetRowUserAgent();
                 var split = userAgent.Split(';');
-                var deviceUid = split.Length >= 8 ? split[0] : string.Empty;
-                return deviceUid;
+                var applicationVersion = split.Length >= 8 ? split[0] : string.Empty;
+                return applicationVersion;
             }
             catch (Exception e)
             {
@@ -115,12 +116,47 @@ namespace MyJetWallet.Sdk.WalletApi
             {
                 var userAgent = ctx.GetRowUserAgent();
                 var split = userAgent.Split(';');
-                var deviceUid = split.Length >= 9 ? split[8] : string.Empty;
-                return deviceUid;
+                var installationId = split.Length >= 9 ? split[8] : string.Empty;
+                return installationId;
             }
             catch (Exception e)
             {
                 return string.Empty;
+            }
+        }
+
+        public static bool TryGetUserAgentData(this HttpContext ctx, out UserAgentData userAgentData)
+        {
+            try
+            {
+                var userAgent = ctx.GetRowUserAgent();
+                var split = userAgent.Split(';');
+
+                if (split.Length < 9)
+                {
+                    userAgentData = null;
+                    return false;
+                }
+
+                userAgentData = new UserAgentData()
+                {
+                    ApplicationVersion = split[0],
+                    Param1 = split[1],
+                    Platform = split[2],
+                    ScreenSize = split[3],
+                    Param4 = split[4],
+                    Lang = split[5].Length == 2 ? split[5] : string.Empty,
+                    PhoneModel = split[6],
+                    DeviceUid = split[7],
+                    InstallationId = split[8]
+                };
+                
+                return true;
+            }
+            catch (Exception e)
+            {
+                userAgentData = null;
+                return false;
             }
         }
     }
