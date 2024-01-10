@@ -141,12 +141,12 @@ namespace MyJetWallet.Sdk.WalletApi
                 userAgentData = new UserAgentData()
                 {
                     ApplicationVersion = split[0],
-                    Param1 = split[1],
+                    Build = split[1],
                     Platform = split[2],
                     ScreenSize = split[3],
-                    Param4 = split[4],
+                    PixelRatio = split[4],
                     Lang = split[5].Length == 2 ? split[5] : string.Empty,
-                    PhoneModel = split[6],
+                    DeviceModel = split[6],
                     DeviceUid = split[7],
                     InstallationId = split[8]
                 };
