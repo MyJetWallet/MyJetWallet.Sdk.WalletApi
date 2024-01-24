@@ -62,6 +62,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ServiceUnavailable = 50, // service unavailable
         InvalidEmail = 51,
         BalanceTooBigForDeletion = 52,
+        AmountNotEnoughToPayFee = 53,
 
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -459,6 +460,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.AccountLabelAlreadyUsed);
             AddBody(ApiResponseCodes.InvalidBic);
             AddBody(ApiResponseCodes.BalanceTooBigForDeletion);
+            AddBody(ApiResponseCodes.AmountNotEnoughToPayFee);
 
         }
 
