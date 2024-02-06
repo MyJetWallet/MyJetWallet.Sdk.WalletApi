@@ -63,7 +63,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvalidEmail = 51,
         BalanceTooBigForDeletion = 52,
         AmountNotEnoughToPayFee = 53,
-
+        TransfersToBankingBlocked = 54,
+        BankingOperationsBlocked = 55,
+        
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
         UserExists = 102, // ??а нужно ли? мы же сделаи обходной флоу
@@ -461,7 +463,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvalidBic);
             AddBody(ApiResponseCodes.BalanceTooBigForDeletion);
             AddBody(ApiResponseCodes.AmountNotEnoughToPayFee);
-
+            AddBody(ApiResponseCodes.TransfersToBankingBlocked);
+            AddBody(ApiResponseCodes.BankingOperationsBlocked);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
