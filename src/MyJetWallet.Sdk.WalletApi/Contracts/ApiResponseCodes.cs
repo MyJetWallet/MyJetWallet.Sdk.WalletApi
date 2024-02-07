@@ -261,7 +261,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         // Earn Engine reject codes 20_000 - 20_099
         EarnOfferNotFound = 20_000,
         EarnPositionNotFound = 20_001,
-        EarnAssetNotFound = 20_001,
+        EarnAssetNotFound = 20_002,
         
         EarnLastCode = 20_099
         
