@@ -258,8 +258,12 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         InvestOperationNotAvailable = 10_009,
         InvestOrderCannotReplace = 10_010,
         
-        InvestLastCode = 19_999,
+        // Earn Engine reject codes 20_000 - 20_099
+        EarnOfferNotFound = 20_000,
+        EarnPositionNotFound = 20_001,
+        EarnAssetNotFound = 20_001,
         
+        EarnLastCode = 20_099
         
         
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
@@ -457,7 +461,12 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.InvestOperationNotAvailable);
             AddBody(ApiResponseCodes.InvestOrderCannotReplace);
             
-            AddBody(ApiResponseCodes.InvestLastCode);
+            // Earn Engine reject codes 20_000 - 20_099
+            AddBody(ApiResponseCodes.EarnOfferNotFound);
+            AddBody(ApiResponseCodes.EarnPositionNotFound);
+            AddBody(ApiResponseCodes.EarnAssetNotFound);
+            AddBody(ApiResponseCodes.EarnLastCode);
+
             AddBody(ApiResponseCodes.PhoneBindingRequired);
             AddBody(ApiResponseCodes.AccountLabelAlreadyUsed);
             AddBody(ApiResponseCodes.InvalidBic);
