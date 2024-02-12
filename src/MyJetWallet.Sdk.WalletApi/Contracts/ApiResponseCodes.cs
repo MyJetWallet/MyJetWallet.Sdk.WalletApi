@@ -262,6 +262,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         EarnOfferNotFound = 20_000,
         EarnPositionNotFound = 20_001,
         EarnAssetNotFound = 20_002,
+        EarnRequestDuplicate = 20_003,
         
         EarnLastCode = 20_099
         
@@ -465,6 +466,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.EarnOfferNotFound);
             AddBody(ApiResponseCodes.EarnPositionNotFound);
             AddBody(ApiResponseCodes.EarnAssetNotFound);
+            AddBody(ApiResponseCodes.EarnRequestDuplicate);
             AddBody(ApiResponseCodes.EarnLastCode);
 
             AddBody(ApiResponseCodes.PhoneBindingRequired);
