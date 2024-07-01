@@ -65,6 +65,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         AmountNotEnoughToPayFee = 53,
         TransfersToBankingBlocked = 54,
         BankingOperationsBlocked = 55,
+        AddressGenerationInProgress = 56,
         
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -473,6 +474,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.AmountNotEnoughToPayFee);
             AddBody(ApiResponseCodes.TransfersToBankingBlocked);
             AddBody(ApiResponseCodes.BankingOperationsBlocked);
+            AddBody(ApiResponseCodes.AddressGenerationInProgress);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
