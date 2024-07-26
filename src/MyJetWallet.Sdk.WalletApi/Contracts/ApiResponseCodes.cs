@@ -66,6 +66,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         TransfersToBankingBlocked = 54,
         BankingOperationsBlocked = 55,
         AddressGenerationInProgress = 56,
+        JarNotFound = 57,
+        JarWithdrawalLimitExceeded = 58,
         
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -475,6 +477,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TransfersToBankingBlocked);
             AddBody(ApiResponseCodes.BankingOperationsBlocked);
             AddBody(ApiResponseCodes.AddressGenerationInProgress);
+            AddBody(ApiResponseCodes.JarNotFound);
+            AddBody(ApiResponseCodes.JarWithdrawalLimitExceeded, "LIMIT", "AMOUNT", "LEFT");
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
