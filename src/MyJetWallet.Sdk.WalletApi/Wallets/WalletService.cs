@@ -67,6 +67,16 @@ namespace MyJetWallet.Sdk.WalletApi.Wallets
             return response.Wallet;
         }
 
+        public async ValueTask<ClientWallet> GetJarWalletAsync(JetClientIdentity clientId)
+        {
+            var response = await _clientWalletService.GetOrCreateJarWalletAsync(clientId);
+
+            if (response?.Success != true)
+                throw new Exception("Cannot create earn wallet");
+
+            return response.Wallet;
+        }
+
         public async ValueTask<ClientWallet> GetWalletByIdAsync(JetClientIdentity clientId, string walletId)
         {
             var list = await _clientWalletService.GetWalletsByClient(clientId);
