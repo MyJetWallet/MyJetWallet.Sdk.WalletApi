@@ -9,9 +9,15 @@ namespace MyJetWallet.Sdk.WalletApi.Common
         public const string Passed2FaPolicy = "Passed2Fa";
         public const string PassedKYCPolicy = "PassedKYC";
         public const string SessionCheckPassPolicy = "SessionCheckPass";
+
         public static void SetupWalletApiPolicy(this AuthorizationOptions options)
         {
-            options.AddPolicy(VerifiedEmailPolicy, policy => policy.RequireClaim("Email-Verified", "True"));
+            options.AddPolicy(VerifiedEmailPolicy, policy =>
+            {
+                policy.RequireClaim("Email-Verified", "True");
+                policy.RequireClaim(AuthorizationConst.VerifyPinPassClaim, "true", "True");
+            });
+            
             options.AddPolicy(Passed2FaPolicy, policy =>
             {
                 policy.RequireClaim("Email-Verified", "True");
@@ -21,10 +27,10 @@ namespace MyJetWallet.Sdk.WalletApi.Common
             
             options.AddPolicy(SessionCheckPassPolicy, policy =>
             {
-                policy.RequireClaim(AuthorizationConst.SetupPinPassClaim, "True");
-                policy.RequireClaim(AuthorizationConst.VerifyPinPassClaim, "True");
-                policy.RequireClaim(AuthorizationConst.ProfileKycPassClaim, "True");
-                policy.RequireClaim(AuthorizationConst.SelfiePassClaim, "True");
+                policy.RequireClaim(AuthorizationConst.SetupPinPassClaim, "true", "True");
+                policy.RequireClaim(AuthorizationConst.VerifyPinPassClaim, "true", "True");
+                policy.RequireClaim(AuthorizationConst.ProfileKycPassClaim, "true", "True");
+                policy.RequireClaim(AuthorizationConst.SelfiePassClaim, "true", "True");
             });
         }
     }
