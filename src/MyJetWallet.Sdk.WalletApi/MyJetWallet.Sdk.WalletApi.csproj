@@ -17,7 +17,7 @@
     <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="3.6.4" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.5.0" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
   </ItemGroup>
 
 </Project>
