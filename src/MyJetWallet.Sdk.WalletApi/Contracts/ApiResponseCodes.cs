@@ -237,6 +237,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         BankAccountRequired = 813,
         AccountLabelAlreadyUsed = 814,
         InvalidBic = 815,
+        TinRequired = 816,
 
         //Gifts
         SimpleKycRequired = 901,
@@ -483,6 +484,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.JarWithdrawalLimitExceeded, "LIMIT", "AMOUNT", "LEFT");
             AddBody(ApiResponseCodes.JarCountLimitExceeded);
             AddBody(ApiResponseCodes.EmailUnavailable);
+            AddBody(ApiResponseCodes.TinRequired);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
