@@ -234,13 +234,5 @@ namespace MyJetWallet.Sdk.WalletApi
             app.UseAuthentication();
             app.UseAuthorization();
         }
-
-        public static void RegisterAuthServices(ContainerBuilder builder, 
-            string readerHostPort,
-            ILoggerFactory loggerFactory)
-        {
-            var authNoSql = builder.CreateNoSqlClient(readerHostPort, loggerFactory, "AuthNoSql");
-            builder.RegisterMyNoSqlReader<ShortRootSessionNoSqlEntity>(authNoSql, ShortRootSessionNoSqlEntity.TableName);
-        }
     }
 }
