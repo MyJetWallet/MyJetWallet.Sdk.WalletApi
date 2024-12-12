@@ -9,11 +9,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="9.0.0" />
     <PackageReference Include="MyJetWallet.Domain" Version="1.2.6" />
-    <PackageReference Include="MyJetWallet.Sdk.NoSql" Version="2.5.1" />
+    <PackageReference Include="MyJetWallet.Sdk.NoSql" Version="2.5.2" />
     <PackageReference Include="MyJetWallet.Sdk.Service" Version="2.8.0" />
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="2.4.18" />
     <PackageReference Include="MyJetWallet.Service.MessageTemplates.Client" Version="2.6.7" />
-    <PackageReference Include="MyJetWallet.Service.Service.KYC.Client" Version="2.25.17" />
+    <PackageReference Include="MyJetWallet.Service.Service.KYC.Client" Version="2.25.19" />
     <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="3.7.0" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.5.0" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
