@@ -112,7 +112,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardNotFound = 216, // 
         PaymentFailed = 217, // 
         CardFirstAndLastNameCannotBeEmpty = 218, // 
-        //InvalidGuid = 219, // 
+        //InvalidGuid = 219, //
+        CardBlocked = 220,
 
         InvalidAccountNumber = 220, //  
         InvalidRoutingNumber = 221, //  
@@ -337,6 +338,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.CardNotFound);
             AddBody(ApiResponseCodes.PaymentFailed);
             AddBody(ApiResponseCodes.CardFirstAndLastNameCannotBeEmpty);
+            AddBody(ApiResponseCodes.CardBlocked);
             AddBody(ApiResponseCodes.InvalidAccountNumber);
             AddBody(ApiResponseCodes.InvalidRoutingNumber);
             AddBody(ApiResponseCodes.InvalidIban);
