@@ -113,7 +113,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         PaymentFailed = 217, // 
         CardFirstAndLastNameCannotBeEmpty = 218, // 
         //InvalidGuid = 219, //
-        CardBlocked = 220,
 
         InvalidAccountNumber = 220, //  
         InvalidRoutingNumber = 221, //  
@@ -188,6 +187,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardCountryNotSupportedExceptVisa = 271,
         CardTypeNotSupported = 272,
 
+        CardBlocked = 280,
+        TooManyCardsIssued = 281,
+        
         //High-Yield
         ClientOfferDisabled = 303,
         OfferDisabled = 305,
@@ -487,6 +489,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.JarCountLimitExceeded);
             AddBody(ApiResponseCodes.EmailUnavailable);
             AddBody(ApiResponseCodes.TinRequired);
+            AddBody(ApiResponseCodes.TooManyCardsIssued);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
