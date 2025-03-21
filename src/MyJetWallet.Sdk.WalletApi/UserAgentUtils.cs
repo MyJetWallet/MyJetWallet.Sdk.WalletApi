@@ -9,7 +9,7 @@ namespace MyJetWallet.Sdk.WalletApi
     {
         // 1.9.3;3791;ios;Size(414.0, 896.0);3.0;en;iPhone XS Max;56147CFB-0000-0000-0000-D4E97E2323BF
         
-        
+        private const string OurUserAgent = "X-User-Agent";
         private const string UserAgent = "User-Agent";
         private const string Ipcountry = "cf-ipcountry";
         
@@ -23,6 +23,9 @@ namespace MyJetWallet.Sdk.WalletApi
         
         public static string GetRowUserAgent(this HttpContext ctx)
         {
+            if (ctx.Request.Headers.ContainsKey(OurUserAgent))
+                return ctx.Request.Headers[OurUserAgent].ToString();
+            
             if (ctx.Request.Headers.ContainsKey(UserAgent))
                 return ctx.Request.Headers[UserAgent].ToString();
 
