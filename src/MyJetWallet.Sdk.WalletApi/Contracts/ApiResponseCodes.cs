@@ -70,6 +70,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         JarWithdrawalLimitExceeded = 58,
         JarCountLimitExceeded = 59,
         EmailUnavailable = 60,
+        UsdtEurNotSupported = 61,
         
         //Auth
         //InvalidUserNameOrPassword = 101, // Invalid login or password.
@@ -490,6 +491,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.EmailUnavailable);
             AddBody(ApiResponseCodes.TinRequired);
             AddBody(ApiResponseCodes.TooManyCardsIssued);
+            
+            AddBody(ApiResponseCodes.UsdtEurNotSupported);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
