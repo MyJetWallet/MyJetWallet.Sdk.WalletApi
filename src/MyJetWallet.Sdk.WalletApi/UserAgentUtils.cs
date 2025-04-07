@@ -26,6 +26,9 @@ namespace MyJetWallet.Sdk.WalletApi
             if (ctx.Request.Headers.ContainsKey(OurUserAgent))
                 return ctx.Request.Headers[OurUserAgent].ToString();
             
+            if (ctx.Request.Headers.ContainsKey(OurUserAgent.ToLower()))
+                return ctx.Request.Headers[OurUserAgent.ToLower()].ToString();
+            
             if (ctx.Request.Headers.ContainsKey(UserAgent))
                 return ctx.Request.Headers[UserAgent].ToString();
 
