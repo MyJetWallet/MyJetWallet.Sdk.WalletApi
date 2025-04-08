@@ -274,7 +274,29 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         EarnPositionNotFound = 20_001,
         
         
-        EarnLastCode = 20_099
+        EarnLastCode = 20_099,
+        
+        //Embedded 100_000+
+        //Transaction 100_000 - 100_999
+        OperationNotSupported = 100_000,
+        LowBalanceForTransaction = 100_001,
+        LowDestinationBalance = 100_002,
+        InvalidPeerType = 100_003,
+        TransactionNotFound = 100_004,
+        OperationNotAvailable = 100_005,
+        DestinationWalletNotFound = 100_006,
+        DestinationAssetNotFound = 100_007,
+        DestinationAddressIsSuspended = 100_008,
+        DestinationAddressIsNotValid = 100_009,
+        MissingTag = 100_010,
+        InvalidSourceType = 100_011,
+        InvalidDestination = 100_012,
+        InvalidAmount = 100_013,
+        InvalidTag = 100_014,
+        UnsupportedBlockchain = 100_015,
+        FeeTooLow = 100_016,
+        InvalidAsset = 100_017,
+        UnableToEstimateFee = 100_018,
         
         
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
@@ -495,6 +517,26 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             
             AddBody(ApiResponseCodes.UsdtEurNotSupported);
             AddBody(ApiResponseCodes.UsdtNotSupported);
+            
+            AddBody(ApiResponseCodes.OperationNotSupported);
+            AddBody(ApiResponseCodes.LowBalanceForTransaction);
+            AddBody(ApiResponseCodes.LowDestinationBalance);
+            AddBody(ApiResponseCodes.InvalidPeerType);
+            AddBody(ApiResponseCodes.TransactionNotFound);
+            AddBody(ApiResponseCodes.OperationNotAvailable);
+            AddBody(ApiResponseCodes.DestinationWalletNotFound);
+            AddBody(ApiResponseCodes.DestinationAssetNotFound);
+            AddBody(ApiResponseCodes.DestinationAddressIsSuspended);
+            AddBody(ApiResponseCodes.DestinationAddressIsNotValid);
+            AddBody(ApiResponseCodes.MissingTag);
+            AddBody(ApiResponseCodes.InvalidSourceType);
+            AddBody(ApiResponseCodes.InvalidDestination);
+            AddBody(ApiResponseCodes.InvalidAmount);
+            AddBody(ApiResponseCodes.InvalidTag);
+            AddBody(ApiResponseCodes.UnsupportedBlockchain);
+            AddBody(ApiResponseCodes.FeeTooLow);
+            AddBody(ApiResponseCodes.InvalidAsset);
+            AddBody(ApiResponseCodes.UnableToEstimateFee);
 
         }
 
