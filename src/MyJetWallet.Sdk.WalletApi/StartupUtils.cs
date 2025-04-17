@@ -144,7 +144,8 @@ namespace MyJetWallet.Sdk.WalletApi
             bool enableApiTrace,
             string swaggerOffsetName,
             bool useApiAccessMiddleware = true,
-            bool useExceptionLogMiddleware = true)
+            bool useExceptionLogMiddleware = true,
+            bool useAuthentication = true)
         {
             if (env.IsDevelopment())
             {
@@ -236,8 +237,11 @@ namespace MyJetWallet.Sdk.WalletApi
                 app.UseMiddleware<ApiAccessMiddleware>();
             }
             
-            app.UseAuthentication();
-            app.UseAuthorization();
+            if(useAuthentication)
+            {
+                app.UseAuthentication();
+                app.UseAuthorization();
+            }
         }
     }
 }
