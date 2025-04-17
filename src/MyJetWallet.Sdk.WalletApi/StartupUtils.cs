@@ -143,7 +143,8 @@ namespace MyJetWallet.Sdk.WalletApi
             IWebHostEnvironment env,
             bool enableApiTrace,
             string swaggerOffsetName,
-            bool useApiAccessMiddleware = true)
+            bool useApiAccessMiddleware = true,
+            bool useExceptionLogMiddleware = true)
         {
             if (env.IsDevelopment())
             {
@@ -223,7 +224,11 @@ namespace MyJetWallet.Sdk.WalletApi
             //     settings.DocumentTitle = $"{swaggerOffsetName.ToUpper()} API";
             // });
 
-            app.UseMiddleware<ExceptionLogMiddleware>();
+            if (useExceptionLogMiddleware)
+            {
+                app.UseMiddleware<ExceptionLogMiddleware>();
+            }
+            
             app.UseMiddleware<DebugMiddleware>();
 
             if (useApiAccessMiddleware)
