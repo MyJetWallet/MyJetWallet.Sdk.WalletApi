@@ -297,8 +297,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         FeeTooLow = 100_016,
         InvalidAsset = 100_017,
         UnableToEstimateFee = 100_018,
-        
-        
+        PresetsNotFound = 100_019,
+        AddressNotFound = 100_020,
+
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
 
