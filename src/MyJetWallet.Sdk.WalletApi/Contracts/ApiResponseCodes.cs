@@ -299,6 +299,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         UnableToEstimateFee = 100_018,
         PresetsNotFound = 100_019,
         AddressNotFound = 100_020,
+        AddressIsNotUnique = 100_021
 
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
     }
@@ -538,7 +539,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.FeeTooLow);
             AddBody(ApiResponseCodes.InvalidAsset);
             AddBody(ApiResponseCodes.UnableToEstimateFee);
-
+            AddBody(ApiResponseCodes.AddressIsNotUnique);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
