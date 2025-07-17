@@ -542,6 +542,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.UnableToEstimateFee);
             AddBody(ApiResponseCodes.AddressIsNotUnique);
             AddBody(ApiResponseCodes.AddressDuplicate);
+            AddBody(ApiResponseCodes.AddressNotFound);
+            AddBody(ApiResponseCodes.PresetsNotFound);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
