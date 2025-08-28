@@ -193,10 +193,7 @@ namespace MyJetWallet.Sdk.WalletApi
             app.BindIsAliveEndpoint();
             app.UseMiddleware<IsAlive2Middleware>();
 
-            app.UseSwagger(options =>
-            {
-                options.SerializeAsV2 = true;
-            });
+            app.UseSwagger();
             app.UseSwaggerUI(settings =>
             {
                 settings.SwaggerEndpoint($"swagger.json", "v1");
