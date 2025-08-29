@@ -14,7 +14,7 @@
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="2.4.19" />
     <PackageReference Include="MyJetWallet.Service.MessageTemplates.Client" Version="2.6.9" />
     <PackageReference Include="MyJetWallet.Service.Service.KYC.Client" Version="2.26.11" />
-    <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="3.8.0" />
+    <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="3.8.1" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.6.0" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
