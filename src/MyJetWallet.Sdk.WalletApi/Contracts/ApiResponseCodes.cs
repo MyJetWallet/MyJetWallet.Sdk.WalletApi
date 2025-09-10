@@ -217,6 +217,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ContactWithThisNicknameAlreadyExists = 604,
         ContactWithThisNameAlreadyExists = 605,
         ContactNotFound = 606,
+        DepositAssetNotAvailable = 607,
         
         //Verification Api
         UnsuccessfulSend = 701,
@@ -459,6 +460,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.ContactWithThisNameAlreadyExists);
             AddBody(ApiResponseCodes.ContactWithThisNicknameAlreadyExists);
             AddBody(ApiResponseCodes.ContactNotFound);
+            AddBody(ApiResponseCodes.DepositAssetNotAvailable);
             AddBody(ApiResponseCodes.AddressInvalidOnlyLatinSymbolAllowed, "INVALID_FIELD");
             AddBody(ApiResponseCodes.IbanNotReachable);
             AddBody(ApiResponseCodes.CardNumberRequired);
