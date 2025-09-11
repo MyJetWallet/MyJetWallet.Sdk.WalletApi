@@ -4,6 +4,14 @@ namespace MyJetWallet.Sdk.WalletApi.Common;
 
 public static class MyControllerHelper
 {
+    public static void ValidateShouldNotBeEmpty(this string s, string errorMessage)
+    {
+        if (string.IsNullOrEmpty(s))
+        {
+            throw new WalletApiErrorException(errorMessage, ApiResponseCodes.ValidationError);
+        }
+    }
+
     public static void ShouldBe(bool result, string paramText, object paramValue)
     {
         if (!result)
