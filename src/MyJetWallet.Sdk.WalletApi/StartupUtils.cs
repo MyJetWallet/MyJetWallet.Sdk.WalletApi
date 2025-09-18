@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Reflection;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
@@ -20,6 +21,7 @@ using Microsoft.OpenApi.Models;
 using MyJetWallet.Sdk.Service;
 using MyJetWallet.Sdk.Service.LivenessProbs;
 using MyJetWallet.Sdk.WalletApi.Swagger;
+using IPNetwork = Microsoft.AspNetCore.HttpOverrides.IPNetwork;
 
 namespace MyJetWallet.Sdk.WalletApi
 {
@@ -136,6 +138,25 @@ namespace MyJetWallet.Sdk.WalletApi
 
             services
                 .AddAuthorization(o => o.SetupWalletApiPolicy());
+            
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                // Указываем какие заголовки нужно обрабатывать
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+
+                // очищаем дефолтные KnownNetworks/Proxies
+                options.KnownNetworks.Clear();
+                options.KnownProxies.Clear();
+
+                // доверяем конкретный IP вашего прокси
+                //options.KnownProxies.Add(IPAddress.Parse("192.168.72.10"));
+
+                // если нужно доверять целой подсети:
+                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("192.168.72.0"), 24));
+
+                // можно ограничить количество "пробросов", если цепочка из нескольких прокси
+                // options.ForwardLimit = 2;
+            });
         }
 
         public static void SetupWalletApplication(
