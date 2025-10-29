@@ -277,6 +277,11 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         
         EarnLastCode = 20_099,
         
+        // Trading codes
+        TradingPositionInvalidOrder = 30_000,
+        TradingPositionInsufficientMargin = 30_001,
+        TradingUnknownError = 30_099,
+        
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
         OperationNotSupported = 100_000,
