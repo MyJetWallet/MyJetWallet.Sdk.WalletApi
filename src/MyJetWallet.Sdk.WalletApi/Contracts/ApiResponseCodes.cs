@@ -281,6 +281,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         TradingPositionInvalidOrder = 30_000,
         TradingPositionInsufficientMargin = 30_001,
         TradingLowBalance = 30_002,
+        TradingAgentAlreadyExists = 30_003,
         TradingUnknownError = 30_099,
         
         //Embedded 100_000+
@@ -533,6 +534,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TradingPositionInvalidOrder);
             AddBody(ApiResponseCodes.TradingPositionInsufficientMargin);
             AddBody(ApiResponseCodes.TradingLowBalance);
+            AddBody(ApiResponseCodes.TradingAgentAlreadyExists);
             AddBody(ApiResponseCodes.TradingUnknownError);
             
             AddBody(ApiResponseCodes.OperationNotSupported);
