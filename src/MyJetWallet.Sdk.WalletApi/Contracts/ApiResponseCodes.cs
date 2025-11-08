@@ -308,9 +308,14 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         PresetsNotFound = 100_019,
         AddressNotFound = 100_020,
         AddressIsNotUnique = 100_021,
-        AddressDuplicate = 100_022
+        AddressDuplicate = 100_022,
 
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
+        
+        
+        //200_000 to 210_000 HyperLiquid Error Codes
+        NotEnoughMargin = 200_000,
+        
     }
 
     public static class ApiResponseClassData
@@ -560,6 +565,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.AddressDuplicate);
             AddBody(ApiResponseCodes.AddressNotFound);
             AddBody(ApiResponseCodes.PresetsNotFound);
+            
+            AddBody(ApiResponseCodes.NotEnoughMargin);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
