@@ -309,10 +309,11 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         AddressNotFound = 100_020,
         AddressIsNotUnique = 100_021,
         AddressDuplicate = 100_022,
+        GaslessNotAllowedForAsset = 100_023,
 
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
-        
-        
+
+
         //200_000 to 210_000 HyperLiquid Error Codes
         NotEnoughMargin = 200_000,
         
