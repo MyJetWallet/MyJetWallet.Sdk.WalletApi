@@ -277,12 +277,14 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         
         EarnLastCode = 20_099,
         
-        // Trading codes
+        // HyperLiquid Error Codes 30_000 - 30_999
         TradingPositionInvalidOrder = 30_000,
         TradingPositionInsufficientMargin = 30_001,
         TradingLowBalance = 30_002,
         TradingAgentAlreadyExists = 30_003,
-        TradingUnknownError = 30_099,
+        TradingNotEnoughMargin = 30_004,
+        TradingUnknownError = 30_999,
+        
         
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
@@ -312,10 +314,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         GaslessNotAllowedForAsset = 100_023,
 
         //NOTE: добавил код - добавь парамтеры для шаблона, даже если они пустые
-
-
-        //200_000 to 210_000 HyperLiquid Error Codes
-        NotEnoughMargin = 200_000,
         
     }
 
@@ -567,7 +565,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.AddressNotFound);
             AddBody(ApiResponseCodes.PresetsNotFound);
             
-            AddBody(ApiResponseCodes.NotEnoughMargin);
+            AddBody(ApiResponseCodes.TradingNotEnoughMargin);
+            AddBody(ApiResponseCodes.GaslessNotAllowedForAsset);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
