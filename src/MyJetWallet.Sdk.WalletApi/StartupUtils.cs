@@ -17,7 +17,7 @@ using MyJetWallet.Sdk.WalletApi.Middleware;
 using Prometheus;
 using SimpleTrading.BaseMetrics;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using MyJetWallet.Sdk.Service;
 using MyJetWallet.Sdk.Service.LivenessProbs;
 using MyJetWallet.Sdk.WalletApi.Swagger;
@@ -47,7 +47,7 @@ namespace MyJetWallet.Sdk.WalletApi
                     Version = "1.0.0",
                     Description = $"{swaggerOffsetName.ToUpper()} API",
                 });
-                option.SchemaFilter<EnumSchemaFilter>();
+                //option.SchemaFilter<EnumSchemaFilter>();
 
                 
                 option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
@@ -58,23 +58,10 @@ namespace MyJetWallet.Sdk.WalletApi
                     Name = "Authorization",
                     Scheme = "Bearer"
                 });
-
-                option.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                
+                option.AddSecurityRequirement(document => new OpenApiSecurityRequirement()
                 {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            },
-                            Scheme = "oauth2",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header,
-                        },
-                        new List<string>()
-                    }
+                    [new OpenApiSecuritySchemeReference("Bearer", document)] = []
                 });
                 
             });
