@@ -47,7 +47,7 @@ namespace MyJetWallet.Sdk.WalletApi
                     Version = "1.0.0",
                     Description = $"{swaggerOffsetName.ToUpper()} API",
                 });
-                //option.SchemaFilter<EnumSchemaFilter>();
+                option.SchemaFilter<EnumSchemaFilter>();
 
                 
                 option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
