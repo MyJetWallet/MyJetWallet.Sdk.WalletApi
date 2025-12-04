@@ -285,6 +285,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         TradingNotEnoughMargin = 30_004,
         TradingUnknownError = 30_999,
         
+        // OpenBanking Error Codes 31_000 - 31_999
+        OpenBankingNotSupported = 30_000,
+        OpenBankingUnknownError = 30_999,
+        
         
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
@@ -540,6 +544,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TradingLowBalance);
             AddBody(ApiResponseCodes.TradingAgentAlreadyExists);
             AddBody(ApiResponseCodes.TradingUnknownError);
+            
+            // OpenBanking Error Codes 31_000 - 31_999
+            AddBody(ApiResponseCodes.OpenBankingNotSupported);
+            AddBody(ApiResponseCodes.OpenBankingUnknownError);
             
             AddBody(ApiResponseCodes.OperationNotSupported);
             AddBody(ApiResponseCodes.LowBalanceForTransaction);
