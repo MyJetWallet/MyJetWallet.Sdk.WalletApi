@@ -13,7 +13,7 @@
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="2.7.0" />
     <PackageReference Include="MyJetWallet.Service.MessageTemplates.Client" Version="2.7.0" />
     <PackageReference Include="MyJetWallet.Service.Service.KYC.Client" Version="2.29.1" />
-    <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="3.11.0" />
+    <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="3.11.1" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.8.0" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
