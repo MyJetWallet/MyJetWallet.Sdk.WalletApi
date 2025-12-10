@@ -286,9 +286,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         TradingUnknownError = 30_999,
         
         // OpenBanking Error Codes 31_000 - 31_999
-        OpenBankingNotSupported = 30_000,
-        OpenBankingUnknownError = 30_999,
-        
+        OpenBankingNotSupported = 31_000,
+        OpenBankingUnknownError = 31_999,
         
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
