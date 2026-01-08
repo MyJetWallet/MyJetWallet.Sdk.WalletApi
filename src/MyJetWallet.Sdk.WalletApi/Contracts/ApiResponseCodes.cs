@@ -289,6 +289,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         OpenBankingNotSupported = 31_000,
         OpenBankingUnknownError = 31_999,
         
+        // QR Payment Error Codes 32_000 - 32_999
+        QrCodeInvalid = 32_000,
+        QrUnknownError = 32_999,
+        
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
         OperationNotSupported = 100_000,
@@ -547,6 +551,14 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             // OpenBanking Error Codes 31_000 - 31_999
             AddBody(ApiResponseCodes.OpenBankingNotSupported);
             AddBody(ApiResponseCodes.OpenBankingUnknownError);
+            
+            // OpenBanking Error Codes 31_000 - 31_999
+            AddBody(ApiResponseCodes.OpenBankingNotSupported);
+            AddBody(ApiResponseCodes.OpenBankingUnknownError);
+            
+            // QR Payment Error Codes 32_000 - 32_999
+            AddBody(ApiResponseCodes.QrCodeInvalid);
+            AddBody(ApiResponseCodes.QrUnknownError);
             
             AddBody(ApiResponseCodes.OperationNotSupported);
             AddBody(ApiResponseCodes.LowBalanceForTransaction);
