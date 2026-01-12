@@ -291,6 +291,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         
         // QR Payment Error Codes 32_000 - 32_999
         QrCodeInvalid = 32_000,
+        QrExpired = 32_001,
         QrUnknownError = 32_999,
         
         //Embedded 100_000+
@@ -558,6 +559,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             
             // QR Payment Error Codes 32_000 - 32_999
             AddBody(ApiResponseCodes.QrCodeInvalid);
+            AddBody(ApiResponseCodes.QrExpired);
             AddBody(ApiResponseCodes.QrUnknownError);
             
             AddBody(ApiResponseCodes.OperationNotSupported);
