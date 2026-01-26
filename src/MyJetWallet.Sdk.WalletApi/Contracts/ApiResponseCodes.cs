@@ -93,6 +93,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         WrongPinCodeAttempt = 117, // wrong pin code with attempts
         WrongPinCodeBlocked = 118, // wrong pin code hit block time
         WebLoginTemporallyNotAvailable = 119, // wrong pin code hit block time
+        AccountDeactivated = 120,
 
 
         //Circle, Cards
@@ -588,6 +589,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             
             AddBody(ApiResponseCodes.TradingNotEnoughMargin);
             AddBody(ApiResponseCodes.GaslessNotAllowedForAsset);
+            AddBody(ApiResponseCodes.AccountDeactivated);
         }
 
         static void AddBody(ApiResponseCodes code, params string[] keys) => TemplateBodyParams[code] =
