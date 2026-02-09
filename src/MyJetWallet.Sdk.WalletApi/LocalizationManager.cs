@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -31,10 +32,26 @@ public class LocalizationManager
             _logger.LogError($"Api code {code} doesnt have params");
             throw new Exception($"Api code {code} doesnt have params");
         }
-        var templates = await _templateService.GetAllTemplates();
+
+        var templates = new List<Template>();
+        var skip = 0;
+        var take = 100;
+        bool existNewItems;
+        do
+        {
+            var templateResponse = await _templateService.GetAllTemplatesV2(new GetTemplatesRequest() { Skip = skip, Take = take });
+            existNewItems = (templateResponse?.Templates?.Any() == true);
+				
+            if (existNewItems)
+            {
+                templates.AddRange(templateResponse.Templates);
+            }
+            skip += take;
+        } while (existNewItems);
+        
         foreach (var code in codes)
         {
-            var template = templates.Templates.FirstOrDefault(t => t.TemplateId == code.ToString().ToLower());
+            var template = templates.FirstOrDefault(t => t.TemplateId == code.ToString().ToLower());
             if (template == null)
             {
                 await _templateService.CreateNewTemplate(new Template
