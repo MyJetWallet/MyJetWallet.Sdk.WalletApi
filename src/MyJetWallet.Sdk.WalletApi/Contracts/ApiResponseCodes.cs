@@ -295,6 +295,11 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         QrExpired = 32_001,
         QrUnknownError = 32_999,
         
+        // Manteca User Registration Error Codes 33_000 - 33_999
+        MantecaUserAlreadyRegistered = 33_000,
+        MantecaUserDocumentNotFound = 33_001,
+        MantecaUserUnknownError = 33_999,
+        
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
         OperationNotSupported = 100_000,
@@ -562,6 +567,11 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.QrCodeInvalid);
             AddBody(ApiResponseCodes.QrExpired);
             AddBody(ApiResponseCodes.QrUnknownError);
+            
+            // Manteca User Registration Error Codes 33_000 - 33_999
+            AddBody(ApiResponseCodes.MantecaUserAlreadyRegistered);
+            AddBody(ApiResponseCodes.MantecaUserDocumentNotFound);
+            AddBody(ApiResponseCodes.MantecaUserUnknownError);
             
             AddBody(ApiResponseCodes.OperationNotSupported);
             AddBody(ApiResponseCodes.LowBalanceForTransaction);
