@@ -298,7 +298,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         // Manteca User Registration Error Codes 33_000 - 33_999
         MantecaUserAlreadyRegistered = 33_000,
         MantecaUserDocumentNotFound = 33_001,
-        MantecaUserUnknownError = 33_999,
+        MantecaUserNotFound = 33_002,
+        MantecaUnknownError = 33_999,
         
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
@@ -571,7 +572,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             // Manteca User Registration Error Codes 33_000 - 33_999
             AddBody(ApiResponseCodes.MantecaUserAlreadyRegistered);
             AddBody(ApiResponseCodes.MantecaUserDocumentNotFound);
-            AddBody(ApiResponseCodes.MantecaUserUnknownError);
+            AddBody(ApiResponseCodes.MantecaUserNotFound);
+            AddBody(ApiResponseCodes.MantecaUnknownError);
             
             AddBody(ApiResponseCodes.OperationNotSupported);
             AddBody(ApiResponseCodes.LowBalanceForTransaction);
