@@ -192,7 +192,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
 
         CardBlocked = 280,
         TooManyCardsIssued = 281,
-        
+        InvalidActivationData = 282,
+
         //High-Yield
         ClientOfferDisabled = 303,
         OfferDisabled = 305,
