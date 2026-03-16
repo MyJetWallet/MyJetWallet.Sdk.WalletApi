@@ -193,6 +193,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardBlocked = 280,
         TooManyCardsIssued = 281,
         InvalidActivationData = 282,
+        CardActionTokenExpired = 283,
 
         //High-Yield
         ClientOfferDisabled = 303,
@@ -546,6 +547,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.EmailUnavailable);
             AddBody(ApiResponseCodes.TinRequired);
             AddBody(ApiResponseCodes.TooManyCardsIssued);
+            AddBody(ApiResponseCodes.CardActionTokenExpired);
             
             AddBody(ApiResponseCodes.UsdtEurNotSupported);
             AddBody(ApiResponseCodes.UsdtNotSupported);
