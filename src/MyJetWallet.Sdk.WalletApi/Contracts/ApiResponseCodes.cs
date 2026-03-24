@@ -194,6 +194,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         TooManyCardsIssued = 281,
         InvalidActivationData = 282,
         CardActionTokenExpired = 283,
+        WirexProfileNotFound = 284,
 
         //High-Yield
         ClientOfferDisabled = 303,
@@ -549,6 +550,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.TooManyCardsIssued);
             AddBody(ApiResponseCodes.InvalidActivationData);
             AddBody(ApiResponseCodes.CardActionTokenExpired);
+            AddBody(ApiResponseCodes.WirexProfileNotFound);
             
             AddBody(ApiResponseCodes.UsdtEurNotSupported);
             AddBody(ApiResponseCodes.UsdtNotSupported);
