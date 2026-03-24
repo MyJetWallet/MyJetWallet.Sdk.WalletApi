@@ -547,6 +547,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.EmailUnavailable);
             AddBody(ApiResponseCodes.TinRequired);
             AddBody(ApiResponseCodes.TooManyCardsIssued);
+            AddBody(ApiResponseCodes.InvalidActivationData);
             AddBody(ApiResponseCodes.CardActionTokenExpired);
             
             AddBody(ApiResponseCodes.UsdtEurNotSupported);
