@@ -230,7 +230,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         PhoneDuplicate = 704,
         WrongPinWhenChangingPhone = 705,
         PhoneBindingRequired = 706,
-        
+        SmsAttemptsExceeded = 707,
+        SmsDeliveryFailed = 708,
+
         //Iban pt.2
         AddressInvalidOnlyLatinSymbolAllowed = 801,
         IbanNotReachable = 802,
@@ -535,6 +537,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.EarnLastCode);
 
             AddBody(ApiResponseCodes.PhoneBindingRequired);
+            AddBody(ApiResponseCodes.SmsAttemptsExceeded);
+            AddBody(ApiResponseCodes.SmsDeliveryFailed);
             AddBody(ApiResponseCodes.AccountLabelAlreadyUsed);
             AddBody(ApiResponseCodes.InvalidBic);
             AddBody(ApiResponseCodes.BalanceTooBigForDeletion);
