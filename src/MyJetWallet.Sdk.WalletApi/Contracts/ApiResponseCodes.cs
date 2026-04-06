@@ -250,6 +250,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         AccountLabelAlreadyUsed = 814,
         InvalidBic = 815,
         TinRequired = 816,
+        InvalidCardHolderName = 817,
 
         //Gifts
         SimpleKycRequired = 901,
@@ -551,6 +552,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.JarCountLimitExceeded);
             AddBody(ApiResponseCodes.EmailUnavailable);
             AddBody(ApiResponseCodes.TinRequired);
+            AddBody(ApiResponseCodes.InvalidCardHolderName);
             AddBody(ApiResponseCodes.TooManyCardsIssued);
             AddBody(ApiResponseCodes.InvalidActivationData);
             AddBody(ApiResponseCodes.CardActionTokenExpired);
