@@ -306,7 +306,10 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         MantecaUserDocumentNotFound = 33_001,
         MantecaUserNotFound = 33_002,
         MantecaUnknownError = 33_999,
-        
+
+        // Compliance 60_000 - 60_999
+        GdprExportRateLimitExceeded = 60_000,
+
         //Embedded 100_000+
         //Transaction 100_000 - 100_999
         OperationNotSupported = 100_000,
@@ -581,6 +584,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
             AddBody(ApiResponseCodes.QrExpired);
             AddBody(ApiResponseCodes.QrUnknownError);
             
+            // Compliance 60_000 - 60_999
+            AddBody(ApiResponseCodes.GdprExportRateLimitExceeded);
+
             // Manteca User Registration Error Codes 33_000 - 33_999
             AddBody(ApiResponseCodes.MantecaUserAlreadyRegistered);
             AddBody(ApiResponseCodes.MantecaUserDocumentNotFound);
